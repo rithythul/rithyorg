@@ -39,9 +39,9 @@ export function AbstractProfile() {
   
           <text 
             x="400" 
-            y="190" 
+            y="195" 
             fontFamily="monospace" 
-            fontSize="12" 
+            fontSize="15" 
             fill="currentColor" 
             textAnchor="middle"
           >

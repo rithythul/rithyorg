@@ -2,8 +2,8 @@ import { AbstractProfile } from '../components/abstractProfile'
 
 export default function About() {
   return (
-    <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 className="text-2xl font-bold mb-6">about</h1>
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 className="text-3xl font-bold mb-6">about</h1>
       <div className="mb-8 w-full">
 	<div className="relative w-full h-[200px]">
 	<div className="relative w-full h-[200px] border rounded-lg overflow-hidden">
@@ -13,50 +13,55 @@ export default function About() {
       </div>
       <div className="space-y-6">
 	<section>
-	  <h2 className="text-xl font-semibold mb-2">background</h2>
+	  <h2 className="text-xl font-semibold mb-2">Interests</h2>
 	  <p>
-	    i'm [your name], an advertising and multimedia professional with over 12 years
-	    of experience in the industry. my journey in this field has been driven by a
-	    passion for creativity and a deep understanding of technology.
+	  simple living, adventure touring, long distance bicycling, running, tech ventures, operating system, programming, blockchain, crypto, web3, investing
 	  </p>
 	</section>
 	<section>
-	  <h2 className="text-xl font-semibold mb-2">experience</h2>
+	  <h2 className="text-xl font-semibold mb-2">Bios</h2>
 	  <p>
-	    throughout my career, i've had the privilege of working with a diverse range of
-	    clients, from small local businesses to large multinational corporations. this
-	    experience has given me a unique perspective on how to create impactful digital
-	    experiences that resonate with various audiences.
+	  I co-founded SmallWorld, a venture building and startup space, which was established in 2011. In 2017, I started KOOMPI, an open-source computer company. That same year, I launched VitaminAir, a sustainable living village and reforestation pilot project. In 2019, I assembled a team to develop Selendra, a Layer 1 blockchain network built with Substrate Framework for real-world asset tokenization and loyalty programs.
 	  </p>
+	  
+	  <br />
+	  <p>
+	  Since 2020, I have nurtured a team of dedicated young developers to build web3 and enterprise-grade software. This team now collaborates with other teams from global companies.
+	  </p>
+	  <br />
+	  
+	  <p>In parallel, I have developed three additional startups: 1. in sports ticketing, 2. a reverse marketplace for e-commerce, and 3. a payment page for online payment integration for startups and SMEs in Cambodia.
+	  </p>
+	  <br />
+
+	  
+	  <p>
+	  These projects leverage each other to provide comprehensive services to businesses, developers, and users.
+	  </p>
+
 	</section>
+
 	<section>
 	  <h2 className="text-xl font-semibold mb-2">skills</h2>
 	  <ul className="list-disc list-inside ml-4">
-	    <li>web development (html, css, javascript, react, node.js)</li>
-	    <li>digital marketing and seo</li>
-	    <li>ui/ux design</li>
-	    <li>content creation and management</li>
-	    <li>data analysis and visualization</li>
+	    <li>linux and bash </li>
+	    <li>project management</li>
+	    <li>startup</li>
+	    <li>community building</li>
 	  </ul>
 	</section>
+
 	<section>
-	  <h2 className="text-xl font-semibold mb-2">approach</h2>
-	  <p>
-	    i'm constantly learning and adapting to new technologies and methodologies in
-	    the ever-evolving digital landscape. my goal is to help businesses and
-	    individuals not just keep up with digital trends, but to stay ahead of the curve
-	    and stand out in their respective markets.
-	  </p>
+	  <h2 className="text-xl font-semibold mb-2">learning</h2>
+	  <ul className="list-disc list-inside ml-4">
+	    <li>smart contract with <b> solidity</b> </li>
+	    <li>programming (<b>rust, typescript</b>)</li>
+	    <li>writing my first book</li>
+	    <li>vipassana meditation</li>
+	  </ul>
 	</section>
-	<section>
-	  <h2 className="text-xl font-semibold mb-2">outside of work</h2>
-	  <p>
-	    when i'm not working, you can find me exploring new technologies, contributing
-	    to open-source projects, or sharing my knowledge through writing and speaking
-	    engagements.
-	  </p>
-	</section>
-      </div>
+  	
+  	</div>
     </div>
   )
 }
