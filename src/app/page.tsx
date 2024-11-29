@@ -11,10 +11,10 @@ export default async function Home() {
       <section className="mb-12">
         <h1 className="text-3xl font-bold mb-6">welcome</h1>
         <p className="text-lg mb-4">
-          hello, i'm rithy. i'm a startup community and venture builder base in Phnom Penh. I like technology, cycling, adventure, time in nature, vipassana.  
+          i'm <Link href="https://x.com/rithythul" className="text-blue-600">rithythul</Link> on X (Twitter). i'm a community and venture builder base in Phnom Penh. I like, running, cycling, football, adventure, time in nature, vipassana, computer and programming.  
         </p>
         <p className="text-lg">
-          currently building tech ventures at smallworld with my favorite human being. I am also into web3 and blockchain. <Link href="/about" className="text-blue-600 hover:underline">about me</Link>.
+          currently building tech ventures at smallworld with my favorite human alive. I am also into web3 and blockchain. <Link href="/about" className="text-blue-600 hover:underline"> read more...</Link>
         </p>
       </section>
 
