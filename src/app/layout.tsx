@@ -4,6 +4,7 @@ import { JetBrains_Mono } from 'next/font/google'
 import Navigation from './components/navigation'
 import Link from 'next/link'
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const mono = JetBrains_Mono({ subsets: ['latin'] })
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           </Link>
           <Navigation />
           <Analytics/>
+          <SpeedInsights/>
         </header>
         <main className="flex-grow">
           {children}
