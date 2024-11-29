@@ -7,7 +7,7 @@ export default async function Home() {
   const recentPosts = posts.slice(0, 9)  // Show up to 9 posts
 
   return (
-    <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-2">
       <section className="mb-12">
         <h1 className="text-3xl font-bold mb-6">welcome</h1>
         <p className="text-lg mb-4">

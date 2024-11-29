@@ -31,7 +31,7 @@ export default async function BlogPostPage({
     const { previous, next } = await getAdjacentPosts(slug)
 
     return (
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-2">
         <article className="mt-4">
           <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
           <time className="text-foreground/60 text-sm italic block mb-6">

@@ -2,7 +2,7 @@ import { AbstractProfile } from '../components/abstractProfile'
 
 export default function About() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-2">
       <h1 className="text-3xl font-bold mb-6">about</h1>
       <div className="mb-8 w-full">
 	<div className="relative w-full h-[200px]">
@@ -15,7 +15,7 @@ export default function About() {
 	<section>
 	  <h2 className="text-xl font-semibold mb-2">Interests</h2>
 	  <p>
-	  simple living, adventure touring, long distance bicycling, running, tech ventures, operating system, programming, blockchain, crypto, web3, investing
+	  simple living, adventure touring, long distance bicycling, running, tech ventures, operating system, programming, blockchain, crypto, web3 investing
 	  </p>
 	</section>
 	<section>

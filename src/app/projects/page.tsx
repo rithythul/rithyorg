@@ -60,7 +60,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-2">
       <h1 className="text-3xl font-bold mb-6">projects</h1>
       <div className="space-y-12">
         {projects.map((project, index) => (
