@@ -36,7 +36,7 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="mt-12 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} rithy.org. all rights not reserved.
+          © {new Date().getFullYear()} <Link href="/" className="text-blue-600"> rithy.org </Link>. all rights not reserved.
         </footer>
       </body>
     </html>
