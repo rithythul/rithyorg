@@ -1,4 +1,5 @@
-import Link from 'next/link'
+// src/app/projects/page.tsx
+import { ProjectList } from '../components/projectList'
 
 interface Project {
   title: string
@@ -60,34 +61,9 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-2">
-      <h1 className="text-3xl font-bold mb-6">projects</h1>
-      <div className="space-y-12">
-        {projects.map((project, index) => (
-          <div key={index} className="border-t border-foreground/20 pt-8">
-            <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-            <p className="text-foreground/70 mb-4">{project.description}</p>
-            <div className="mb-4">
-              <strong className="text-foreground/90">features:</strong>
-              <ul className="list-disc list-inside ml-4">
-                {project.technologies.map((tech, techIndex) => (
-                  <li key={techIndex} className="text-foreground/70">{tech}</li>
-                ))}
-              </ul>
-            </div>
-            {project.link && (
-              <Link
-                href={project.link}
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                link
-              </Link>
-            )}
-          </div>
-        ))}
-      </div>
+    <div className="max-w-[100vw] px-4">
+      <h1 className="text-2xl font-bold mb-8">projects</h1>
+      <ProjectList projects={projects} />
     </div>
   )
 }

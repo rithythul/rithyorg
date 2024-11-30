@@ -37,3 +37,15 @@ body {
   border-radius: 0.25rem;
   font-size: 0.875em;
 }
+
+/* Hide scrollbar utilities */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
