@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Golden circle background -->
+  <circle cx="16" cy="16" r="15" fill="#D4AF37"/>
+  
+  <!-- Black "r" -->
+  <text
+    x="16"
+    y="22"
+    font-family="monospace"
+    font-size="20"
+    font-weight="bold"
+    fill="black"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >r</text>
+</svg>

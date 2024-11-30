@@ -13,21 +13,25 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="w-full sm:w-auto">
-      <div className="border border-foreground/20 rounded-full px-1 py-1 flex space-x-1 justify-center sm:justify-start">
-        {navItems.map((item) => (
-          <Link
-            key={item.name}
-            href={item.path}
-            className={`text-base px-4 py-1 rounded-full transition-colors ${
-              pathname === item.path 
-                ? 'bg-foreground/10' 
-                : 'hover:bg-foreground/10'
-            }`}
-          >
-            {item.name}
-          </Link>
-        ))}
+    <nav className="w-full px-2 sm:px-0 sm:w-auto">
+      <div className="max-w-full overflow-x-auto">
+        <div className="border border-foreground/20 rounded-full px-1 py-1 flex whitespace-nowrap justify-start sm:justify-center min-w-fit mx-auto">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.path}
+              className={`text-lg sm:text-lg px-4 sm:px-3 py-1.5 rounded-full transition-colors ${
+                pathname === item.path 
+                  ? 'bg-foreground/10' 
+                  : 'hover:bg-foreground/10'
+              } ${
+                item.name !== navItems[navItems.length - 1].name ? 'mr-1' : ''
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
       </div>
     </nav>
   )
