@@ -23,7 +23,7 @@ export default function Navigation() {
               className={`text-lg sm:text-lg px-4 sm:px-3 py-1.5 rounded-full transition-colors ${
                 pathname === item.path 
                   ? 'bg-foreground/10' 
-                  : 'hover:bg-foreground/10'
+                  : 'hover:bg-foreground/5'
               } ${
                 item.name !== navItems[navItems.length - 1].name ? 'mr-1' : ''
               }`}

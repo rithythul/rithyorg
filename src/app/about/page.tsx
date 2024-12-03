@@ -5,12 +5,10 @@ export default function About() {
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-2">
       <h1 className="text-3xl font-bold mb-6">about</h1>
       <div className="mb-8 w-full">
-	<div className="relative w-full h-[200px]">
-	<div className="relative w-full h-[200px] border rounded-lg overflow-hidden">
-          <AbstractProfile />
-        </div>
-	</div>
-      </div>
+		<div className="relative w-full h-[200px] border rounded-lg overflow-hidden">
+		 <AbstractProfile />
+		</div>
+	  </div>
       <div className="space-y-6">
 	<section>
 	  <h2 className="text-xl font-semibold mb-2">Interests</h2>

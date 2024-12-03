@@ -26,7 +26,7 @@ function Logo() {
       className="w-full h-full"
       aria-label="rithy.org logo"
     >
-      <circle cx="16" cy="16" r="15" className="fill-yellow-500"/>
+      <circle cx="16" cy="16" r="15" className="fill-yellow-400"/>
       <text
         x="16"
         y="22"
