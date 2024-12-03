@@ -1,6 +1,6 @@
 ---
 title: "Understand the choices we made"
-date: "2024-01-30"
+date: "2024-12-01"
 description: "You have made the choice. Your goal in life is to understand why you made those choices."
 tags: ["choice", "understanding"]
 status: "published" # "draft" to prevent cross-posting
