@@ -10,7 +10,7 @@ const mono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Rithy Thul',
-  description: 'Personal Website - writing',
+  description: 'notes - writing',
   icons: {
     icon: [
       { url: '/favicon.svg' },
