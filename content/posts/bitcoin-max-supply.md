@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Max Suppy"
+title: "Bitcoin Max Supply"
 date: "2024-12-20"
 description: "Is Bitcoin max supply still the same?"
 tags: ["Bitcoin", "Supply", "Crypto"]
