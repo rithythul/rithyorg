@@ -41,7 +41,7 @@ export default async function WritingPage({
               </Link>
               
               {/* Dotted line */}
-              <div className="flex-grow border-b border-dotted border-foreground/30 absolute w-full top-1/2"></div>
+              <div className="flex-grow border-b border-dotted border-foreground/10 absolute w-full top-1/2"></div>
               
               {/* Date */}
               <time className="text-foreground/70 text-sm whitespace-nowrap pl-2 z-10 bg-background">

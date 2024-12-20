@@ -20,7 +20,7 @@ export default async function Home() {
 
       {recentPosts.length > 0 && (
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">writing</h2>
+          <h2 className="text-2xl font-bold mb-6">to my wall</h2>
           <div className="space-y-4">
             {recentPosts.map((post) => (
               <article 
