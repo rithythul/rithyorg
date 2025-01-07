@@ -25,32 +25,39 @@ export default async function WritingPage({
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-2">
       <h1 className="text-3xl font-bold mb-6">writing</h1>
+
+      {/* Introduction */}
+      <p className="mb-6 text-foreground/70">
+        A writing on ideas, experiences, and reflections on a variety of topics. 
+        A blend of thoughts, lessons learned, and moments captured through words. 
+      </p>
+
       <div className="space-y-4">
         {posts.length > 0 ? (
           posts.map((post) => (
-            <article 
-              key={post.slug} 
-              className="group relative flex justify-between items-baseline"
+            <Link
+              key={post.slug}
+              href={`/writing/${post.slug}`}
+              className="group block"
             >
-              {/* Title */}
-              <Link 
-                href={`/writing/${post.slug}`}
-                className="hover:text-blue-600 transition-colors mr-4 z-10 bg-background pr-2"
-              >
-                {post.title}
-              </Link>
+              <article className="relative flex justify-between items-baseline hover:text-blue-700">
+                {/* Title */}
+                <div className="mr-4 z-10 bg-background pr-2">
+                  {post.title}
+                </div>
               
-              {/* Dotted line */}
-              <div className="flex-grow border-b border-dotted border-foreground/10 absolute w-full top-1/2"></div>
-              
-              {/* Date */}
-              <time className="text-foreground/70 text-sm whitespace-nowrap pl-2 z-10 bg-background">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long'
-                })}
-              </time>
-            </article>
+                {/* Dotted line */}
+                <div className="flex-grow border-b border-dotted border-foreground/10 absolute w-full top-1/2"></div>
+                
+                {/* Date */}
+                <time className="text-foreground/70 text-sm whitespace-nowrap pl-2 z-10 bg-background">
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long'
+                  })}
+                </time>
+              </article>
+            </Link>
           ))
         ) : (
           <p className="text-foreground/70">No posts available yet.</p>

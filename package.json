@@ -9,12 +9,15 @@
     "lint": "next lint",
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "rebuild": "yarn clean && yarn install && yarn build",
-    "cross-post": "ts-node scripts/cross-post.ts"
+    "cross-post": "ts-node scripts/cross-post.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
+    "axios": "^1.6.7",
     "gray-matter": "^4.0.3",
     "next": "15.0.3",
     "react": "^18.2.0",
@@ -25,17 +28,25 @@
     "rehype-stringify": "^10.0.1",
     "remark-gfm": "^4.0.0",
     "remark-parse": "^11.0.0",
-    "unified": "^11.0.5",
-    "axios": "^1.6.7",
-    "twitter-api-v2": "^1.15.2"
+    "twitter-api-v2": "^1.15.2",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.3",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/nextjs": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/test": "^8.4.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8",
+    "storybook": "^8.4.7",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
   }
 }

@@ -1,4 +1,4 @@
-// src/app/lib/writing.ts
+// app/lib/writing.ts
 import { readdir, readFile } from 'node:fs/promises'
 import { mkdir } from 'node:fs/promises'
 import path from 'node:path'

@@ -1,4 +1,4 @@
-// src/app/writing/[slug]/page.tsx
+// app/writing/[slug]/page.tsx
 import { getBlogPost, getBlogPosts, getAdjacentPosts } from '../../lib/writing'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -42,7 +42,22 @@ export default async function BlogPostPage({
             })}
           </time>
           <div className="prose prose-sm md:prose-base lg:prose-lg max-w-none">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
+            <ReactMarkdown
+              components={{
+                a: ({ href, children }) => (
+                  <a 
+                    href={href} 
+                    className="text-blue-500 hover:underline" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    {children}
+                  </a>
+                ),
+              }}
+            >
+              {post.content}
+            </ReactMarkdown>
           </div>
         </article>
 

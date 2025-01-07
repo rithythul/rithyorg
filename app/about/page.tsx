@@ -1,19 +1,12 @@
-import { AbstractProfile } from '../components/abstractProfile'
-
 export default function About() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-2">
       <h1 className="text-3xl font-bold mb-6">about</h1>
-      <div className="mb-8 w-full">
-		<div className="relative w-full h-[200px] border rounded-lg overflow-hidden">
-		 <AbstractProfile />
-		</div>
-	  </div>
       <div className="space-y-6">
 	<section>
 	  <h2 className="text-xl font-semibold mb-2">Interests</h2>
 	  <p>
-	  simple living, adventure touring, long distance bicycling, running, tech ventures, operating system, programming, blockchain, crypto, web3 investing
+	  simple living, adventure and bicycle touring, running, technology ventures, computer operating system, computer programming, blockchain technology, crypto investing, web3 and DApps development
 	  </p>
 	</section>
 	<section>
@@ -28,7 +21,7 @@ export default function About() {
 	  </p>
 	  <br />
 	  
-	  <p>In parallel, I have developed three additional startups: 1. in sports ticketing, 2. a reverse marketplace for e-commerce, and 3. a payment page for online payment integration for startups and SMEs in Cambodia.
+	  <p>In parallel, I have developed a few startups: 1. in sports ticketing, 2. a reverse marketplace for e-commerce, and 3. a payment page for online payment integration for startups and SMEs in Cambodia.
 	  </p>
 	  <br />
 
@@ -42,23 +35,26 @@ export default function About() {
 	<section>
 	  <h2 className="text-xl font-semibold mb-2">skills</h2>
 	  <ul className="list-disc list-inside ml-4">
-	    <li>linux and bash </li>
-	    <li>project management</li>
+	    <li>linux</li>
 	    <li>startup</li>
-	    <li>community building</li>
+	    <li>community</li>
 	  </ul>
 	</section>
 
 	<section>
 	  <h2 className="text-xl font-semibold mb-2">learning</h2>
 	  <ul className="list-disc list-inside ml-4">
-	    <li>smart contract with <b> solidity</b> </li>
-	    <li>programming (<b>rust, typescript</b>)</li>
-	    <li>writing my first book</li>
+	    <li><b>solidity </b>smart contract</li>
+	    <li><b>rust & typescript</b> programming</li>
 	    <li>vipassana meditation</li>
 	  </ul>
 	</section>
-  	
+	<section>
+	  <h2 className="text-xl font-semibold mb-2">Writing</h2>
+	  <ul className="list-disc list-inside ml-4">
+	    <li>my first book by 2025</li>
+	  </ul>
+	</section>
   	</div>
     </div>
   )

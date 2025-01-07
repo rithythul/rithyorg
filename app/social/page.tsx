@@ -25,7 +25,7 @@ const socialLinks = [
   {
     href: 'https://github.com/rithythul',
     icon: GithubIcon,
-    hoverColor: 'hover:text-gray-900'
+    hoverColor: 'hover:text-blue-500'
   }
 ]
 
