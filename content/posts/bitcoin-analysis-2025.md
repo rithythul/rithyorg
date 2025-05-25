@@ -1,3 +1,12 @@
+---
+title: "Bitcoin Data-Driven Analysis"
+date: "2025-05-25"
+description: "A data-driven Bitcoin analysis"
+tags: ["Bitcoin", "Bull", "Bear", "high", "Low"]
+status: "published" # "draft" to prevent cross-posting
+crossPosted: true
+---
+
 # Bitcoin Price Predictions for 2025: A Data-Driven Analysis
 
 Bitcoin currently trades at $107,582 as of May 25, 2025, just shy of its $111,814 all-time high. We're 13 months past the April 2024 halving event, entering the window where Bitcoin historically peaks.
