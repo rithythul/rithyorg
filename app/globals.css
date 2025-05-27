@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: white;
+  --foreground: black;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,30 +24,111 @@ body {
   color: #fff;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+/* .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { */
+  /* font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
+/* Removed to inherit from body */
+/* } */
 
 .prose a {
   text-decoration: underline;
+  color: var(--foreground); /* Ensure foreground color */
 }
 
 /* Blog post styles */
 .prose {
   max-width: none;
+  color: var(--foreground); /* Ensure foreground color */
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: var(--foreground); /* Ensure foreground color for headings */
 }
 
 .prose pre {
-  background-color: #f0f0f0;
-  padding: 1rem;
-  border-radius: 0.25rem;
+  background-color: transparent; /* Remove background */
+  padding: 0.5em; /* Simpler padding */
+  border: 1px solid var(--foreground); /* Stark border */
+  color: var(--foreground); /* Ensure text color */
+  overflow-x: auto; /* Handle long lines */
 }
 
 .prose code {
-  background-color: #f0f0f0;
-  padding: 0.2rem 0.4rem;
-  border-radius: 0.25rem;
-  font-size: 0.875em;
+  background-color: transparent; /* Remove background */
+  padding: 0.1em 0.3em; /* Simpler padding */
+  border: 1px solid var(--foreground); /* Stark border */
+  font-size: 0.875em; /* Keep existing font-size for now */
+  color: var(--foreground); /* Ensure text color */
+}
+
+/* Ensure inline code within pre is not double bordered or padded excessively */
+.prose pre code {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--foreground);
+  padding-left: 1em;
+  font-style: italic;
+  color: var(--foreground);
+}
+
+.prose strong, .prose em {
+  color: var(--foreground);
+}
+
+.prose hr {
+  border-top: 1px solid var(--foreground);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.5em; /* Standard indentation */
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+/* Table Styling */
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid var(--foreground);
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--foreground);
+  padding: 0.5em 0.75em; /* Adjusted padding slightly for better spacing */
+  text-align: left;
+  vertical-align: top; /* Ensure consistent vertical alignment */
+}
+
+.prose th {
+  font-weight: bold;
+  background-color: transparent !important; /* Override any plugin styles */
+}
+
+.prose thead {
+  border-bottom: 2px solid var(--foreground);
+}
+
+/* Optional: Style for table captions if your markdown processor supports them */
+.prose caption {
+  padding: 0.5em;
+  text-align: left;
+  caption-side: bottom; /* Or top, depending on preference */
+  font-style: italic;
+  color: var(--foreground); /* Or a slightly de-emphasized color if needed */
 }
 
 /* Hide scrollbar utilities */

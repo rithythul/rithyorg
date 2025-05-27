@@ -11,10 +11,10 @@ export default async function Home() {
       <section className="mb-12">
         <h1 className="text-3xl font-bold mb-6">welcome</h1>
         <p className="text-lg mb-4">
-          i'm <Link href="https://x.com/rithythul" className="text-blue-600">rithythul</Link> on X (Twitter). i'm a community and venture builder base in Phnom Penh. I like, running, cycling, football, adventure, time in nature, vipassana, computer and programming.  
+          i'm <Link href="https://x.com/rithythul" className="text-[var(--foreground)] hover:underline">rithythul</Link> on X (Twitter). i'm a community and venture builder base in Phnom Penh. I like, running, cycling, football, adventure, time in nature, vipassana, computer and programming.  
         </p>
         <p className="text-lg">
-          currently building tech ventures at smallworld with my favorite human alive. I am also into web3 and blockchain. <Link href="/about" className="text-blue-600 hover:underline"> read more...</Link>
+          currently building tech ventures at smallworld with my favorite human alive. I am also into web3 and blockchain. <Link href="/about" className="text-[var(--foreground)] hover:underline"> read more...</Link>
         </p>
       </section>
 
@@ -23,28 +23,24 @@ export default async function Home() {
           <h2 className="text-2xl font-bold mb-6">to my wall</h2>
           <div className="space-y-4">
             {recentPosts.map((post) => (
-              <article 
-                key={post.slug} 
-                className="group relative flex justify-between items-baseline"
-              >
+              <article key={post.slug} className="mb-4 pb-2 border-b border-[var(--foreground)]">
                 {/* Title */}
                 <Link 
                   href={`/writing/${post.slug}`}
-                  className="hover:text-blue-600 transition-colors mr-4 z-10 bg-background pr-2"
+                  className="text-[var(--foreground)] hover:underline text-xl"
                 >
                   {post.title}
                 </Link>
                 
-                {/* Dotted line */}
-                <div className="flex-grow border-b border-dotted border-foreground/30 absolute w-full top-1/2"></div>
-                
                 {/* Date */}
-                <time className="text-foreground/70 text-sm whitespace-nowrap pl-2 z-10 bg-background">
-                  {new Date(post.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long'
-                  })}
-                </time>
+                <div className="text-sm text-[var(--foreground)]">
+                  <time dateTime={post.date}>
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long'
+                    })}
+                  </time>
+                </div>
               </article>
             ))}
           </div>
@@ -53,7 +49,7 @@ export default async function Home() {
             <div className="mt-6">
               <Link 
                 href="/writing" 
-                className="text-blue-600 hover:underline"
+                className="text-[var(--foreground)] hover:underline"
               >
                 more →
               </Link>
