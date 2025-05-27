@@ -34,7 +34,7 @@ export default async function BlogPostPage({
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-2">
         <article className="mt-4">
           <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-          <time className="text-foreground/60 text-sm italic block mb-6">
+          <time className="text-[var(--foreground)] text-sm italic block mb-6">
             {new Date(post.date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
@@ -47,7 +47,7 @@ export default async function BlogPostPage({
                 a: ({ href, children }) => (
                   <a 
                     href={href} 
-                    className="text-blue-500 hover:underline" 
+                    className="text-[var(--foreground)] hover:underline" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
@@ -61,11 +61,11 @@ export default async function BlogPostPage({
           </div>
         </article>
 
-        <nav className="mt-8 py-4 border-t border-foreground/20 flex justify-between">
+        <nav className="mt-8 py-4 border-t border-[var(--foreground)] flex justify-between">
           {previous ? (
             <Link
               href={`/writing/${previous.slug}`}
-              className="text-blue-600 hover:underline truncate flex-1"
+              className="text-[var(--foreground)] hover:underline truncate flex-1"
             >
               ← {previous.title}
             </Link>
@@ -75,7 +75,7 @@ export default async function BlogPostPage({
           {next ? (
             <Link
               href={`/writing/${next.slug}`}
-              className="text-blue-600 hover:underline truncate flex-1 text-right"
+              className="text-[var(--foreground)] hover:underline truncate flex-1 text-right"
             >
               {next.title} →
             </Link>

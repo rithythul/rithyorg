@@ -1,12 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { JetBrains_Mono } from 'next/font/google'
+// Removed JetBrains_Mono import
 import Navigation from './components/navigation'
 import Link from 'next/link'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const mono = JetBrains_Mono({ subsets: ['latin'] })
+// const mono = { className: 'font-mono' }; // Using Tailwind's font-mono directly
 
 export const metadata: Metadata = {
   title: 'Rithy Thul',
@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${mono.className} antialiased max-w-2xl mx-auto px-4 py-8 flex flex-col min-h-screen`}>
+      <body className={`font-mono antialiased max-w-2xl mx-auto px-4 py-8 flex flex-col min-h-screen`}>
         <header className="w-full max-w-2xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center mb-12 space-y-4 sm:space-y-0">
           <Navigation />
           <Analytics />

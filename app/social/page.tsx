@@ -10,22 +10,22 @@ const socialLinks = [
   {
     href: 'https://linkedin.com/in/rithythul',
     icon: LinkedInIcon,
-    hoverColor: 'hover:text-blue-600'
+    hoverColor: 'hover:text-[var(--foreground)]'
   },
   {
     href: 'https://twitter.com/rithythul',
     icon: TwitterIcon,
-    hoverColor: 'hover:text-blue-400'
+    hoverColor: 'hover:text-[var(--foreground)]'
   },
   {
     href: 'https://t.me/notestothyself',
     icon: TelegramIcon,
-    hoverColor: 'hover:text-blue-500'
+    hoverColor: 'hover:text-[var(--foreground)]'
   },
   {
     href: 'https://github.com/rithythul',
     icon: GithubIcon,
-    hoverColor: 'hover:text-blue-500'
+    hoverColor: 'hover:text-[var(--foreground)]'
   }
 ]
 
@@ -43,7 +43,7 @@ export default function Social() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-foreground/70 transition-colors ${social.hoverColor}`}
+                className={`text-[var(--foreground)] hover:underline ${social.hoverColor}`} /* Removed transition-colors, added hover:underline */
               >
                 <Icon className="w-8 h-8 md:w-10 md:h-10" />
               </a>

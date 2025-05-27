@@ -17,22 +17,22 @@ export function ProjectList({ projects }: { projects: Project[] }) {
         {projects.map((project, index) => (
           <li 
             key={index} 
-            className="space-y-2 border border-foreground/20 rounded-md p-4 flex flex-col items-center text-center"
+            className="space-y-2 border border-[var(--foreground)] p-4 flex flex-col items-center text-center"
           >
             <Link
               href={project.link || '#'}
-              className="text-blue-500 hover:underline text-lg font-semibold"
+              className="text-[var(--foreground)] hover:underline text-lg font-semibold"
               target={project.link ? "_blank" : undefined}
               rel={project.link ? "noopener noreferrer" : undefined}
             >
               {project.title}
             </Link>
-            <p className="text-sm text-foreground/70">{project.description}</p>
+            <p className="text-sm text-[var(--foreground)]">{project.description}</p>
             <div className="flex flex-wrap gap-2">
               {project.industry.map((tech, techIndex) => (
                 <span 
                   key={techIndex} 
-                  className="text-xs px-2 py-1 rounded-full bg-foreground/10 text-foreground/70"
+                  className="text-xs px-2 py-1 bg-[var(--foreground)] text-[var(--background)]"
                 >
                   {tech}
                 </span>
