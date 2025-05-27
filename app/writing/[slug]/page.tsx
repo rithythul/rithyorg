@@ -3,6 +3,7 @@ import { getBlogPost, getBlogPosts, getAdjacentPosts } from '../../lib/writing'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm' // <-- Import here
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts()
@@ -43,6 +44,7 @@ export default async function BlogPostPage({
           </time>
           <div className="prose prose-sm md:prose-base lg:prose-lg max-w-none">
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]} // <-- Add this prop
               components={{
                 a: ({ href, children }) => (
                   <a 
