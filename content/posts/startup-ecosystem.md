@@ -1,5 +1,3 @@
-
-
 ---
 title: "Grow Startup Ecosystem"
 date: "2025-06-10"
