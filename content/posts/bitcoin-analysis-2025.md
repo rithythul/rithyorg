@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Data-Driven Analysis"
+title: "Bitcoin Analysis"
 date: "2025-05-25"
 description: "A data-driven Bitcoin analysis"
 tags: ["Bitcoin", "Bull", "Bear", "high", "Low"]

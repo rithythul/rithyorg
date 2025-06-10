@@ -3,16 +3,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
-function Logo() {
-  return (
-    <div className="ascii-art text-terminal-green text-center mb-4 text-sm font-mono">
-      {`██▀█ █ ▀█▀ █ █ █ █
-█▀▀  █  █  █▀█ ▀█▀
-█▀▀▀ █  █  █ █  █  .ORG`}
-    </div>
-  );
-}
-
 function SystemStatus() {
   const [uptime, setUptime] = useState(1748164116);
 
@@ -29,17 +19,24 @@ function SystemStatus() {
   };
 
   return (
-    <div className="text-xs text-terminal-amber mb-4">
-      <div className="flex justify-between">
-        <span>
+    <div className="text-xs text-solarized-yellow mb-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-0">
+        <span className="truncate">
           STATUS:{" "}
-          <span className="text-terminal-green" aria-label="System Status">
+          <span
+            className="text-solarized-green font-medium"
+            aria-label="System Status"
+          >
             ONLINE
-          </span>
+          </span>{" "}
+          - rithy.org
         </span>
-        <span>
+        <span className="truncate">
           UPTIME:{" "}
-          <span className="text-terminal-green" aria-label="Uptime Counter">
+          <span
+            className="text-solarized-green font-medium"
+            aria-label="Uptime Counter"
+          >
             {formatUptime(uptime)}
           </span>{" "}
           SECONDS
@@ -60,30 +57,28 @@ export default function Navigation() {
   ];
 
   return (
-    <div className="terminal-border bg-black p-4 mb-8">
-      {/* ASCII Logo */}
+    <div className="w-full bg-solarized-base2 border border-solarized-base1 p-3 sm:p-4 mb-6 sm:mb-8 pt-6 sm:pt-8 rounded-sm">
+      {/* System Status */}
       <Link href="/" aria-label="Home">
-        <Logo />
+        <SystemStatus />
       </Link>
 
-      {/* System Status */}
-      <SystemStatus />
-
       {/* Navigation */}
-      <nav className="flex items-center justify-between border-t border-terminal-green/30 pt-3">
-        <div className="text-xs text-terminal-amber" aria-hidden="true">
-          root@rithy.org:~$
+      <nav className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-t border-solarized-base1 pt-3 gap-3 sm:gap-0">
+        <div className="text-xs text-solarized-yellow order-2 sm:order-1">
+          <span className="terminal-prompt"></span>
+          <span className="terminal-loading"></span>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center justify-center sm:justify-end space-x-3 sm:space-x-4 order-1 sm:order-2">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.path}
-              className={`text-sm transition-colors ${
+              className={`text-sm font-light transition-colors py-2 px-1 ${
                 pathname === item.path
-                  ? "text-terminal-amber"
-                  : "text-terminal-green hover:text-terminal-amber"
+                  ? "text-solarized-blue font-medium underline"
+                  : "text-solarized-cyan hover:text-solarized-blue hover:underline"
               }`}
             >
               {item.name}
