@@ -21,34 +21,26 @@ export default function About() {
             Bios
           </h2>
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            I co-founded SmallWorld, a venture building and startup space, which
-            was established in 2011. In 2017, I started KOOMPI, an open-source
-            computer company. That same year, I launched VitaminAir, a
-            sustainable living village and reforestation pilot project. In 2019,
-            I assembled a team to develop Selendra, a Layer 1 blockchain network
-            built with Substrate Framework for real-world asset tokenization and
-            loyalty programs.
-          </p>
-
-          <br />
-          <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            Since 2020, I have nurtured a team of dedicated young developers to
-            build web3 and enterprise-grade software. This team now collaborates
-            with other teams from global companies.
+            I co-founded SmallWorld, a venture building and startup space, in
+            2011. In 2017, I launched KOOMPI, an open-source computer company,
+            and VitaminAir, a sustainable living and reforestation project. In
+            2019, I assembled a team to build Selendra, a Layer 1 blockchain
+            network for real-world asset tokenization and loyalty programs.
           </p>
           <br />
-
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            In parallel, I have developed a few startups: 1. in sports
-            ticketing, 2. a reverse marketplace for e-commerce, and 3. a payment
-            page for online payment integration for startups and SMEs in
-            Cambodia.
+            Since 2020, I have led a team of young developers building web3 and
+            enterprise software, now collaborating with global partners.
           </p>
           <br />
-
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            These projects leverage each other to provide comprehensive services
-            to businesses, developers, and users.
+            Alongside, I have developed startups in sports ticketing,
+            e-commerce, and online payments for Cambodian startups and SMEs.
+          </p>
+          <br />
+          <p className="text-solarized-base0 text-sm font-light leading-relaxed">
+            These projects work together to deliver integrated solutions for
+            businesses, developers, and users.
           </p>
         </section>
 
