@@ -21,26 +21,25 @@ export default function About() {
             Bios
           </h2>
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            I co-founded SmallWorld, a venture building and startup space, in
-            2011. In 2017, I launched KOOMPI, an open-source computer company,
-            and VitaminAir, a sustainable living and reforestation project. In
-            2019, I assembled a team to build Selendra, a Layer 1 blockchain
-            network for real-world asset tokenization and loyalty programs.
+            Co-founded SmallWorld, a venture building and startup space, in
+            2011. In 2017, we started KOOMPI, an open-source computer company,
+            and launched VitaminAir, a pilot natural living community and
+            reforestation project. In 2019, our team developed Selendra, a Layer
+            1 blockchain network for real-world asset tokenization and loyalty
+            programs.
           </p>
           <br />
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            Since 2020, I have led a team of young developers building web3 and
-            enterprise software, now collaborating with global partners.
+            Since 2020, we've built a team of developers creating web3 and
+            enterprise software, now collaborating with local and global
+            companies.
           </p>
           <br />
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            Alongside, I have developed startups in sports ticketing,
-            e-commerce, and online payments for Cambodian startups and SMEs.
-          </p>
-          <br />
-          <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            These projects work together to deliver integrated solutions for
-            businesses, developers, and users.
+            We developed and maintain a sports ticketing, reverse marketplace
+            e-commerce SaaS, and an integrated payment environment for SMEs.
+            These projects work together to provide services to businesses,
+            developers, and users.
           </p>
         </section>
 
