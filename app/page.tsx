@@ -11,7 +11,7 @@ export default async function Home() {
       <section className="mb-12">
         <h1 className="text-3xl font-bold mb-6">welcome</h1>
         <p className="text-lg mb-4">
-          i'm <Link href="https://x.com/rithythul" className="text-[var(--foreground)] hover:underline">rithythul</Link> on X (Twitter). i'm a community and venture builder base in Phnom Penh. I like, running, cycling, football, adventure, time in nature, vipassana, computer and programming.  
+          i'm <Link href="https://x.com/rithythul" className="text-[var(--foreground)] hover:underline">rithythul</Link>. i'm a community and venture builder base in Phnom Penh. I like, running, cycling, football, adventure, time in nature, vipassana, computer and programming.  
         </p>
         <p className="text-lg">
           currently building tech ventures at smallworld with my favorite human alive. I am also into web3 and blockchain. <Link href="/about" className="text-[var(--foreground)] hover:underline"> read more...</Link>
