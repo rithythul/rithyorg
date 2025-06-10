@@ -22,13 +22,12 @@ export default async function Home() {
           >
             rithythul
           </Link>
-          . i'm a community and venture builder base in Phnom Penh. I like,
-          running, cycling, football, adventure, time in nature, vipassana,
-          computer and programming.
+          . I like running, cycling, football, adventure, time in nature,
+          vipassana, computer, and programming.
         </p>
         <p className="text-sm font-light leading-relaxed">
-          currently building tech ventures at smallworld with my favorite human
-          alive. I am also into web3 and blockchain.{" "}
+          currently building tech ventures at smallworld. I am also into web3
+          and blockchain.{" "}
           <Link
             href="/about"
             className="text-solarized-blue hover:text-solarized-cyan hover:underline"

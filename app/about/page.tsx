@@ -8,16 +8,6 @@ export default function About() {
       <div className="space-y-4 sm:space-y-6">
         <section>
           <h2 className="text-base font-medium mb-2 text-solarized-blue">
-            Interests
-          </h2>
-          <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            simple living, adventure and bicycle touring, running, technology
-            ventures, computer operating system, computer programming,
-            blockchain technology, crypto investing, web3 and DApps development
-          </p>
-        </section>
-        <section>
-          <h2 className="text-base font-medium mb-2 text-solarized-blue">
             Bios
           </h2>
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
@@ -42,7 +32,16 @@ export default function About() {
             developers, and users.
           </p>
         </section>
-
+        <section>
+          <h2 className="text-base font-medium mb-2 text-solarized-blue">
+            Interests
+          </h2>
+          <p className="text-solarized-base0 text-sm font-light leading-relaxed">
+            simple living, adventure and bicycle touring, running, startup,
+            programming, blockchain, crypto, web3 and DApps, open source,
+            community, and nature.
+          </p>
+        </section>
         <section>
           <h2 className="text-base font-medium mb-2 text-solarized-yellow">
             skills
@@ -77,7 +76,7 @@ export default function About() {
             Writing
           </h2>
           <ul className="list-disc list-inside ml-4 text-solarized-base0 text-sm font-light">
-            <li>my first book by 2025</li>
+            <li>my first book</li>
           </ul>
         </section>
       </div>
