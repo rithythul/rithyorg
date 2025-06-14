@@ -1,6 +1,6 @@
 ---
 title: "RWA Evolution"
-date: "2025-06-10"
+date: "2025-06-14"
 description: "RWA Best practice"
 tags: ["Blockchain", "ecosystem", "RWA"]
 status: "published" # "draft" to prevent cross-posting
