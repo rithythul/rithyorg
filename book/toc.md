@@ -1,9 +1,7 @@
 # Book Table of Contents
 
 ## Title Ideas:
-- **"Building Where You Are: Notes from a Cambodian Entrepreneur"**
 - **"The Long Way Around: Lessons from Building an Ecosystem"** 
-- **"Notes to My Younger Self: 15 Years of Building in Cambodia"**
 
 ## Proposed Table of Contents:
 
