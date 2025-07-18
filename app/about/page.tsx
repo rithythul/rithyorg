@@ -22,7 +22,8 @@ export default function About() {
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
             Since 2020, we've built a team of developers creating web3 and
             enterprise software, now collaborating with local and global
-            companies.
+            companies. We've helped over ~50 startups and installed computer labs
+            in 63 schools across Cambodia.
           </p>
           <br />
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
@@ -31,15 +32,22 @@ export default function About() {
             These projects work together to provide services to businesses,
             developers, and users.
           </p>
+          <br />
+          <p className="text-solarized-base0 text-sm font-light leading-relaxed">
+            I believe in building sustainable businesses that solve real problems,
+            growing ecosystems rather than just companies, and finding Cambodia's
+            unique strengths instead of copying Silicon Valley.
+          </p>
         </section>
         <section>
           <h2 className="text-base font-medium mb-2 text-solarized-blue">
             Interests
           </h2>
           <p className="text-solarized-base0 text-sm font-light leading-relaxed">
-            simple living, adventure and bicycle touring, running, startup,
-            programming, blockchain, crypto, web3 and DApps, open source,
-            community, and nature.
+            simple living, adventure and bicycle touring across Southeast Asia, 
+            running, vipassana meditation practice, startup ecosystem building, 
+            programming, blockchain, crypto, web3 and DApps, open source software, 
+            community development, and time in nature.
           </p>
         </section>
         <section>
@@ -47,9 +55,11 @@ export default function About() {
             skills
           </h2>
           <ul className="list-disc list-inside ml-4 text-solarized-base0 text-sm font-light">
-            <li>linux</li>
-            <li>startup</li>
-            <li>community</li>
+            <li>linux systems and open source advocacy</li>
+            <li>startup ecosystem development</li>
+            <li>community building and mentorship</li>
+            <li>venture building and business strategy</li>
+            <li>educational technology deployment</li>
           </ul>
         </section>
 
@@ -76,7 +86,9 @@ export default function About() {
             Writing
           </h2>
           <ul className="list-disc list-inside ml-4 text-solarized-base0 text-sm font-light">
-            <li>my first book</li>
+            <li>working on my first book</li>
+            <li>documenting a decade+ of building tech ventures in Cambodia</li>
+            <li>sharing lessons from meditation practice and startup life</li>
           </ul>
         </section>
       </div>
