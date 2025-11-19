@@ -1,91 +1,92 @@
-// src/app/page.tsx
 import Link from "next/link";
 import { getBlogPosts } from "./lib/writing";
 
 export default async function Home() {
   const posts = await getBlogPosts();
-  const recentPosts = posts.slice(0, 9); // Show up to 9 posts
+  const recentPosts = posts.slice(0, 13); // Fetch enough for the grid
 
   return (
-    <div>
-      {/* Terminal prompt simulation */}
-      <div className="text-solarized-yellow text-sm mb-4 opacity-70">
-        <span>rithy@localhost:~$ cat welcome.txt</span>
-      </div>
-
-      <section className="mb-8 sm:mb-12">
-        <p className="text-sm mb-4 font-light leading-relaxed">
-          i'm{" "}
-          <Link
-            href="https://x.com/rithythul"
-            className="text-solarized-blue hover:text-solarized-cyan hover:underline"
-          >
-            rithythul
-          </Link>
-          . I like running, cycling, football, adventure, time in nature,
-          vipassana, computer, and programming.
-        </p>
-        <p className="text-sm font-light leading-relaxed">
-          currently building tech ventures at smallworld. I am also into web3
-          and blockchain.{" "}
-          <Link
-            href="/about"
-            className="text-solarized-blue hover:text-solarized-cyan hover:underline"
-          >
-            {" "}
-            read more...
-          </Link>
-        </p>
+    <div className="space-y-20 pb-20">
+      {/* Kinetic Hero Section */}
+      <section className="pt-20 pb-12 border-b border-foreground/10">
+        <h1 className="font-serif text-6xl sm:text-8xl md:text-9xl font-bold tracking-tighter text-foreground leading-[0.85]">
+          The <br />
+          <span className="italic text-muted-foreground hover:text-foreground transition-colors duration-500 cursor-default">
+            Living
+          </span>{" "}
+          <br />
+          Archive
+        </h1>
+        <div className="mt-8 flex justify-between items-end max-w-xl">
+          <p className="font-mono text-sm text-muted max-w-[200px]">
+            A digital broadsheet for ideas, systems, and ventures.
+          </p>
+          <div className="h-px bg-foreground/20 flex-grow ml-8" />
+        </div>
       </section>
 
-      {recentPosts.length > 0 && (
-        <>
-          {/* Terminal prompt for blog section */}
-          <div className="text-solarized-yellow text-sm mb-4 opacity-70">
-            <span>rithy@localhost:~$ ls -la blog/recent/</span>
-          </div>
+      {/* Bento / Masonry Grid Feed */}
+      <main className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-8 auto-rows-auto md:auto-rows-[260px]">
+        {recentPosts.map((post, index) => {
+          // Grid Logic:
+          // Index 0: Featured (Full width or large block) -> col-span-6 md:col-span-4 md:row-span-2
+          // Index 1: Secondary (Tall) -> col-span-6 md:col-span-2 md:row-span-2
+          // Index 2, 3, 4: Standard -> col-span-6 md:col-span-2
+          // Index 5: Wide -> col-span-6 md:col-span-3
+          // Index 6: Wide -> col-span-6 md:col-span-3
 
-          <section className="mb-8 sm:mb-12">
-            <div className="space-y-3 sm:space-y-4">
-              {recentPosts.map((post) => (
-                <article
-                  key={post.slug}
-                  className="mb-3 sm:mb-4 pb-2 border-b border-solarized-base2"
-                >
-                  {/* Title */}
-                  <Link
-                    href={`/writing/${post.slug}`}
-                    className="text-solarized-cyan hover:text-solarized-blue hover:underline text-sm font-medium block py-1 -mx-1 px-1"
-                  >
-                    {post.title}
-                  </Link>
+          let gridClass = "col-span-1 md:col-span-2"; // Default
+          if (index === 0) gridClass = "col-span-1 md:col-span-4 md:row-span-2";
+          if (index === 1) gridClass = "col-span-1 md:col-span-2 md:row-span-2";
+          if (index === 5 || index === 6) gridClass = "col-span-1 md:col-span-3";
 
-                  {/* Date */}
-                  <div className="text-xs sm:text-sm text-solarized-base1">
-                    <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                      })}
-                    </time>
-                  </div>
-                </article>
-              ))}
-            </div>
+          return (
+            <article
+              key={post.slug}
+              className={`group relative flex flex-col justify-between p-6 md:p-8 border border-foreground/10 hover:border-foreground/30 bg-white/50 hover:bg-white transition-all duration-300 ${gridClass}`}
+            >
+              <Link href={`/writing/${post.slug}`} className="absolute inset-0 z-10" />
 
-            {posts.length > 9 && (
-              <div className="mt-4 sm:mt-6">
-                <Link
-                  href="/writing"
-                  className="text-solarized-blue hover:text-solarized-cyan hover:underline"
-                >
-                  more →
-                </Link>
+              <div className="space-y-4">
+                <div className="flex justify-between items-start">
+                  <span className="font-mono text-xs text-muted uppercase tracking-wider">
+                    {post.slug.split('-')[0] || 'Note'} {/* Fallback category/tag simulation */}
+                  </span>
+                  <span className="font-mono text-xs text-muted">
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </span>
+                </div>
+
+                <h2 className={`font-serif font-bold leading-tight group-hover:underline decoration-1 underline-offset-4 ${index === 0 ? "text-4xl md:text-6xl" :
+                  index === 1 ? "text-3xl md:text-4xl" :
+                    "text-2xl md:text-3xl"
+                  }`}>
+                  {post.title}
+                </h2>
+
+
               </div>
-            )}
-          </section>
-        </>
-      )}
+
+              <div className="pt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="font-mono text-xs">Read Article</span>
+                <span className="text-xs">→</span>
+              </div>
+            </article>
+          );
+        })}
+      </main>
+
+      <div className="flex justify-center pt-12 border-t border-foreground/10">
+        <Link
+          href="/writing"
+          className="font-mono text-sm text-muted hover:text-foreground transition-colors border-b border-transparent hover:border-foreground pb-0.5"
+        >
+          View Full Archive
+        </Link>
+      </div>
     </div>
   );
 }

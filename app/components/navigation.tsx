@@ -1,91 +1,110 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-
-function SystemStatus() {
-  const [uptime, setUptime] = useState(1748164116);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setUptime((prev) => prev + 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const formatUptime = (num: number) => {
-    return num.toLocaleString("en-US");
-  };
-
-  return (
-    <div className="text-xs text-solarized-yellow mb-4">
-      <div className="flex flex-col sm:flex-row sm:justify-between gap-2 sm:gap-0">
-        <span className="truncate">
-          STATUS:{" "}
-          <span
-            className="text-solarized-green font-medium"
-            aria-label="System Status"
-          >
-            ONLINE
-          </span>{" "}
-          - rithy.org
-        </span>
-        <span className="truncate">
-          UPTIME:{" "}
-          <span
-            className="text-solarized-green font-medium"
-            aria-label="Uptime Counter"
-          >
-            {formatUptime(uptime)}
-          </span>{" "}
-          SECONDS
-        </span>
-      </div>
-    </div>
-  );
-}
+import { useEffect, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const navItems = [
-    { name: "about", path: "/about" },
-    { name: "writing", path: "/writing" },
-    { name: "projects", path: "/projects" },
-    { name: "social", path: "/social" },
+    { name: "Index", path: "/" },
+    { name: "Writing", path: "/writing" },
+    { name: "Projects", path: "/projects" },
+    { name: "About", path: "/about" },
   ];
 
   return (
-    <div className="w-full bg-solarized-base2 border border-solarized-base1 p-3 sm:p-4 mb-6 sm:mb-8 pt-6 sm:pt-8 rounded-sm">
-      {/* System Status */}
-      <Link href="/" aria-label="Home">
-        <SystemStatus />
-      </Link>
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled || isOpen
+            ? "bg-background/80 backdrop-blur-md border-foreground/10 py-4"
+            : "bg-transparent border-transparent py-6"
+          }`}
+      >
+        <div className="container-custom flex justify-between items-center">
+          <Link
+            href="/"
+            className="font-serif font-bold text-xl tracking-tight hover:opacity-70 transition-opacity z-50 relative"
+            onClick={() => setIsOpen(false)}
+          >
+            The Living Archive
+          </Link>
 
-      {/* Navigation */}
-      <nav className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-t border-solarized-base1 pt-3 gap-3 sm:gap-0">
-        <div className="text-xs text-solarized-yellow order-2 sm:order-1">
-          <span className="terminal-prompt"></span>
-          <span className="terminal-loading"></span>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.path}
+                className={`text-sm font-mono transition-colors ${pathname === item.path
+                    ? "text-foreground font-medium"
+                    : "text-muted hover:text-foreground"
+                  }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden z-50 relative p-2 -mr-2 text-foreground hover:opacity-70 transition-opacity"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
         </div>
+      </nav>
 
-        <div className="flex items-center justify-center sm:justify-end space-x-3 sm:space-x-4 order-1 sm:order-2">
+      {/* Mobile Full Screen Overlay */}
+      <div
+        className={`fixed inset-0 z-40 bg-background flex flex-col justify-center items-center transition-all duration-500 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+          }`}
+      >
+        <div className="flex flex-col items-center gap-8">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.path}
-              className={`text-sm font-light transition-colors py-2 px-1 ${
-                pathname === item.path
-                  ? "text-solarized-blue font-medium underline"
-                  : "text-solarized-cyan hover:text-solarized-blue hover:underline"
-              }`}
+              className={`font-serif text-4xl font-bold transition-colors ${pathname === item.path
+                  ? "text-foreground"
+                  : "text-muted hover:text-foreground"
+                }`}
             >
               {item.name}
             </Link>
           ))}
         </div>
-      </nav>
-    </div>
+      </div>
+    </>
   );
 }

@@ -11,38 +11,48 @@ interface Project {
 
 export function ProjectList({ projects }: { projects: Project[] }) {
   return (
-    <div className="space-y-4 sm:space-y-6">
-      {/* <h1 className="text-2xl font-bold">Projects Line</h1> */}
-      <ul className="space-y-3 sm:space-y-4">
+    <div className="space-y-8">
+      <div className="grid grid-cols-1 gap-8">
         {projects.map((project, index) => (
-          <li
+          <article
             key={index}
-            className="space-y-2 border border-solarized-base2 p-3 sm:p-4 flex flex-col items-left text-left terminal-window pt-6 sm:pt-8 relative"
+            className="group relative flex flex-col space-y-3 pb-8 border-b border-border last:border-0"
           >
-            <Link
-              href={project.link || "#"}
-              className="text-solarized-blue hover:text-solarized-cyan hover:underline text-sm font-medium py-1 -mx-1 px-1"
-              target={project.link ? "_blank" : undefined}
-              rel={project.link ? "noopener noreferrer" : undefined}
-            >
-              {project.title}
-            </Link>
-            <p className="text-xs text-solarized-base0 font-light leading-relaxed">
+            <div className="flex items-baseline justify-between">
+              <h3 className="text-lg font-medium tracking-tight">
+                {project.link ? (
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cream-accent transition-colors"
+                  >
+                    {project.title}
+                    <span className="ml-1 text-muted text-sm font-normal">↗</span>
+                  </Link>
+                ) : (
+                  <span>{project.title}</span>
+                )}
+              </h3>
+            </div>
+
+            <p className="text-muted leading-relaxed max-w-2xl">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+
+            <div className="flex flex-wrap gap-2 pt-1">
               {project.industry.map((tech, techIndex) => (
                 <span
                   key={techIndex}
-                  className="text-xs px-1.5 sm:px-2 py-1 bg-solarized-base2 text-solarized-base01"
+                  className="text-xs font-mono text-muted/80 bg-cream-muted/10 px-2 py-1 rounded-sm"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-          </li>
+          </article>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

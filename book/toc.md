@@ -1,7 +1,6 @@
 # Book Table of Contents
 
-## Title Ideas:
-- **"The Long Way Around: Lessons from Building an Ecosystem"** 
+## Title: **"The Long Way Around"** 
 
 ## Proposed Table of Contents:
 

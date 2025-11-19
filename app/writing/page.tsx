@@ -9,88 +9,82 @@ interface PageProps {
 }
 
 export default async function WritingPage({ searchParams }: PageProps) {
-  // Await the searchParams
   const { page } = await searchParams;
   const currentPage = Number(page) || 1;
   const allPosts = await getBlogPosts();
 
-  // Calculate pagination
   const totalPosts = allPosts.length;
   const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
   const offset = (currentPage - 1) * POSTS_PER_PAGE;
   const posts = allPosts.slice(offset, offset + POSTS_PER_PAGE);
 
   return (
-    <div>
-      {/* Terminal prompt simulation */}
-      <div className="text-solarized-yellow text-sm mb-4 opacity-60">
-        <span>rithy@localhost:~$ ls -la writing/</span>
-      </div>
-      {/* Introduction */}
-      <p className="mb-6 text-solarized-base0 text-sm font-light">
-        A writing on ideas, experiences, and reflections on a variety of topics.
-        A blend of thoughts, lessons learned, and moments captured through
-        words.
-      </p>
+    <div className="space-y-16 pt-20 pb-20">
+      <header className="border-b border-foreground/10 pb-8">
+        <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-4">
+          Archive
+        </h1>
+        <p className="font-mono text-muted max-w-xl text-sm md:text-base">
+          Reflections on technology, philosophy, and building.
+        </p>
+      </header>
 
-      <div className="space-y-3 sm:space-y-4">
+      <div className="flex flex-col">
         {posts.length > 0 ? (
           posts.map((post) => (
-            <article
+            <Link
               key={post.slug}
-              className="mb-3 sm:mb-4 pb-2 border-b border-solarized-base2/50"
+              href={`/writing/${post.slug}`}
+              className="group flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 py-6 border-b border-foreground/10 hover:bg-white/50 transition-colors"
             >
-              <Link
-                href={`/writing/${post.slug}`}
-                className="text-solarized-blue hover:text-solarized-cyan hover:underline text-sm font-medium block py-1 -mx-1 px-1"
-              >
-                {post.title}
-              </Link>
-              <div className="text-xs sm:text-sm text-solarized-base0 mt-1 font-light">
-                {" "}
-                {/* Added margin top for date */}
-                <time dateTime={post.date}>
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    // day: 'numeric' // Optionally add day
-                  })}
-                </time>
+              <time className="font-mono text-sm text-muted shrink-0 w-32">
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </time>
+
+              <div className="flex flex-col gap-2">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold tracking-tight group-hover:underline decoration-1 underline-offset-4">
+                  {post.title}
+                </h2>
+                {/* Optional: Add excerpt here if available in the future */}
               </div>
-            </article>
+            </Link>
           ))
         ) : (
-          <p className="text-solarized-base0">No posts available yet.</p>
+          <p className="font-mono text-muted py-12">No posts available yet.</p>
         )}
       </div>
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:justify-between sm:items-center border-t border-solarized-base2/50 pt-4 gap-3 sm:gap-0">
+        <div className="flex justify-between items-center pt-12">
           {currentPage > 1 ? (
             <Link
               href={`/writing?page=${currentPage - 1}`}
-              className="text-solarized-blue hover:text-solarized-cyan hover:underline text-center sm:text-left"
+              className="font-mono text-sm text-muted hover:text-foreground transition-colors"
             >
               ← Previous
             </Link>
           ) : (
-            <div></div>
+            <div />
           )}
 
-          <div className="text-xs sm:text-sm text-solarized-base0 text-center">
+          <span className="font-mono text-xs text-muted">
             Page {currentPage} of {totalPages}
-          </div>
+          </span>
 
           {currentPage < totalPages ? (
             <Link
               href={`/writing?page=${currentPage + 1}`}
-              className="text-solarized-blue hover:text-solarized-cyan hover:underline text-center sm:text-right"
+              className="font-mono text-sm text-muted hover:text-foreground transition-colors"
             >
               Next →
             </Link>
           ) : (
-            <div></div>
+            <div />
           )}
         </div>
       )}

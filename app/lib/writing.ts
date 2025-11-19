@@ -11,6 +11,7 @@ export interface BlogPost {
   title: string
   date: string
   content: string
+  description?: string
 }
 
 // Ensure the posts directory exists
@@ -55,7 +56,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
           return {
             slug,
             content: matterResult.content,
-            ...(matterResult.data as { title: string; date: string })
+            ...(matterResult.data as { title: string; date: string; description?: string })
           }
         })
     )

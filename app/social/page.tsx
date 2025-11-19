@@ -22,48 +22,58 @@ const socialLinks = [
   {
     href: "https://linkedin.com/in/rithythul",
     icon: LinkedInIcon,
-    hoverColor: "hover:text-solarized-cyan",
+    label: "LinkedIn",
+    handle: "rithythul"
   },
   {
     href: "https://twitter.com/rithythul",
     icon: TwitterIcon,
-    hoverColor: "hover:text-solarized-cyan",
+    label: "Twitter",
+    handle: "@rithythul"
   },
   {
     href: "https://t.me/rithy",
     icon: TelegramIcon,
-    hoverColor: "hover:text-solarized-cyan",
+    label: "Telegram",
+    handle: "t.me/rithy"
   },
   {
     href: "https://github.com/rithythul",
     icon: GithubIcon,
-    hoverColor: "hover:text-solarized-cyan",
+    label: "GitHub",
+    handle: "rithythul"
   },
 ];
 
 export default function Social() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center px-4">
-      <div className="text-center">
-        <h1 className="text-base font-medium mb-6 sm:mb-8 terminal-header text-solarized-yellow">
-          connect with me on
+    <div className="space-y-16 pt-20 pb-20">
+      <header className="border-b border-foreground/10 pb-8">
+        <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-4">
+          Connect
         </h1>
-        <div className="flex justify-center gap-6 sm:gap-8 md:gap-12">
-          {socialLinks.map((social, index) => {
-            const Icon = social.icon;
-            return (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`text-solarized-blue ${social.hoverColor} p-2 -m-2`} /* Added touch target padding */
-              >
-                <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10" />
-              </a>
-            );
-          })}
-        </div>
+        <p className="font-mono text-muted max-w-xl text-sm md:text-base">
+          Channels for communication and collaboration.
+        </p>
+      </header>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {socialLinks.map((social, index) => {
+          const Icon = social.icon;
+          return (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center justify-center p-12 border border-foreground/10 hover:border-foreground/30 bg-white/50 hover:bg-white transition-all duration-300 aspect-square"
+            >
+              <Icon className="w-12 h-12 text-foreground mb-6 group-hover:scale-110 transition-transform duration-300" />
+              <span className="font-serif text-xl font-bold">{social.label}</span>
+              <span className="font-mono text-xs text-muted mt-2">{social.handle}</span>
+            </a>
+          );
+        })}
       </div>
     </div>
   );

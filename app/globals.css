@@ -3,333 +3,123 @@
 @tailwind utilities;
 
 :root {
-  /* Solarized Light Theme */
-  --background: #fdf6e3;        /* Base3 - cream background */
-  --foreground: #657b83;        /* Base00 - dark gray for main text */
-  --secondary-text: #839496;    /* Base0 - lighter gray for secondary text */
-  --muted-text: #93a1a1;       /* Base1 - muted text */
-  --subtle-text: #eee8d5;      /* Base2 - very light for subtle elements */
-  --emphasis: #586e75;          /* Base01 - darker text for emphasis */
-  --solarized-blue: #268bd2;    /* Blue - primary accent */
-  --solarized-cyan: #2aa198;    /* Cyan - secondary accent */
-  --solarized-green: #859900;   /* Green - success/positive */
-  --solarized-yellow: #b58900;  /* Yellow - warning/highlight */
-  --solarized-orange: #cb4b16;  /* Orange - attention */
-  --solarized-red: #dc322f;     /* Red - error/negative */
-  --solarized-magenta: #d33682; /* Magenta - special accent */
-  --solarized-violet: #6c71c4;  /* Violet - secondary accent */
-  --border-color: #93a1a1;      /* Base1 for borders */
-  --selection-bg: #268bd2;      /* Blue for selection */
-  --selection-text: #fdf6e3;    /* Light background for selection text */
+  --background: #F5F7FA;
+  --foreground: #1c1917;
+  --muted: #57534e;
+  --border: #e7e5e4;
+  --accent: #44403c;
 }
 
-html {
-  height: 100%;
-  background-color: var(--background);
-}
-
-html, body {
-  height: 100%;
-  background-color: var(--background);
-}
-
+html,
 body {
+  height: 100%;
   background-color: var(--background);
   color: var(--foreground);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
-  font-weight: 300; /* Light font weight by default */
-  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-::selection {
-  background: var(--selection-bg);
-  color: var(--selection-text);
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  /* Tighter tracking for big typo feel */
+  color: var(--foreground);
 }
 
-/* .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { */
-  /* font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
-/* Removed to inherit from body */
-/* } */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* Utilities */
+.container-custom {
+  max-width: 900px;
+  /* Slightly wider for big text */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+/* Markdown/Prose Overrides */
+.prose {
+  color: var(--foreground);
+  max-width: none;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  color: var(--foreground);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.prose p {
+  line-height: 1.7;
+  margin-bottom: 1.5em;
+  color: #292524;
+  /* Slightly softer black for body text */
+}
 
 .prose a {
+  color: var(--foreground);
   text-decoration: underline;
-  color: var(--foreground); /* Ensure foreground color */
-  transition: all 0.2s ease-in-out;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 4px;
 }
 
-/* Blog post styles */
-.prose {
-  color: var(--foreground); /* Ensure foreground color */
-  font-size: 0.875rem; /* 14px base */
-  font-weight: 300;
-  line-height: 1.7;
+.prose a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }
 
-/* Mobile optimizations */
-@media (max-width: 640px) {
-  .prose {
-    font-size: 0.8125rem; /* 13px on mobile */
-    line-height: 1.6;
-  }
-  
-  .prose h1 {
-    font-size: 1.25rem; /* 20px on mobile */
-  }
-  
-  .prose h2 {
-    font-size: 1.0625rem; /* 17px on mobile */
-  }
-  
-  .prose h3 {
-    font-size: 0.9375rem; /* 15px on mobile */
-  }
-}
-
-.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  color: var(--foreground); /* Ensure foreground color for headings */
-  font-weight: 500; /* Medium weight for headings */
-  line-height: 1.3;
-}
-
-.prose h1 {
-  font-size: 1.375rem; /* 22px */
-  font-weight: 500;
-  color: var(--solarized-yellow);
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-}
-
-.prose h2 {
-  font-size: 1.125rem; /* 18px */
-  font-weight: 500;
-  color: var(--solarized-yellow);
-  margin-bottom: 0.75rem;
-  margin-top: 1.5rem;
-}
-
-.prose h3 {
-  font-size: 1rem; /* 16px */
-  font-weight: 500;
-  color: var(--solarized-yellow);
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
-}
-
-.prose pre {
-  background-color: var(--solarized-base2);
-  padding: 1em;
-  border: 1px solid var(--solarized-base1);
+.prose strong {
   color: var(--foreground);
-  overflow-x: auto;
-  position: relative;
-}
-
-.prose pre::before {
-  content: '$ ';
-  color: var(--solarized-yellow);
-  font-weight: bold;
-}
-
-.prose code {
-  background-color: var(--solarized-base2);
-  padding: 0.2em 0.4em;
-  border: 1px solid var(--solarized-base1);
-  color: var(--solarized-blue);
-  font-size: 0.875em;
-}
-
-/* Ensure inline code within pre is not double bordered or padded excessively */
-.prose pre code {
-  border: none;
-  padding: 0;
-  background-color: transparent;
-}
-
-.prose blockquote {
-  border-left: 3px solid var(--solarized-yellow);
-  padding-left: 1em;
-  font-style: italic;
-  color: var(--solarized-base0);
-  background-color: var(--solarized-base2);
-  padding: 1em;
-  margin: 1em 0;
-}
-
-.prose blockquote::before {
-  content: '> ';
-  color: var(--solarized-yellow);
-  font-weight: bold;
-}
-
-.prose strong, .prose em {
-  color: var(--foreground);
-}
-
-.prose hr {
-  border: none;
-  border-top: 1px dashed var(--solarized-base1);
-  margin: 2em 0;
-  position: relative;
-}
-
-.prose hr::before {
-  content: '─────────────────────────────────────────';
-  color: var(--solarized-base1);
-  font-family: monospace;
-  position: absolute;
-  top: -0.5em;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--background);
-  padding: 0 1em;
-}
-
-.prose ul, .prose ol {
-  padding-left: 1.5em; /* Standard indentation */
+  font-weight: 600;
 }
 
 .prose ul {
   list-style-type: disc;
+  padding-left: 1.5em;
 }
 
-.prose ol {
-  list-style-type: decimal;
-}
-
-/* Table Styling */
-.prose table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 2em 0;
-  border: 2px solid var(--solarized-base1);
-  background-color: var(--background);
-}
-
-.prose th,
-.prose td {
-  border: 1px solid var(--solarized-base1);
-  padding: 0.75em 1em;
-  text-align: left;
-  vertical-align: top;
-}
-
-.prose th {
-  font-weight: bold;
-  background-color: var(--solarized-base2);
-  color: var(--solarized-yellow);
-}
-
-.prose thead {
-  border-bottom: 2px solid var(--solarized-yellow);
-}
-
-/* Optional: Style for table captions if your markdown processor supports them */
-.prose caption {
-  padding: 0.5em;
-  text-align: left;
-  caption-side: bottom; /* Or top, depending on preference */
+.prose blockquote {
+  border-left-color: var(--border);
+  color: var(--muted);
   font-style: italic;
-  color: var(--foreground); /* Or a slightly de-emphasized color if needed */
 }
 
-/* Typography consistency */
-body {
-  font-weight: 300; /* Light font weight by default */
-  line-height: 1.6;
+/* Custom Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-/* Consistent heading styles */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500; /* Medium weight for headings */
-  line-height: 1.3;
+::-webkit-scrollbar-track {
+  background: var(--background);
 }
 
-/* Consistent paragraph spacing */
-p {
-  margin-bottom: 1rem;
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 3px;
 }
 
-/* Link consistency */
-a {
-  transition: all 0.2s ease-in-out;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
 }
-
-/* Text sizing hierarchy */
-.text-hierarchy-1 { font-size: 1.125rem; font-weight: 500; } /* 18px - Main headings */
-.text-hierarchy-2 { font-size: 1rem; font-weight: 400; }     /* 16px - Sub headings */
-.text-hierarchy-3 { font-size: 0.875rem; font-weight: 300; } /* 14px - Body text */
-.text-hierarchy-4 { font-size: 0.75rem; font-weight: 300; }  /* 12px - Small text */
-
-/* Hide scrollbar utilities */
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-
-  .terminal-border {
-    border: 2px solid var(--solarized-base1);
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .terminal-cursor::after {
-    content: '█';
-    animation: blink 1s infinite;
-    color: var(--solarized-blue);
-  }
-
-  .terminal-window {
-    background: var(--background);
-    border: 2px solid var(--solarized-base1);
-    position: relative;
-    width: 100%;
-  }
-
-  .terminal-window::before {
-    content: '● ● ●';
-    position: absolute;
-    top: 5px;
-    left: 10px;
-    color: var(--solarized-red);
-    font-size: 12px;
-  }
-
-  .terminal-prompt::before {
-    content: 'rithy@localhost:~$ ';
-    color: var(--solarized-yellow);
-    font-weight: bold;
-  }
-
-  .terminal-loading::after {
-    content: '';
-    width: 8px;
-    height: 1.2em;
-    background: var(--solarized-blue);
-    display: inline-block;
-    animation: blink 1s infinite;
-    margin-left: 2px;
-  }
-
-  .terminal-header {
-    background: var(--solarized-yellow);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-}
-
-/* ASCII Art specific styling - REMOVED */
