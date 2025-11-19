@@ -28,10 +28,10 @@ export default async function BlogPostPage({ params }: PageProps) {
     const { previous, next } = await getAdjacentPosts(slug);
 
     return (
-      <div className="py-24 sm:py-32">
-        <article className="space-y-16">
-          <header className="space-y-8 border-b border-foreground/10 pb-12">
-            <div className="flex gap-4 text-sm font-mono text-muted">
+      <div className="py-16 sm:py-20">
+        <article className="space-y-12 max-w-[36rem]">
+          <header className="space-y-4">
+            <div className="flex gap-3 text-sm text-muted">
               <time>
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -39,23 +39,22 @@ export default async function BlogPostPage({ params }: PageProps) {
                   day: "numeric",
                 })}
               </time>
-              <span>/</span>
-              <span>{post.slug.split('-')[0] || 'Essay'}</span>
             </div>
 
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-tight">
               {post.title}
             </h1>
           </header>
 
-          <div className="prose prose-xl prose-stone max-w-[65ch]
-            prose-headings:font-serif prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-foreground prose-headings:mt-12 prose-headings:mb-6
-            prose-p:font-sans prose-p:text-xl prose-p:leading-8 prose-p:text-[#292524] prose-p:mb-8
-            prose-a:text-foreground prose-a:decoration-muted/50 prose-a:underline-offset-4 hover:prose-a:decoration-foreground hover:prose-a:text-foreground
-            prose-blockquote:border-l-4 prose-blockquote:border-foreground prose-blockquote:pl-8 prose-blockquote:py-2 prose-blockquote:my-12 prose-blockquote:italic prose-blockquote:font-serif prose-blockquote:text-3xl prose-blockquote:leading-tight prose-blockquote:text-foreground
-            prose-code:text-foreground prose-code:bg-stone-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-code:font-mono prose-code:text-sm
-            prose-li:font-sans prose-li:text-xl prose-li:text-[#292524]
-            first-letter:float-left first-letter:text-8xl first-letter:font-serif first-letter:font-bold first-letter:mr-4 first-letter:mt-2 first-letter:leading-none">
+          <div className="prose prose-lg prose-stone max-w-[36rem]
+            prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-foreground prose-headings:mt-8 prose-headings:mb-4
+            prose-h2:text-2xl prose-h3:text-xl
+            prose-p:font-sans prose-p:text-lg prose-p:leading-relaxed prose-p:text-[#292524] prose-p:mb-6
+            prose-a:text-foreground prose-a:decoration-muted/50 prose-a:underline-offset-4 hover:prose-a:decoration-amber-600 hover:prose-a:text-amber-600
+            prose-blockquote:border-l-2 prose-blockquote:border-muted prose-blockquote:pl-6 prose-blockquote:py-1 prose-blockquote:my-6 prose-blockquote:italic prose-blockquote:text-lg prose-blockquote:text-muted
+            prose-code:text-foreground prose-code:bg-stone-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm
+            prose-li:text-lg prose-li:text-[#292524] prose-li:leading-relaxed
+            prose-strong:text-foreground prose-strong:font-semibold">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
@@ -75,34 +74,37 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </article>
 
-        <nav className="mt-24 pt-12 border-t border-foreground/10 flex justify-between items-center gap-8">
-          {previous ? (
-            <Link
-              href={`/writing/${previous.slug}`}
-              className="group flex flex-col gap-2 text-left max-w-[45%]"
-            >
-              <span className="text-xs text-muted font-mono group-hover:text-foreground transition-colors">← Previous</span>
-              <span className="font-serif text-xl font-bold text-foreground group-hover:text-muted transition-colors leading-tight">
-                {previous.title}
-              </span>
-            </Link>
-          ) : (
-            <div />
-          )}
+        <nav className="mt-20 pt-12 border-t border-foreground/10">
+          <div className="text-sm text-muted mb-6 text-center">Continue Reading</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[36rem]">
+            {previous ? (
+              <Link
+                href={`/writing/${previous.slug}`}
+                className="group flex flex-col gap-2 p-4 border border-foreground/10 rounded-lg hover:border-amber-600/50 hover:bg-amber-50/30 transition-all"
+              >
+                <span className="text-xs text-muted group-hover:text-amber-600 transition-colors">← Previous</span>
+                <span className="text-sm font-semibold text-foreground group-hover:text-amber-600 transition-colors leading-tight">
+                  {previous.title}
+                </span>
+              </Link>
+            ) : (
+              <div />
+            )}
 
-          {next ? (
-            <Link
-              href={`/writing/${next.slug}`}
-              className="group flex flex-col gap-2 text-right max-w-[45%]"
-            >
-              <span className="text-xs text-muted font-mono group-hover:text-foreground transition-colors">Next →</span>
-              <span className="font-serif text-xl font-bold text-foreground group-hover:text-muted transition-colors leading-tight">
-                {next.title}
-              </span>
-            </Link>
-          ) : (
-            <div />
-          )}
+            {next ? (
+              <Link
+                href={`/writing/${next.slug}`}
+                className="group flex flex-col gap-2 p-4 border border-foreground/10 rounded-lg hover:border-amber-600/50 hover:bg-amber-50/30 transition-all sm:text-right"
+              >
+                <span className="text-xs text-muted group-hover:text-amber-600 transition-colors">Next →</span>
+                <span className="text-sm font-semibold text-foreground group-hover:text-amber-600 transition-colors leading-tight">
+                  {next.title}
+                </span>
+              </Link>
+            ) : (
+              <div />
+            )}
+          </div>
         </nav>
       </div>
     );

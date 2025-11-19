@@ -45,14 +45,14 @@ export default function Navigation() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled || isOpen
-            ? "bg-background/80 backdrop-blur-md border-foreground/10 py-4"
-            : "bg-transparent border-transparent py-6"
+          ? "bg-background/80 backdrop-blur-md border-foreground/10 py-4"
+          : "bg-transparent border-transparent py-6"
           }`}
       >
         <div className="container-custom flex justify-between items-center">
           <Link
             href="/"
-            className="font-serif font-bold text-xl tracking-tight hover:opacity-70 transition-opacity z-50 relative"
+            className="font-serif font-bold text-xl tracking-tight hover:text-amber-600 transition-colors z-50 relative"
             onClick={() => setIsOpen(false)}
           >
             The Living Archive
@@ -65,8 +65,8 @@ export default function Navigation() {
                 key={item.name}
                 href={item.path}
                 className={`text-sm font-mono transition-colors ${pathname === item.path
-                    ? "text-foreground font-medium"
-                    : "text-muted hover:text-foreground"
+                  ? "text-foreground font-medium"
+                  : "text-muted hover:text-amber-600"
                   }`}
               >
                 {item.name}
@@ -96,8 +96,8 @@ export default function Navigation() {
               key={item.name}
               href={item.path}
               className={`font-serif text-4xl font-bold transition-colors ${pathname === item.path
-                  ? "text-foreground"
-                  : "text-muted hover:text-foreground"
+                ? "text-foreground"
+                : "text-muted hover:text-amber-600"
                 }`}
             >
               {item.name}

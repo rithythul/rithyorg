@@ -35,7 +35,7 @@ export default async function WritingPage({ searchParams }: PageProps) {
             <Link
               key={post.slug}
               href={`/writing/${post.slug}`}
-              className="group flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 py-6 border-b border-foreground/10 hover:bg-white/50 transition-colors"
+              className="group flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12 py-6 border-b border-foreground/10 hover:bg-amber-50/30 transition-colors"
             >
               <time className="font-mono text-sm text-muted shrink-0 w-32">
                 {new Date(post.date).toLocaleDateString("en-US", {
@@ -64,7 +64,7 @@ export default async function WritingPage({ searchParams }: PageProps) {
           {currentPage > 1 ? (
             <Link
               href={`/writing?page=${currentPage - 1}`}
-              className="font-mono text-sm text-muted hover:text-foreground transition-colors"
+              className="font-mono text-sm text-muted hover:text-amber-600 transition-colors"
             >
               ← Previous
             </Link>
@@ -79,7 +79,7 @@ export default async function WritingPage({ searchParams }: PageProps) {
           {currentPage < totalPages ? (
             <Link
               href={`/writing?page=${currentPage + 1}`}
-              className="font-mono text-sm text-muted hover:text-foreground transition-colors"
+              className="font-mono text-sm text-muted hover:text-amber-600 transition-colors"
             >
               Next →
             </Link>

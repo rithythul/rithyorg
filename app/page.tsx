@@ -26,7 +26,7 @@ export default async function Home() {
       </section>
 
       {/* Bento / Masonry Grid Feed */}
-      <main className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-8 auto-rows-auto md:auto-rows-[260px]">
+      <main className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-8 auto-rows-auto md:auto-rows-[300px]">
         {recentPosts.map((post, index) => {
           // Grid Logic:
           // Index 0: Featured (Full width or large block) -> col-span-6 md:col-span-4 md:row-span-2
@@ -43,7 +43,7 @@ export default async function Home() {
           return (
             <article
               key={post.slug}
-              className={`group relative flex flex-col justify-between p-6 md:p-8 border border-foreground/10 hover:border-foreground/30 bg-white/50 hover:bg-white transition-all duration-300 ${gridClass}`}
+              className={`group relative flex flex-col justify-between p-6 md:p-8 border border-foreground/10 hover:border-amber-600/50 bg-white/50 hover:bg-amber-50/30 transition-all duration-300 ${gridClass}`}
             >
               <Link href={`/writing/${post.slug}`} className="absolute inset-0 z-10" />
 
@@ -82,7 +82,7 @@ export default async function Home() {
       <div className="flex justify-center pt-12 border-t border-foreground/10">
         <Link
           href="/writing"
-          className="font-mono text-sm text-muted hover:text-foreground transition-colors border-b border-transparent hover:border-foreground pb-0.5"
+          className="font-mono text-sm text-muted hover:text-amber-600 transition-colors border-b border-transparent hover:border-amber-600 pb-0.5"
         >
           View Full Archive
         </Link>

@@ -44,7 +44,7 @@ export default function About() {
                 { title: "Hardware", desc: "Building physical tools for builders." }
               ].map((item) => (
                 <div key={item.title} className="group">
-                  <div className="font-serif text-xl font-bold group-hover:text-muted-foreground transition-colors">
+                  <div className="font-serif text-xl font-bold group-hover:text-amber-600 transition-colors">
                     {item.title}
                   </div>
                   <div className="font-mono text-sm text-muted mt-2">

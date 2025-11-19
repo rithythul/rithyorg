@@ -1,5 +1,5 @@
 ---
-title: "Reflecting on Real World Assets"
+title: "Real World Assets"
 date: "2025-06-14"
 description: "A note to self on what RWA means beyond the noise"
 tags: ["Blockchain", "RWA", "reflection"]

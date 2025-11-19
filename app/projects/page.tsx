@@ -100,7 +100,7 @@ export default function Projects() {
           return (
             <article
               key={index}
-              className={`group relative flex flex-col justify-between p-8 md:p-10 border border-foreground/10 hover:border-foreground/30 bg-white/50 hover:bg-white transition-all duration-300 ${isFeatured ? "md:col-span-2 bg-foreground/5" : ""
+              className={`group relative flex flex-col justify-between p-8 md:p-10 border border-foreground/10 hover:border-amber-600/50 bg-white/50 hover:bg-amber-50/30 transition-all duration-300 ${isFeatured ? "md:col-span-2 bg-foreground/5" : ""
                 }`}
             >
               {project.link && (
