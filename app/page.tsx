@@ -40,19 +40,27 @@ export default async function Home() {
           if (index === 1) gridClass = "col-span-1 md:col-span-2 md:row-span-2";
           if (index === 5 || index === 6) gridClass = "col-span-1 md:col-span-3";
 
+          // Randomize dark/light cards based on slug hash for consistency
+          const hash = post.slug.split('').reduce((a, b) => ((a << 5) - a + b.charCodeAt(0)) | 0, 0);
+          const isDark = hash % 3 === 0; // ~1/3 of cards will be dark
+
           return (
             <article
               key={post.slug}
-              className={`group relative flex flex-col justify-between p-6 md:p-8 border border-foreground/10 hover:border-amber-600/50 bg-white/50 hover:bg-amber-50/30 transition-all duration-300 ${gridClass}`}
+              className={`group relative flex flex-col justify-between p-6 md:p-8 border transition-all duration-300 ${gridClass} ${
+                isDark 
+                  ? "bg-foreground text-white border-foreground hover:bg-foreground/90" 
+                  : "bg-white/50 border-foreground/10 hover:border-amber-600/50 hover:bg-amber-50/30"
+              }`}
             >
               <Link href={`/writing/${post.slug}`} className="absolute inset-0 z-10" />
 
               <div className="space-y-4">
                 <div className="flex justify-between items-start">
-                  <span className="font-mono text-xs text-muted uppercase tracking-wider">
+                  <span className={`font-mono text-xs uppercase tracking-wider ${isDark ? "text-white/60" : "text-muted"}`}>
                     {post.slug.split('-')[0] || 'Note'} {/* Fallback category/tag simulation */}
                   </span>
-                  <span className="font-mono text-xs text-muted">
+                  <span className={`font-mono text-xs ${isDark ? "text-white/60" : "text-muted"}`}>
                     {new Date(post.date).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
@@ -60,7 +68,9 @@ export default async function Home() {
                   </span>
                 </div>
 
-                <h2 className={`font-serif font-bold leading-tight group-hover:underline decoration-1 underline-offset-4 ${index === 0 ? "text-4xl md:text-6xl" :
+                <h2 className={`font-serif font-bold leading-tight group-hover:underline decoration-1 underline-offset-4 ${
+                  isDark ? "text-white" : "text-foreground"
+                } ${index === 0 ? "text-4xl md:text-6xl" :
                   index === 1 ? "text-3xl md:text-4xl" :
                     "text-2xl md:text-3xl"
                   }`}>
@@ -70,7 +80,7 @@ export default async function Home() {
 
               </div>
 
-              <div className="pt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className={`pt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${isDark ? "text-white/80" : ""}`}>
                 <span className="font-mono text-xs">Read Article</span>
                 <span className="text-xs">→</span>
               </div>
