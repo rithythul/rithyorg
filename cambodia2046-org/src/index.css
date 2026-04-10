@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-khmer-red: #E00025;
+  --color-khmer-red-dark: #B8001E;
+  --color-khmer-blue: #032EA1;
+  --color-khmer-gold: #D4A843;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-zinc-950 text-zinc-100 antialiased;
+  margin: 0;
+}

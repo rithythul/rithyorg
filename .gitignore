@@ -1,0 +1,34 @@
+# Embedded git repos (submodules or clones)
+alive-app/
+blender-mcp/
+cambodia-sme/
+cambodia2046/
+cambodia-sme-finance/
+claw-brain/
+claw-installer/
+claw-landing/
+isi-group-ev/
+koompi-nimmit/
+koompi-veha/
+nimmit-runtime/
+nimmit.ai/
+onedegree-finance/
+paperclip/
+procurewatch/
+sarawan-social/
+telegram-bot-api/
+cpl-plus/
+
+# OS/Editor
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Node/Bun
+node_modules/
+.bun/
+
+# Temp
+/tmp/
+*.log
