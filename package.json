@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
-    "rebuild": "yarn clean && yarn install && yarn build"
+    "rebuild": "bun run clean && bun install && bun run build"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
