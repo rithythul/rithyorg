@@ -37,9 +37,9 @@ export default function Navigation() {
   const navItems = [
     { name: "Index", path: "/" },
     { name: "Writing", path: "/writing" },
+    { name: "Crypto", path: "/crypto" },
     { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" },
-    { name: "Crypto", path: "/crypto" },
   ];
 
   return (
