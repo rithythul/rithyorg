@@ -1,4 +1,5 @@
 import { getCryptoPost, getCryptoPosts } from "../../lib/crypto";
+import type { CryptoPost } from "../../lib/crypto";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -39,6 +40,18 @@ export default async function CryptoPostPage({
     const { slug } = await params;
     const post = await getCryptoPost(slug);
     if (!post) notFound();
+
+    // Related posts: same category first, then recent, exclude current
+    const allPosts = await getCryptoPosts();
+    const related: CryptoPost[] = allPosts
+      .filter((p) => p.slug !== slug)
+      .sort((a, b) => {
+        const aScore = a.category === post.category ? 1 : 0;
+        const bScore = b.category === post.category ? 1 : 0;
+        if (bScore !== aScore) return bScore - aScore;
+        return a.date < b.date ? 1 : -1;
+      })
+      .slice(0, 3);
 
     return (
       <div className="py-16 sm:py-20">
@@ -153,6 +166,51 @@ export default async function CryptoPostPage({
             </footer>
           </div>
         </article>
+
+        {/* Related Posts */}
+        {related.length > 0 && (
+          <section className="mt-20">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="font-mono text-xs uppercase tracking-wider text-muted">
+                Related Reads
+              </h2>
+              <div className="h-px bg-foreground/10 flex-grow ml-6" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {related.map((r) => (
+                <Link
+                  key={r.slug}
+                  href={`/crypto/${r.slug}`}
+                  className="group flex flex-col justify-between p-6 border border-foreground/10 hover:border-amber-600/50 hover:bg-amber-50/30 transition-all duration-300"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono text-xs uppercase tracking-wider text-amber-600">
+                        {r.category}
+                      </span>
+                      <span className="font-mono text-xs text-muted">
+                        {new Date(r.date).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </span>
+                    </div>
+                    <h3 className="font-serif font-bold text-lg leading-tight group-hover:text-amber-600 transition-colors">
+                      {r.title}
+                    </h3>
+                    <p className="font-sans text-sm text-muted line-clamp-2">
+                      {r.summary}
+                    </p>
+                  </div>
+                  <div className="pt-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="font-mono text-xs">Read</span>
+                    <span className="text-xs">→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="mt-20 p-8 md:p-12 bg-foreground text-white text-center">
