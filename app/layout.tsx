@@ -43,8 +43,12 @@ export default function RootLayout({
         <Navigation />
         <div className="container-custom pt-28 pb-8 flex flex-col min-h-screen">
           <main className="flex-grow">{children}</main>
-          <footer className="mt-16 text-center text-sm text-muted border-t border-border pt-8 font-mono">
-            {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} @rithy.org
+          <footer className="mt-16 text-center text-sm text-muted border-t border-border pt-8 font-mono flex flex-col items-center gap-3">
+            <span>{new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} @rithy.org</span>
+            <div className="flex gap-4">
+              <Link href="/terms" className="hover:text-amber-600 transition-colors">Terms</Link>
+              <Link href="/crypto/privacy" className="hover:text-amber-600 transition-colors">Privacy</Link>
+            </div>
           </footer>
           <Analytics />
           <SpeedInsights />
