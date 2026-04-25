@@ -157,6 +157,12 @@ export default async function CryptoPage() {
           Join BitcoinPrahok on Telegram
         </Link>
       </section>
+
+      <div className="text-center">
+        <Link href="/crypto/privacy" className="font-mono text-xs text-muted hover:text-amber-600">
+          Privacy Policy
+        </Link>
+      </div>
     </div>
   );
 }
