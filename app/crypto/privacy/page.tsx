@@ -105,14 +105,13 @@ export default function CryptoPrivacyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-serif text-xl font-bold text-foreground">Contact</h2>
+          <h2 className="font-serif text-xl font-bold text-foreground">Questions?</h2>
           <p>
-            Questions?{" "}
             <a
-              href="mailto:rithythul@gmail.com"
+              href="mailto:contact@rithy.org"
               className="text-amber-600 hover:underline"
             >
-              rithythul@gmail.com
+              Get in touch
             </a>
           </p>
         </section>
