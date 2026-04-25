@@ -39,6 +39,7 @@ export default function Navigation() {
     { name: "Writing", path: "/writing" },
     { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" },
+    { name: "Crypto", path: "/crypto" },
   ];
 
   return (
