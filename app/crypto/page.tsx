@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getCryptoPosts, getCryptoCategories } from "../lib/crypto";
 import type { Metadata } from "next";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: "Crypto Digest — rithy.org",
   description:
@@ -14,11 +16,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function CryptoPage() {
+export default async function CryptoPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
+  const { category: activeCategory } = await searchParams;
   const posts = await getCryptoPosts();
   const categories = await getCryptoCategories();
-  const featured = posts[0];
-  const rest = posts.slice(1);
+
+  const filtered = activeCategory
+    ? posts.filter((p) => p.category === activeCategory)
+    : posts;
+  const featured = filtered[0];
+  const rest = filtered.slice(1);
 
   return (
     <div className="space-y-16 pb-20">
@@ -44,19 +51,21 @@ export default async function CryptoPage() {
 
       {/* Category Filter */}
       <div className="flex flex-wrap gap-2">
-        <span
-          className="font-mono text-xs uppercase tracking-wider px-3 py-1.5 rounded-full border border-foreground/20 bg-foreground text-white cursor-default"
+        <Link
+          href="/crypto"
+          className={"font-mono text-xs uppercase tracking-wider px-3 py-1.5 rounded-full border transition-colors " + (!activeCategory ? "border-foreground/20 bg-foreground text-white" : "border-foreground/10 text-muted hover:border-amber-600 hover:text-amber-600")}
         >
           All
-        </span>
+        </Link>
         {categories.map((cat) => (
-          <span
+          <Link
             key={cat.name}
-            className="font-mono text-xs uppercase tracking-wider px-3 py-1.5 rounded-full border border-foreground/10 text-muted hover:border-amber-600 hover:text-amber-600 transition-colors cursor-default"
+            href={"/crypto?category=" + encodeURIComponent(cat.name)}
+            className={"font-mono text-xs uppercase tracking-wider px-3 py-1.5 rounded-full border transition-colors " + (activeCategory === cat.name ? "border-amber-600 bg-amber-600 text-white" : "border-foreground/10 text-muted hover:border-amber-600 hover:text-amber-600")}
           >
             {cat.name}
             <span className="ml-1.5 opacity-50">{cat.count}</span>
-          </span>
+          </Link>
         ))}
       </div>
 
