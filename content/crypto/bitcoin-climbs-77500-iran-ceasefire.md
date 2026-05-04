@@ -10,6 +10,8 @@ sources:
     url: https://cointelegraph.com
 ---
 
-The announcement of a ceasefire between Iran and regional adversaries triggered an immediate risk-on rotation across global markets. Bitcoin surged past $77,500 within hours, reclaiming levels not seen since early April. Analysts point to the convergence of de-escalating geopolitical risk and strong on-chain accumulation data.
+Iran ceasefire announced. Bitcoin surges past $77,500 within hours. Risk-on rotation across all global markets.
 
-This move matters beyond the headline number — it confirms BTC's role as a global liquidity barometer. Institutional flows into spot ETFs accelerated, with BlackRock's IBIT recording its largest single-day inflow in three weeks. The relief rally suggests the market had been pricing in a significant risk premium that is now unwinding.
+What matters here isn't the price move — it's how fast it happened. BTC didn't wait for confirmation, analysts to opine, or markets to "digest the news." The algorithms front-ran the headline. That's the new normal.
+
+BlackRock's IBIT recorded its largest single-day inflow in three weeks on the news. The market had been pricing in a geopolitical risk premium — now it's unwinding. Watch if $77.5K holds as support if tensions flare again.

@@ -10,6 +10,8 @@ sources:
     url: https://www.theblock.co
 ---
 
-The Securities and Exchange Commission has finalized its stablecoin oversight framework, establishing reserve requirements, regular audits, and issuer registration protocols. The rules create two tiers: large issuers (>$10B) face stricter capital buffers and real-time attestation mandates, while smaller issuers get a streamlined registration process.
+SEC finalized its stablecoin framework. Two tiers: large issuers (>$10B) get strict capital buffers and real-time attestations. Smaller issuers get streamlined registration.
 
-Circle and Paxos have already indicated compliance readiness. Tether's response remains muted, but market participants see this as a net positive — regulatory clarity removes a key overhang that has kept institutional capital on the sidelines. Expect a wave of banking partnerships and treasury adoption in the coming months.
+Circle and Paxos are ready. Tether hasn't said much — which is itself telling. A $141B stablecoin facing stricter audits and capital requirements isn't a small deal.
+
+The real win: regulatory clarity removes the biggest overhang keeping institutional capital on the sidelines. Expect banking partnerships and treasury adoption to accelerate in the coming months. The stablecoin rails are finally getting legitimized.

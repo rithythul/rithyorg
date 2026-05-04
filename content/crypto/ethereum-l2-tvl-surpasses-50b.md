@@ -10,6 +10,8 @@ sources:
     url: https://decrypt.co
 ---
 
-Combined total value locked across Ethereum Layer 2 networks has crossed $50 billion for the first time. Base (Coinbase's L2) leads user growth with 2M+ daily active addresses, while Arbitrum maintains dominance in DeFi TVL at $18B. Scroll's ZK-rollup is gaining traction in derivatives, with perps volume doubling month-over-month.
+Ethereum L2 TVL just crossed $50B. The rollup wars are no longer theoretical — they're playing out in real numbers.
 
-The milestone underscores a structural shift: Ethereum is becoming the settlement layer while L2s handle the user-facing experience. Gas fees on mainnet have dropped to sub-cent levels as activity migrates upward. For builders and investors alike, the L2 landscape is no longer emerging — it's arrived.
+Base (Coinbase's L2) leads user growth with 2M+ daily active addresses. Not DeFi degens — regular users. Arbitrum still dominates DeFi TVL at $18B. And Scroll's ZK-rollup is quietly doubling perps volume month-over-month in derivatives.
+
+The structural shift is clear: Ethereum mainnet is becoming a settlement layer while L2s handle everything else. Mainnet gas has dropped to sub-cent levels because activity migrated up. This was always the plan — it's just finally working at scale.
