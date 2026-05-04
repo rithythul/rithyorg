@@ -8,10 +8,10 @@ sources:
     url: "https://www.coindesk.com/markets/2026/05/04/iran-missile-report-sends-bitcoin-back-to-usd79-000-with-eth-sol-doge-sharply-lower"
 ---
 
-Bitcoin fell from a session high of $80,594 to $79,000 after Iran's Fars news agency claimed two missiles hit a U.S. warship. Oil spiked 5% before the U.S. denied the report.
+Iran's Fars news agency claimed two missiles hit a U.S. warship. Oil spiked 5%. Bitcoin dropped $1,500 in minutes — from $80,594 to $79,000. ETH, SOL, DOGE all dumped.
 
-Ethereum, Solana, and Dogecoin all experienced significant declines alongside Bitcoin. The flash crash demonstrates how geopolitical tensions continue creating extreme volatility in crypto markets, with traders reacting rapidly to unconfirmed reports.
+Then the U.S. denied it. Everything recovered.
 
-This pattern of military-related news driving crypto dumps has become increasingly common throughout 2026, suggesting the market remains highly sensitive to headline risk despite growing institutional participation.
+This is the fifth time in 2026 that a geopolitical headline has flash-crashed crypto. The pattern is consistent: unconfirmed report → instant selloff → denial → bounce. Traders aren't waiting for verification — they're selling first and asking questions later.
 
-The quick recovery after the denial also shows improving market resilience, with buyers stepping in once the report was debunked.
+The silver lining: recovery speed is improving. Markets bounced back faster this time than previous geopolitical dumps. Liquidity is deepening.

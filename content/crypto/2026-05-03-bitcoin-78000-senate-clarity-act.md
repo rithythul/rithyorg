@@ -8,12 +8,8 @@ sources:
     url: "https://www.coindesk.com/markets/2026/05/02/bitcoin-above-usd78-000-as-senate-clears-clarity-act-yield-hurdle-s-and-p-500-sets-new-record"
 ---
 
-Bitcoin has staged a remarkable recovery, climbing back above $78,000 after the Senate's stablecoin yield compromise effectively removed a key roadblock to comprehensive crypto market structure legislation. The breakthrough comes amid broader market optimism, with the S&P 500 also setting new records, suggesting growing correlation between traditional and digital asset markets.
+Bitcoin is back above $78K and the S&P 500 is at new highs. The catalyst: Senate cleared the CLARITY Act's yield hurdle — the biggest remaining roadblock to comprehensive crypto legislation.
 
-The surge reflects market relief over the Clarity Act's progress, which has been a critical piece of legislation for establishing clear regulatory boundaries for crypto assets. The Senate's compromise on stablecoin yield provisions addresses one of the most contentious points in the legislation, potentially paving the way for final passage and providing the regulatory clarity the industry has desperately sought.
+The compromise lets stablecoins operate normally but blocks bank-like yield products. Crypto industry backed it, pushing Senate Banking toward markup. Not perfect, but legislative progress beats regulatory limbo.
 
-This price action demonstrates how regulatory developments have become a primary driver of crypto market sentiment. Unlike previous cycles where technical analysis and on-chain metrics dominated market movements, the current bull run appears increasingly influenced by macroeconomic factors and regulatory progress.
-
-The $78,000 level represents a significant psychological and technical milestone, suggesting Bitcoin may be entering a new phase of institutional adoption. With traditional financial markets also reaching all-time highs, the confluence of regulatory progress and broad market optimism has created ideal conditions for sustained price appreciation.
-
-Market participants will be closely watching whether Bitcoin can maintain this momentum as the Clarity Act moves through final legislative stages. The combination of regulatory clarity and traditional market strength could signal the beginning of a new era for crypto as it becomes increasingly integrated into the global financial system.
+The $78K level matters. It's where BTC stalled multiple times in Q1. Breaking through with S&P 500 at all-time highs suggests the risk-on environment is broadening — not just crypto-specific momentum.
