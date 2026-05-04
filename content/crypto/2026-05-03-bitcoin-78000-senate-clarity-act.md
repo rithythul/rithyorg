@@ -2,7 +2,6 @@
 title: "Bitcoin Surges Above $78,000 as Senate Clears Clarity Act Yield Hurdle"
 date: "2026-05-03"
 category: "bitcoin"
-excerpt: "Bitcoin recovers to new heights as regulatory breakthrough removes key legislative barrier"
 summary: "Bitcoin has climbed back above $78,000 following the Senate's stablecoin yield compromise that removes a major roadblock to comprehensive crypto market structure legislation, with traditional markets also reaching new records."
 sources:
   - name: "CoinDesk"

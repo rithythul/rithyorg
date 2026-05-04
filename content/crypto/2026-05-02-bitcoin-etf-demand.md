@@ -2,7 +2,6 @@
 title: "Bitcoin ETFs Show Strong Institutional Demand; MicroStrategy Adds 3,273 BTC in April"
 date: "2026-05-02"
 category: "institutional"
-excerpt: "Bitcoin ETFs continue attracting institutional capital as MicroStrategy accumulates another 3,273 BTC"
 summary: "Bitcoin ETFs demonstrate sustained institutional interest while MicroStrategy expands its Bitcoin holdings"
 sources:
   - name: "LinkedIn"

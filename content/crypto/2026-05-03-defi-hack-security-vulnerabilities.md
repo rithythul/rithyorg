@@ -2,7 +2,6 @@
 title: "$292M Crypto Hack Exposes Critical DeFi Security Weaknesses as Wall Street Moves Onchain"
 date: "2026-05-03"
 category: "security"
-excerpt: "Major DeFi protocol hack reveals industry vulnerabilities at a critical inflection point"
 summary: "The $292 million crypto hack targeting DeFi protocols has exposed critical security vulnerabilities, forcing industry insiders to rethink risk management protocols as institutional adoption accelerates."
 sources:
   - name: "CoinDesk"

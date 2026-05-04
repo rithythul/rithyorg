@@ -2,7 +2,6 @@
 title: "Canadian Pension Giant AIMCo Bought Strategy Dip, Now Sitting on $69M Unrealized Gain"
 date: "2026-05-02"
 category: "institutional"
-excerpt: "Canadian pension fund AIMCo capitalizes on Strategy price dip with $69M unrealized gain"
 summary: "Institutional investor confidence grows as AIMCo demonstrates successful timing in crypto market"
 sources:
   - name: "CoinDesk"

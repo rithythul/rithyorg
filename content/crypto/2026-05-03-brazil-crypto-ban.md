@@ -2,7 +2,6 @@
 title: "Brazil Bans Crypto Settlement in Cross-Border Payments, Closing Key Payment Rails"
 date: "2026-05-03"
 category: "regulation"
-excerpt: "Brazil's central bank effectively shuts down crypto flows for fintechs and payment firms"
 summary: "Brazil's landmark decision to ban stablecoin and crypto settlement in cross-border payments creates a significant regulatory barrier for institutional crypto adoption while maintaining individual investor rights."
 sources:
   - name: "CoinDesk"

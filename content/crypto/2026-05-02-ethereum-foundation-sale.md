@@ -2,7 +2,6 @@
 title: "Ethereum Foundation Sells Another 10,000 ETH ($23M) to BitMine, Continuing Treasury Strategy"
 date: "2026-05-02"
 category: "ethereum"
-excerpt: "Ethereum Foundation continues its strategic ETH sales, transferring 10,000 ETH worth $23M to BitMine"
 summary: "Ethereum Foundation maintains its systematic treasury management with latest $23M ETH sale"
 sources:
   - name: "Decrypt"
