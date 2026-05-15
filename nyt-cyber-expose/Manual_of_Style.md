@@ -18,9 +18,7 @@
    - Let the reader see, hear, feel what is happening.
    - Example: “The server room hummed with cooling fans” instead of “The server room was noisy.”
 
-5. **Every sentence must stand clear on its own** – no reliance on prior knowledge not supplied in the text.
-   - Each sentence should be understandable without needing earlier sentences.
-   - Use analogies or concrete images to explain complex ideas.
+5. **Adjacent sentences can complement and support each other.**  Compound Sentences, Complex Sentences, and Compound-Complex Sentences are okay.
 
 6. **Paragraphs must end on a concrete image, action, or sensory detail** – not on an abstraction or summary statement.
    - End with something the reader can picture: a blinking light, a closing door, a hand on a keyboard.
@@ -29,8 +27,7 @@
 7. **Ban causal‑sentence endings** – do not end a sentence with “because,” “since,” “as,” or “due to.”
    - Causality should be shown through structure, not tacked on at the end.
 
-8. **Sentence length** – aim for an average of 7‑9 words; no sentence may exceed 20 words.
-   - Vary length for rhythm, but keep most sentences short.
+8. **Sentence length** – Flexibility, no min or max, Keep most sentences average 8 to 10 words. Mixed length to optimize impact.
 
 9. **Adverb usage** – keep ‑ly adverbs below 0.2% of total words; prefer strong verbs.
    - Replace “quickly ran” with “sprinted.”
@@ -45,10 +42,7 @@
     - Do not define “database”; show a row of blinking lights representing data.
     - Show the human impact: a denied claim, a delayed payment, a family waiting.
 
-13. **Inline definitions must be complete standalone sentences** – not appended fragments.
-    - When defining a term within the text, write it as a full sentence.
-    - Correct: “Freedom of information requests are pleas for government records.”
-    - Incorrect: “Freedom of information requests, pleas for government records.”
+13. **Adjacent sentences can complement and support each other.**  Compound Sentences, Complex Sentences, and Compound-Complex Sentences are okay. Do not sound like a dictionary.
 
 14. **No invented sensory details or physical actions in nonfiction** – if the source record does not confirm an event occurred, do not report it as fact.
     - Hypothetical risk must be framed explicitly as possibility, not reported fact.
