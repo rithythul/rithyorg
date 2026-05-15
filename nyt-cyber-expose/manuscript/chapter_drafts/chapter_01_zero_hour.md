@@ -42,14 +42,14 @@ The deletions left ninety‑six silent servers.
 
 Court documents confirm the deletions halted investigations.
 Agencies delayed payments while they restored data from backups.
-Backups covered only some systems.
+Backups covered some systems.
 The backup tapes whirred as workers tried to restore what was lost.
 
 Company policy required immediate account deletion upon termination.
 Federal contracts included the same rule.
 His account should have flashed 'access denied' within minutes.
 
-Instead his credentials worked for nearly sixty minutes.
+Instead his credentials worked for about sixty minutes.
 That window enabled the destruction.
 The brothers watched the deletion progress bar race to completion.
 
