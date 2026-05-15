@@ -1,0 +1,142 @@
+============================================================
+ISBN & BISAC REGISTRATION REFERENCE
+Minutes to Zero — The Architecture of Blindness, Volume 1
+Hermes Agent Handoff | Version 1.0 | 2026-05-13
+============================================================
+
+
+== ISBN ASSIGNMENT ==
+
+RECOMMENDATION: Purchase ISBNs directly via Bowker (US) or Nielsen (UK).
+Do NOT use a free ISBN assigned by KDP, IngramSpark, or any distributor.
+Distributor-assigned ISBNs list the distributor as publisher of record.
+That classification persists in all metadata downstream and cannot be corrected.
+
+Bowker (US publisher of record): https://www.myidentifiers.com
+Nielsen (UK publisher of record): https://www.nielsenisbn.com
+Cost (Bowker, as of 2025): $125 single / $295 for 10-pack (strongly recommend 10-pack for series)
+
+REQUIRED ASSIGNMENTS FOR THIS PROJECT:
+  ISBN-01: Print edition (trade paperback, 5.5 x 8.5)
+  ISBN-02: EPUB edition
+  ISBN-03: Reserve for Volume 2 print
+  ISBN-04: Reserve for Volume 2 EPUB
+  ISBN-05 through ISBN-10: Reserve for series, academic offshoots, translated editions
+
+CURRENT STATUS: NOT ASSIGNED
+Placeholder: [ASSIGN BEFORE INGRAM TITLE SETUP]
+
+
+== LCCN PREASSIGNMENT ==
+
+Apply for a Preassigned Control Number (PCN) from the Library of Congress.
+Required for library catalog metadata and LoC CIP data block (Cataloging in Publication).
+Apply before book goes to press — LoC requires the book to be sent to them post-publication.
+
+Application: https://lccn.loc.gov
+Eligibility: US publishers with established mailing address and prior publication record (or intent).
+Processing: 2–3 business days for preassignment.
+
+CURRENT STATUS: NOT APPLIED
+Placeholder: [APPLY WHEN MANUSCRIPT REACHES FINAL DRAFT STAGE]
+
+
+== BISAC CLASSIFICATION ==
+
+BISAC (Book Industry Standards and Communications) codes determine retail shelf placement,
+distributor catalog routing, and library acquisition category.
+
+PRIMARY:
+  Code:  TRU003000
+  Label: TRUE CRIME / Computer Crime
+
+SECONDARY:
+  Code:  POL012000
+  Label: POLITICAL SCIENCE / Government / Federal
+
+TERTIARY:
+  Code:  COM053000
+  Label: COMPUTERS / Security / General
+
+Source: https://www.bisg.org/bisac-subject-codes
+Verify codes against current BISG list — codes are reviewed annually.
+
+
+== THEMA CLASSIFICATION (international retailers) ==
+
+Thema is the international equivalent of BISAC, used by Ingram for non-US routing.
+
+  JKVF1   Cybercrime, computer crime, hacking (True Crime subcategory)
+  JPB     Central / national government
+  UR      Computer security
+
+Source: https://www.editeur.org/151/Thema/
+
+
+== KDP BROWSE CATEGORIES ==
+
+Amazon uses its own category system separate from BISAC.
+Select two categories at KDP title setup.
+
+  Primary:   Nonfiction > True Crime > Cybercrime & Hacking
+  Secondary: Nonfiction > Political Science > Government > Federal
+
+Amazon keyword slots (7 available at KDP setup):
+  1. IRS data breach
+  2. federal contractor security failure
+  3. government cybersecurity exposé
+  4. contractor accountability
+  5. investigative non-fiction technology
+  6. federal IT vulnerability
+  7. true crime hacking government
+
+
+== INGRAM SETUP NOTES ==
+
+Distribution channel: Ingram Lightning Source (preferred over IngramSpark for trade publishers)
+SJ import hub routing: Confirm with Ingram account rep that San Jose hub is designated for this title's
+  primary distribution run. Request confirmation in writing before print run authorization.
+
+Ingram requires:
+  - Print-ready interior PDF (PDF/X-1a or PDF/X-4, embedded fonts, no RGB elements)
+  - Print-ready cover PDF (same spec, with bleed, barcode box, spine width verified)
+  - Title setup form completed via Ingram portal
+  - Wholesale discount declaration (standard trade: 55%)
+  - Return policy declaration (returnable recommended for library channel)
+
+Spine width calculation:
+  Formula: Page count × paper caliper
+  60lb cream offset: 0.002252 inches per page
+  At 260 pages: 260 × 0.002252 = 0.5855 inches
+  Round to nearest 0.001 inch: 0.586 inches
+  Add to cover template spine box before submitting cover PDF.
+  CONFIRM with Ingram spec sheet for the exact paper stock selected at print setup.
+
+
+== LEGAL REVIEW CHECKLIST (pre-ISBN assignment) ==
+
+  [ ] Character identification reviewed by media attorney (Chapter 3 especially)
+  [ ] Composite scene labeling reviewed — methodology appendix matches chapter flags
+  [ ] FOIA document use reviewed — government documents are public domain; confirm no sealed records cited
+  [ ] Advance reader quote releases obtained
+  [ ] Author bio factually verified
+  [ ] Title cleared — search USPTO trademark database for "Minutes to Zero" in book/publication class
+
+
+============================================================
+SERIES ISBN STRATEGY
+============================================================
+
+For "The Architecture of Blindness" series:
+- Purchase 10-pack of ISBNs via Bowker (US) or Nielsen (UK)
+- Assign sequentially: Vol 1 (this project), Vol 2 ("The Next Pair"), etc.
+- Maintain same imprint/publisher of record across all volumes
+- This ensures series consistency in metadata and avoids distributor-as-publisher confusion
+
+RECOMMENDATION: Buy 10-pack now ($295 via Bowker as of 2025) to cover Volumes 1-3.
+
+============================================================
+END ISBN_BISAC_INFO.TXT
+Maintained by: GYLC Spokesperson
+Next update: At manuscript final draft stage, pre-Ingram submission
+============================================================

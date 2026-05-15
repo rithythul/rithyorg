@@ -1,0 +1,146 @@
+# ============================================================
+# HERMES AGENT HANDOFF — METADATA SHEET
+# Project: Minutes to Zero (NYT Cyber Exposé, Volume 1)
+# Maintained by: GYLC Spokesperson
+# Version: 1.0 | 2026-05-13
+# ============================================================
+
+# --- TITLE BLOCK ---
+title: "Minutes to Zero"
+subtitle: "Inside the Akhter Breach and the Contractor Blindness That Made It Possible"
+series_name: "The Architecture of Blindness"
+series_volume: 1
+series_volume_note: >
+  Volume 2 (working title: "The Next Pair") covers the investigation, policy fight,
+  and whether the structural vulnerabilities persist. Publish contingent on Volume 1 performance.
+
+# --- AUTHORSHIP ---
+author_display_name: "[AUTHOR NAME]"
+author_legal_name: "[AUTHOR LEGAL NAME — for copyright and contract purposes]"
+author_bio_short: >
+  [Author bio, 75 words max. Establish investigative credentials, relevant access,
+  and prior publications. Do not reference this manuscript until publication.]
+
+# --- MANUSCRIPT SPECS ---
+word_count_target: 65000
+word_count_tolerance: "+/- 2500 words"
+page_count_estimated: 260
+language: "English"
+territory_rights: "WORLD"
+fidelity_model: >
+  Narrative Non-fiction. Primary documentary source: United States v. Muneeb and
+  Sohaib Akhter (EDVA Alexandria). Muneeb Akhter Statement of Facts (April 2026 plea)
+  provides minute-by-minute operational record for Ch 1, 3, 6, 7, 8, 11.
+  Fidelity: Ch 1, 3, 6, 7, 8, 11 = DOCUMENTARY-PACER. Ch 9 = PARTIAL-COMPOSITE
+  (internal Opexus NOC monitoring detail). Ch 2, 4, 5, 10, 12-16 = DOCUMENTARY.
+  Composite reconstruction scoped to interiority and NOC workflow detail only.
+  Methodology appendix labels all remaining composite elements explicitly.
+
+# --- PHYSICAL FORMAT ---
+format: "Trade Paperback"
+trim_size_inches: "5.5 x 8.5"
+interior_paper: "Cream (60lb natural offset)"
+binding: "Perfect bound (PUR adhesive recommended for run length)"
+spine_width_formula: "Page count × paper stock caliper. Verify with printer spec sheet before final cover submission."
+spine_width_placeholder: "[Calculate at final page count: 260pp × 0.002252in/pg = ~0.585in for 60lb cream]"
+bleed: "0.125 inch on all sides"
+cover_finish: "Matte laminate (no UV spot — budget tier compatible)"
+
+# --- DIGITAL FORMAT ---
+ebook_format: "EPUB 3.0"
+ebook_drm: "None recommended (open access compatible with GYLC values)"
+ebook_price_note: "Price lower than print to maximize reach. Suggest $9.99 USD."
+# --- PRICING (SUGGESTED RETAIL) ---
+
+price_usd: 24.99
+price_eur: 22.99
+price_gbp: 19.99
+price_cad: 32.99
+price_aud: 36.99
+pricing_note: >
+  Verify Ingram wholesale discount (usually 55%) and print cost before setting retail.
+  Based on comparable true crime/cybersecurity titles (see handoff/comps_analysis.md).
+  Minimum 40% net margin required after Ingram (55%) and print costs.
+
+# --- IDENTIFIERS ---
+isbn_print: "[ASSIGN via Bowker (US) or Nielsen (UK) — do not use free ISBN from distributor]"
+isbn_ebook: "[ASSIGN separate ISBN for EPUB edition]"
+lccn: "[Apply via Library of Congress Preassigned Card Number service: https://lccn.loc.gov]"
+doi: "[Optional — apply via Crossref if academic distribution planned]"
+
+# --- CLASSIFICATION ---
+bisac_primary: "TRUE CRIME / Computer Crime"
+bisac_secondary: "POLITICAL SCIENCE / Government / Federal"
+bisac_tertiary: "COMPUTERS / Security / General"
+
+kdp_category_1: "Nonfiction > True Crime > Cybercrime & Hacking"
+kdp_category_2: "Nonfiction > Political Science > Government > Federal"
+
+thema_code_1: "JKVF1"    # True crime: computer crime
+thema_code_2: "JPB"       # Central / national government
+thema_code_3: "UR"        # Computer security
+
+dewey_decimal: "364.168"  # Computer crimes
+lcc_call_number: "HV6773"  # Computer crime — verify with LoC cataloger at submission
+
+# --- KEYWORDS (for metadata search optimization) ---
+keywords:
+  - "IRS data breach"
+  - "federal contractor security"
+  - "cybersecurity exposé"
+  - "government database hack"
+  - "FISMA compliance failure"
+  - "contractor oversight"
+  - "IRS IDRS vulnerability"
+  - "twin hackers"
+  - "federal IT accountability"
+  - "investigative non-fiction"
+  - "cybercrime true crime"
+  - "contractor blindness"
+
+# --- DISTRIBUTION ---
+distribution_primary: "Ingram Lightning Source"
+distribution_sj_hub: "San Jose, CA import hub"
+distribution_extended: "Baker & Taylor (library channel) — apply separately via Ingram"
+distribution_note: >
+  Ingram expanded distribution covers major online retailers, library wholesalers,
+  and academic distributors. Confirm SJ hub routing with Ingram account rep.
+amazon_kdp: "Upload separately. KDP and Ingram can coexist if KDP expanded distribution is disabled."
+# --- EDITORIAL STATUS ---
+
+manuscript_status: "Outline hardened (v2.1). Akhter SOF integrated as primary documentary source. Chapter drafts in progress."
+next_milestone: "Complete PACER retrieval (SOF, indictment, Sohaib verdict/search warrant). Draft Ch 1, Ch 6, Ch 11 for agent/edit packet by 2026-06-15."
+legal_review_status: "Not started. Both brothers named (public court record). Review required for composite scene labeling in Ch 9 and Opexus internal characterizations."
+foia_requests_filed: 0
+foia_requests_pending: 5
+foia_note: >
+  Priority 1: Opexus offboarding SLA (contract # and deactivation timeline).
+  Priority 2: Federal IT monitoring SLA terms (response thresholds, alert escalation).
+  Priority 3: Contractor accountability findings implementation tracking (GAO/OIG).
+
+# --- HERMES HANDOFF CHECKLIST ---
+hermes_checklist:
+  - item: "Manuscript finalized (65K words)"
+    status: "PENDING"
+  - item: "Legal review complete (character identification, composite scene labeling)"
+    status: "PENDING"
+  - item: "ISBN assigned (print and ebook)"
+    status: "PENDING"
+  - item: "LCCN preassigned"
+    status: "PENDING"
+  - item: "Cover file delivered (print-ready PDF, bleed applied)"
+    status: "PENDING"
+  - item: "Interior file delivered (print-ready PDF, embedded fonts)"
+    status: "PENDING"
+  - item: "EPUB delivered (validated against EPUB 3.0 spec)"
+    status: "PENDING"
+  - item: "Ingram title setup complete"
+    status: "PENDING"
+  - item: "KDP title setup complete"
+    status: "PENDING"
+  - item: "SJ import hub routing confirmed"
+    status: "PENDING"
+  - item: "Back cover copy approved"
+    status: "DRAFT — see back_cover_copy.md"
+  - item: "Metadata sheet approved"
+    status: "DRAFT v1.0"
