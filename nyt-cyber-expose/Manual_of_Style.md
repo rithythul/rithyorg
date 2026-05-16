@@ -27,7 +27,7 @@
 7. **Ban causal‑sentence endings** – do not end a sentence with “because,” “since,” “as,” or “due to.”
    - Causality should be shown through structure, not tacked on at the end.
 
-8. **Sentence length** – Flexibility, no min or max, Keep most sentences average 8 to 10 words. Mixed length to optimize impact.
+8. **Sentence length** – Keep most sentences average 8 to 10 words, no sentence exceeds 20 words. Vary length for rhythm.
 
 9. **Adverb usage** – keep ‑ly adverbs below 0.2% of total words; prefer strong verbs.
    - Replace “quickly ran” with “sprinted.”

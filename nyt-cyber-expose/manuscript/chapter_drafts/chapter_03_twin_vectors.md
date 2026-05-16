@@ -2,7 +2,7 @@
 
 To understand the Akhter brothers’ capacity for sustained high-impact insider threat, begin with their prior federal conviction. This public record shaped their skills, networks, and risk calculus at Opexus. Both Muneeb and Sohaib Akhter pleaded guilty in 2015 to hacking U.S. State Department systems and a private company.
 
-They stole personal data from coworkers, acquaintances, and a federal investigator. Their admissions, documented in plea agreements and Statement of Facts, provide a baseline for their technical capabilities. These admissions reveal a pattern of behavior that persisted in altered form a decade later.
+They stole personal data from coworkers, acquaintances, and a federal investigator. Their admissions are documented in plea agreements and Statement of Facts. These admissions provide a baseline for their technical capabilities. These admissions reveal a pattern of behavior that persisted in altered form a decade later.
 
 Muneeb Akhter was born in 1991. Sohaib Akhter, his twin brother, was also born in 1991. They arrived in the United States as children. They grew up in Alexandria, Virginia.
 
