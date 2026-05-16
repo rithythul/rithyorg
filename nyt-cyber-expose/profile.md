@@ -7,6 +7,8 @@
 - **Path Awareness:** User operates on remote machine; relative paths may not mirror agent's workspace. Verify paths via session context or user clarification before assuming.
 - **Default Mode:** Discussion mode is always active unless user explicitly switches to action/task mode.
 - **Trust Building:** Prioritize anticipating logical next steps (e.g., file download after write) over procedural permission-seeking to reduce token waste and friction.
+- **Repository Verification:** Always verify the state of files on shared repositories (e.g., via git show or web view) before claiming changes are visible to others; do not assume local changes are reflected remotely until explicitly pushed.
+- **Agent Memory:** Before claiming any file changes are visible on a shared repository, verify the remote state (e.g., via git show, git ls-remote, or web view). Never assume local commits are pushed.
 
 ## Communication Preferences
 - **Prose Style:** Favor Hemingway-inspired directness—short declarative sentences, concrete endings, implicit causality. Avoid:

@@ -1,99 +1,49 @@
-# Chapter Three: Twin Vectors
-
-To understand the Akhter brothers’ capacity for sustained high-impact insider threat, begin with their prior federal conviction. This public record shaped their skills, networks, and risk calculus at Opexus. Both Muneeb and Sohaib Akhter pleaded guilty in 2015 to hacking U.S. State Department systems and a private company.
-
-They stole personal data from coworkers, acquaintances, and a federal investigator. Their admissions are documented in plea agreements and Statement of Facts. These admissions provide a baseline for their technical capabilities. These admissions reveal a pattern of behavior that persisted in altered form a decade later.
-
-Muneeb Akhter was born in 1991. Sohaib Akhter, his twin brother, was also born in 1991. They arrived in the United States as children. They grew up in Alexandria, Virginia.
-
-By their early twenties, both had developed advanced skills in network enumeration, credential harvesting, and web application exploitation. They applied these skills not for ideological goals but for personal gain and the thrill of bypassing access controls.
-
-In 2014 and 2015, while working as government contractors for a cosmetic company’s website, they probed the U.S. State Department’s public-facing systems. They discovered a vulnerability that allowed them to escalate privileges and extract sensitive data.
-
-Over several months, they exfiltrated thousands of records. These records contained names, addresses, phone numbers, and, in some cases, credit card information. The data belonged to State Department employees and contractors.
-
-They also breached the website of a private cosmetics company. They harvested customer data for resale. Their 2015 guilty pleas included specific admissions that foreshadowed their later conduct.
-
-Muneeb admitted to accessing a State Department database without authorization and extracting personal information. Sohaib admitted to conspiring to commit wire fraud and accessing a protected computer without authorization.
-
-Both acknowledged using stolen credentials to maintain access. They described methods for covering their tracks, including log clearing and the use of anonymizing networks.
-
-Notably, Sohaib’s plea included a count for password trafficking. This admission is directly relevant to the February 1, 2025 exchange in which he provided Muneeb with the plaintext password of an EEOC complainant.
-
-That credential later accessed that individual’s personal email without authorization. The legal consequences were substantial but not prohibitive to future federal contracting work.
-
-Muneeb received a sentence of 39 months in federal prison. Sohaib received 24 months.
-
-Both were ordered to pay restitution and faced supervised release upon completion of incarceration. They served their sentences in federal correctional institutions. They were released to the community by 2018.
-
-Notably, neither was barred from future government contracting. This fact becomes significant when examining how they re-entered the cleared workforce despite recent felony convictions for computer crimes.
-
-By 2023 and 2024, both brothers had secured engineering roles at Opexus. Opexus provides software products and services to more than forty-five federal government agencies. It hosts data for select clients on servers in Ashburn, Virginia.
-
-Their positions granted them elevated privileges: access to development environments, database administration tools, and critically, the ability to run arbitrary Structured Query Language (SQL) queries against client databases hosted on Opexus-managed infrastructure.
-
-This access was not an anomaly. It reflected a broader trend in federal information technology (IT) contracting. Specialized technical roles—particularly those involving database administration, network engineering, and cybersecurity—are frequently filled by contractor personnel.
-
-Their background checks, while standard, often fail to capture older criminal history due to temporal limitations built into the vetting process.
-
-This gap is not speculative. It is a structural feature of the contractor vetting pipeline. Opexus’s background check, like many in the industry, covered approximately seven years. This window results from a combination of Fair Credit Reporting Act restrictions on reporting older negative information.
-
-It also stems from the practical reality that state criminal repositories often purge or seal records after a certain period. For a role requiring access to federal databases, a seven-year lookback means that any conviction older than that window is effectively invisible to the employer unless the employee volunteers the information. Few do.
-
-The Akhters’ 2015 convictions fell just outside this window when they were hired by Opexus in late 2023. Early 2024, a contractor conducting a seven-year check would see a clean record, devoid of the felony pleas that should have raised immediate red flags.
-
-This temporal blind spot in contractor background checks is not unique to the Akhter case. It is a documented vulnerability in the federal personnel security system.
-
-Government Accountability Office and Inspector General reports have repeatedly noted that reliance on commercial background investigators, combined with state-level record sealing and expungement laws, creates gaps. Individuals with older convictions—particularly for non-violent, financially motivated crimes like fraud or computer intrusion—can obtain positions of trust despite histories that would disqualify them under a full-lifecycle review.
-
-The result is a system where agencies outsource not just labor, but also the responsibility for knowing who that labor is. Yet they retain ultimate liability for what that labor does with the access granted.
-
-In the months leading up to their termination, the Akhters engaged in behavior that directly leveraged their prior experience and the access granted by their Opexus roles.
-
-For weeks before February 18, 2025, Muneeb collected approximately 5,400 usernames and passwords from Opexus’s internal network.
-
-He harvested them via credential dumping tools, password spraying attempts, and exploitation of poorly secured internal applications. He built custom credential-testing scripts, later referenced in discovery as marriott_checker.py variants.
-
-These scripts validated which combinations granted access to external systems, including personal email accounts, banking portals, and government services. This activity was not isolated.
-
-It mirrored the enumeration and harvesting techniques he had used a decade earlier against State Department systems. This suggests a continuity of tradecraft that persisted despite incarceration and release.
-
-On February 1, 2025—seventeen days before his termination—Muneeb sent a plaintext message to his twin brother Sohaib via Microsoft Teams. He asked: “Can you get me the plaintext password for EEOC complainant?”
-
-Sohaib, still possessing elevated database access as an Opexus engineering employee, conducted a query on the Equal Employment Opportunity Commission’s public portal database. He returned the credentials.
-
-That password was subsequently used to access the complainant’s personal email without authorization. This fact was confirmed in the brothers’ guilty pleas and the Statement of Facts.
-
-The exchange was not a one-off anomaly. It was a deliberate replication of the password-sharing behavior that had characterized their 2014–2015 State Department hack.
-
-Now adapted to a new target and a new vector for monetization. Role division on February 18, 2025, followed a pattern established in their prior criminal conduct.
-
-Muneeb, the more technically aggressive of the two, executed the deletion sequence. He issued DROP DATABASE commands, monitored progress, and initiated cover-up actions.
-
-Sohaib, while less overtly destructive, served as a real-time observer, advisor, and discussant of next steps. The Statement of Facts notes that Sohaib observed Muneeb “cleaning out their database backups.” He discussed the implications of the operation in real time.
-
-This dynamic mirrored their 2014–2015 collaboration, where one brother would probe for vulnerabilities while the other assessed risk and planned exfiltration routes.
-
-This division of labor was not coincidental. It reflected a practiced synergy that allowed them to operate efficiently despite the heightened stakes of a federal contractor environment.
-
-The twins’ prior convictions thus serve as both a warning and an explanation. They warn that individuals with a history of computer-based financial crime can re-enter the cleared contractor workforce despite temporal gaps in background checks.
-
-They explain that the Akhter operation was not a sudden acquisition of skill. It was the application of a well-rehearsed playbook: enumerate, harvest, validate, exfiltrate, destroy, cover, and, if advantageous, monetize.
-
-The only difference in 2025 was the scale of the target—not a single State Department database but the entire suite of federal systems hosted by Opexus—and the absence of any meaningful barrier to re-entry despite a recent felony record for almost identical conduct.
-
-To close this gap would require rethinking how federal contractors vet personnel for positions of trust.
-
-One approach would be to extend the background investigation window beyond seven years for roles involving privileged access to federal data. This could incorporate federal criminal records (NCIC) and federal court archives (PACER) into the standard check.
-
-Another would be to mandate continuous monitoring of contractor personnel with access to sensitive systems. For example, require real-time alerts when an employee with a prior conviction for computer crime attempts to access certain databases or execute certain SQL commands.
-
-A third would be to bring certain high-visibility roles—like database administration and security monitoring—under hybrid models where federal employees retain oversight authority even as contractors perform the labor.
-
-None of these solutions are free or simple. Each would add cost, delay, and complexity to the hiring process.
-
-But, as the Akhter case demonstrates, the cost of inaction is already being measured in deleted databases, exfiltrated personal records, and the erosion of public trust in the government’s ability to protect its most sensitive information.
-
-The Akhter brothers are not anomalies. They are symptoms of a contractor state that externalizes liability, diffuses accountability, and structures incentives to prioritize uptime over security. This creates windows of opportunity that individuals with prior convictions, technical skill, and a willingness to exploit them can and do walk through.
-
-Recognizing that the vulnerability begins not at the keyboard but in the vetting process and the background check is the first step toward designing a system where the door does not remain open long enough for a determined actor to walk through it. And, if they do, the alarm sounds before they reach the database.
+1|# Chapter Three: Twin Vectors
+     2|
+     3|To understand the Akhter brothers’ capacity for sustained high-impact insider threat. Begin with their prior federal conviction. This public record shaped their skills, networks, and risk calculus at Opexus. Both Muneeb and Sohaib Akhter pleaded guilty in 2015 to hacking U.S. State Department systems and a private company. 4|
+     5|They stole personal data from coworkers, acquaintances, and a federal investigator. Their admissions are documented in plea agreements and Statement of Facts. These admissions provide a baseline for their technical capabilities. These admissions reveal a pattern of behavior that persisted in altered form a decade later. 6|
+     7|Muneeb Akhter was born in 1991. Sohaib Akhter, his twin brother, was also born in 1991. They arrived in the United States as children. They grew up in Alexandria, Virginia. 8|
+     9|By their early twenties, both had developed advanced skills in network enumeration, credential harvesting, and web application exploitation. They applied these skills not for ideological goals but for personal gain and the thrill of bypassing access controls. 10|
+    11|In 2014 and 2015, while working as government contractors for a cosmetic company’s website, they probed the U.S. State Department’s public-facing systems. They discovered a vulnerability that allowed them to escalate privileges and extract sensitive data. 12|
+    13|Over several months, they exfiltrated thousands of records. These records contained names, addresses, phone numbers, and, in some cases, credit card information. The data belonged to State Department employees and contractors. 14|
+    15|They also breached the website of a private cosmetics company. They harvested customer data for resale. Their 2015 guilty pleas included specific admissions that foreshadowed their later conduct. 16|
+    17|Muneeb admitted to accessing a State Department database without authorization and extracting personal information. Sohaib admitted to conspiring to commit wire fraud and accessing a protected computer without authorization. 18|
+    19|Both acknowledged using stolen credentials to maintain access. They described methods for covering their tracks, including log clearing and the use of anonymizing networks. 20|
+    21|Notably, Sohaib’s plea included a count for password trafficking. This admission is directly relevant to the February 1. 2025 exchange in which he provided Muneeb with the plaintext password of an EEOC complainant. 22|
+    23|That credential later accessed that individual’s personal email without authorization. The legal consequences were substantial but not prohibitive to future federal contracting work. 24|
+    25|Muneeb received a sentence of 39 months in federal prison. Sohaib received 24 months. 26|
+    27|Both were ordered to pay restitution and faced supervised release upon completion of incarceration. They served their sentences in federal correctional institutions. They were released to the community by 2018. 28|
+    29|Notably, neither was barred from future government contracting. This fact becomes significant when examining how they re-entered the cleared workforce despite recent felony convictions for computer crimes. 30|
+    31|By 2023 and 2024, both brothers had secured engineering roles at Opexus. Opexus provides software products and services to more than forty-five federal government agencies. It hosts data for select clients on servers in Ashburn, Virginia. 32|
+    33|Their positions granted them elevated privileges: access to development environments. Database administration tools, and critically, the ability to run arbitrary Structured Query Language (SQL) queries against client databases hosted on Opexus-managed infrastructure. 34|
+    35|This access was not an anomaly. It reflected a broader trend in federal information technology (IT) contracting. Specialized technical roles,particularly those involving database administration, network engineering, and cybersecurity,are frequently filled by contractor personnel. 36|
+    37|Their background checks. While standard, often fail to capture older criminal history due to temporal limitations built into the vetting process. 38|
+    39|This gap is not speculative. It is a structural feature of the contractor vetting pipeline. Opexus’s background check, like many in the industry, covered approximately seven years. This window results from a combination of Fair Credit Reporting Act restrictions on reporting older negative information. 40| 41|It also stems from the practical reality that state criminal repositories often purge or seal records after a certain. Period. For a role requiring access to federal databases. A seven-year lookback means that any conviction older than that window is effectively invisible to the employer unless the employee volunteers the information. Few do. 42|
+    43|The Akhters’ 2015 convictions fell just outside this window when they were hired by Opexus in late 2023. Early 2024. A contractor conducting a seven-year check would see a clean record, devoid of the felony pleas that should have raised immediate red flags. 44|
+    45|This temporal blind spot in contractor background checks is not unique to the Akhter case. It is a documented vulnerability in the federal personnel security system. 46|
+    47|Government Accountability Office and Inspector General reports have repeatedly noted that reliance on commercial background investigators. Combined with state-level record sealing and expungement laws, creates gaps. Individuals with older convictions. Particularly for non-violent, financially motivated crimes like fraud or computer intrusion,can obtain positions of trust despite histories that would disqualify them under a full-lifecycle review. 48|
+    49|The result is a system where agencies outsource not just labor. But also the responsibility for knowing who that labor is. Yet they retain ultimate liability for what that labor does with the access granted. 50|
+    51|In the months leading up to their termination. The Akhters engaged in behavior that directly leveraged their prior experience and the access granted by their Opexus roles. 52|
+    53|For weeks before February 18, 2025, Muneeb collected approximately 5,400 usernames and passwords from Opexus’s internal network. 54|
+    55|He harvested them via credential dumping tools, password spraying attempts, and exploitation of poorly secured internal applications. He built custom credential-testing scripts, later referenced in discovery as marriott_checker.py variants. 56|
+    57|These scripts validated which combinations granted access to external systems, including personal email accounts, banking portals, and government services. This activity was not isolated. 58|
+    59|It mirrored the enumeration and harvesting techniques he had used a decade earlier against State Department systems. This suggests a continuity of tradecraft that persisted despite incarceration and release. 60|
+    61|On February 1. 2025,seventeen days before his termination,Muneeb sent a plaintext message to his twin brother Sohaib via Microsoft Teams. He asked: “Can you get me the plaintext password for EEOC complainant?”
+    62|
+    63|Sohaib. Still possessing elevated database access as an Opexus engineering employee, conducted a query on the Equal Employment Opportunity Commission’s public portal database. He returned the credentials. 64|
+    65|That password was subsequently used to access the complainant’s personal email without authorization. This fact was confirmed in the brothers’ guilty pleas and the Statement of Facts. 66|
+    67|The exchange was not a one-off anomaly. It was a deliberate replication of the password-sharing behavior that had characterized their 2014–2015 State Department hack. 68|
+    69|Now adapted to a new target and a new vector for monetization. Role division on February 18, 2025, followed a pattern established in their prior criminal conduct. 70|
+    71|Muneeb, the more technically aggressive of the two, executed the deletion sequence. He issued DROP DATABASE commands, monitored progress, and initiated cover-up actions. 72|
+    73|Sohaib, while less overtly destructive, served as a real-time observer, advisor, and discussant of next steps. The Statement of Facts notes that Sohaib observed Muneeb “cleaning out their database backups.” He discussed the implications of the. Operation in real time. 74|
+    75|This dynamic mirrored their 2014–2015 collaboration. Where one brother would probe for vulnerabilities while the other assessed risk and planned exfiltration routes. 76|
+    77|This division of labor was not coincidental. It reflected a practiced synergy that allowed them to operate efficiently despite the heightened stakes of a federal contractor environment. 78|
+    79|The twins’ prior convictions thus serve as both a warning and an explanation. They warn that individuals with a history of computer-based financial crime can re-enter the cleared contractor workforce despite temporal gaps. In background checks. 80|
+    81|They explain that the Akhter operation was not a sudden acquisition of skill. It was the application of a well-rehearsed playbook: enumerate, harvest, validate, exfiltrate, destroy, cover, and, if advantageous, monetize. 82|
+    83|The only difference in 2025 was the scale of the target. Not a single State Department database but the entire suite of federal systems hosted by Opexus,and the absence of any meaningful barrier to re-entry despite a recent felony record for almost identical conduct. 84|
+    85|To close this gap would require rethinking how federal contractors vet personnel for positions of trust. 86| 87|One approach would be to extend the background investigation window beyond seven years for roles involving privileged access to. Federal data. This could incorporate federal criminal records (NCIC) and federal court archives (PACER) into the standard check. 88|
+    89|Another would be to mandate continuous monitoring of contractor personnel with access to sensitive systems. For example. Require real-time alerts when an employee with a prior conviction for computer crime attempts to access certain databases or execute certain SQL commands. 90|
+    91|A third would be to bring certain high-visibility roles. Like database administration and security monitoring,under hybrid models where federal employees retain oversight authority even as contractors perform the labor. 92|
+    93|None of these solutions are free or simple. Each would add cost, delay, and complexity to the hiring process. 94|
+    95|But. As the Akhter case demonstrates, the cost of inaction is already being measured in deleted databases, exfiltrated personal records, and the erosion of public trust in the government’s ability to protect its most sensitive information. 96|
+    97|The Akhter brothers are not anomalies. They are symptoms of a contractor state that externalizes liability, diffuses accountability, and structures incentives to prioritize uptime over security. This creates windows of opportunity that individuals with prior convictions. Technical skill, and a willingness to exploit them can and do walk through. 98| 99|Recognizing that the vulnerability begins not at the keyboard but in the vetting process and the background check is. The first step toward designing a system where the door does not remain open long enough for a determined actor to walk through it. And, if they do, the alarm sounds before they reach the database.

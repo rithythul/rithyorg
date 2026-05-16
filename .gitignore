@@ -32,3 +32,8 @@ node_modules/
 # Temp
 /tmp/
 *.log
+
+# Ignore agent directories
+.claude/
+cambodia2046-org/
+mcp-servers/
