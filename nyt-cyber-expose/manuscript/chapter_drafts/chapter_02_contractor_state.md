@@ -30,7 +30,7 @@ In essence, the contract paid for the illusion of security while measuring only 
 
 A prime contractor awarded a five-hundred-million-dollar agency-wide IT operations contract might subcontract thirty percent of that work to regional specialists. Those specialists might in turn outsource niche functions like help desk tiering or database administration to local firms. 
 
-By the time the work reached the individual turning wrenches—or, in the Akhters’ case, running Structured Query Language queries—four or five layers of contractual separation could exist between the federal agency paying the bill and the employee with actual keyboard access.
+By the time the work reached the individual turning wrenches,or, in the Akhters’ case, running Structured Query Language queries,four or five layers of contractual separation could exist between the federal agency paying the bill and the employee with actual keyboard access.
 
 Each layer added its own markup, its own reporting requirements, and its own incentive to obscure problems that might reflect poorly on its performance. Audits of subcontractor performance by the prime were rare. Agency-level audits of the entire chain were rarer still.
 
@@ -38,7 +38,7 @@ The result was a system where no single entity had full visibility into who had 
 
 According to Government Accountability Office reports from the mid-2010s, approximately seventy-five percent of federal IT spending went to contracts for services, operations, and maintenance. This meant that three out of every four dollars spent on keeping federal networks running flowed to private companies rather than federal employees. 
 
-In specific high-impact areas like database administration and network engineering, the contractor share often exceeded eighty-five percent. Consequently, the individuals with the highest levels of privileged access—database administrators who could issue DROP DATABASE commands, network engineers who could reconfigure firewalls, system administrators who could manage Active Directory—were far more likely to be contractor badge holders than federal civil servants.
+In specific high-impact areas like database administration and network engineering, the contractor share often exceeded eighty-five percent. Consequently, the individuals with the highest levels of privileged access,database administrators who could issue DROP DATABASE commands, network engineers who could reconfigure firewalls, system administrators who could manage Active Directory,were far more likely to be contractor badge holders than federal civil servants.
 
 Yet the personnel vetting, monitoring, and offboarding protocols that governed those contractor employees were not federal rules. They were the private policies of the companies employing them, subject only to the limited oversight written into their contracts.
 
@@ -60,7 +60,7 @@ According to an Office of Inspector General report on contractor oversight gap f
 
 When a contractor employee is terminated, the process depends entirely on the contractor’s internal policies and the speed with which their human resources or security team processes the termination notice. 
 
-Even if the contractor’s service-level agreement with the federal agency promises “immediate” account deactivation—a term often left undefined—the financial consequence of missing that target is frequently negligible compared to the penalty for failing uptime guarantees. 
+Even if the contractor’s service-level agreement with the federal agency promises “immediate” account deactivation,a term often left undefined,the financial consequence of missing that target is frequently negligible compared to the penalty for failing uptime guarantees. 
 
 A contractor might lose a few service credits for a delayed deactivation. They risk far more if their monitoring system flags an anomaly that leads to a network-wide outage during peak hours. 
 
@@ -72,13 +72,13 @@ According to standard federal contracting norms and the National Institute of St
 
 Instead, his credentials remained active for nearly an hour. This was long enough to delete ninety-six databases, exfiltrate thousands of sensitive files, and initiate a cover-up that would delay detection for months. 
 
-As urgent as the situation was, the party paying for the service—the federal agency—had no practical way to verify in real time whether the revocation had been done. 
+As urgent as the situation was, the party paying for the service,the federal agency,had no practical way to verify in real time whether the revocation had been done. 
 
-The breakdown was not a momentary lapse in vigilance. It was the predictable outcome of a system where the party responsible for access revocation—the contractor—had no financial reason to treat it as urgent.
+The breakdown was not a momentary lapse in vigilance. It was the predictable outcome of a system where the party responsible for access revocation,the contractor,had no financial reason to treat it as urgent.
 
 According to a National Institute of Standards and Technology report on SP 800-53 AC-2(3) automated account management, the structural implications extend far beyond a single terminated account. 
 
-Treating offboarding as a discretionary process rather than an automated security function means that every contractor employee who leaves a federal IT position—whether voluntarily, for cause, or at the end of a contract—represents a potential window of unauthorized access. 
+Treating offboarding as a discretionary process rather than an automated security function means that every contractor employee who leaves a federal IT position,whether voluntarily, for cause, or at the end of a contract,represents a potential window of unauthorized access. 
 
 The scale is staggering because the threat originates from within the trusted session itself. With tens of thousands of contractor personnel cycling through federal IT roles each year, the aggregate exposure represents a persistent low-grade risk of insider threat. No amount of perimeter hardening or multi-factor authentication can fully mitigate this risk. 
 
