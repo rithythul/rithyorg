@@ -132,3 +132,65 @@ Then follow this hardened 5-pass revision process with verification between each
         - Clear emphasis on key points.
 
 This repeatable, hardened skill ensures consistent, high‑quality output across all chapters by catching errors through multiple targeted passes with specific verifications. Each pass builds upon the previous, creating layers of quality control.
+
+## Pipeline
+
+The pipeline is expressed as a JSON‑compatible delegate‑task definition. It hard‑codes three agents that each run a specific script and a verification stage. The JSON can be fed to `hermes delegate_task` to process any chapter.
+
+```json
+{
+  "toolsets": ["terminal", "delegate_task"],
+  "tasks": [
+    {
+      "goal": "Run style_clean_agent on ${CHAPTER_PATH}",
+      "role": "leaf",
+      "toolsets": ["terminal"],
+      "context": "${CHAPTER_PATH}"
+    },
+    {
+      "goal": "Run rhythm_agent on ${CHAPTER_PATH}",
+      "role": "leaf",
+      "toolsets": ["terminal"],
+      "context": "${CHAPTER_PATH}"
+    },
+    {
+      "goal": "Run verify_agent on ${CHAPTER_PATH}",
+      "role": "leaf",
+      "toolsets": ["terminal"],
+      "context": "${CHAPTER_PATH}"
+    },
+    {
+      "goal": "Commit the verified chapter to git and push",
+      "role": "leaf",
+      "toolsets": ["terminal"],
+      "context": "${CHAPTER_PATH}"
+    }
+  ]
+}
+```
+
+### Named agents
+- **style_clean_agent** – runs `scripts/clean_style.py` (em‑dash removal, header blank line, bracket removal, causal‑fragment rewrite).
+- **rhythm_agent** – runs `scripts/rhythm_rewrite.py` (LLM‑driven split of >20‑word sentences while preserving meaning).
+- **verify_agent** – runs the four verification scripts (`verify_mos.py`, `verify_paragraph_endings.py`, `check_acronyms.py`, `verify_brackets.py`).
+
+### Final EPUB assembly (once all chapters are ready)
+```bash
+# generate master markdown that includes every chapter in order
+cat <<'EOF' > book.md
+% NYT Cyber Expose
+% Rithy Thul
+% 2026
+\newpage
+# Table of Contents
+\newpage
+$(for i in {01..16}; do echo "!include manuscript/chapter_drafts/chapter_${i}_*.md"; done)
+EOF
+
+pandoc \
+  --metadata-file=metadata.yaml \
+  --toc \
+  --epub-cover-image=cover.jpg \
+  --embed-resources \
+  -o nyt-cyber-expose.epub book.md
+```
