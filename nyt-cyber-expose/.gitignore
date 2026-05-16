@@ -1,0 +1,4 @@
+# Ignore agent directories
+.claude/
+cambodia2046-org/
+mcp-servers/
