@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import SiteHeader from "./components/site-header";
 import SiteFooter from "./components/site-footer";
 import { AUTHOR, SITE_URL } from "@/lib/content";
@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+};
+
+// Browser chrome matches the page.
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8f7f3" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1b19" },
+  ],
 };
 
 // Apply the saved or system theme before first paint (existing behaviour).

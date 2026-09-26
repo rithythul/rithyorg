@@ -10,8 +10,7 @@ export default function BookFeature({ book }: { book: Book }) {
           {book.title}
         </h2>
         <p className="book-meta">
-          by {book.author}
-          <span className="sep" aria-hidden="true">·</span>
+          <span>by {book.author}</span>
           <span className="status">{book.status}</span>
         </p>
       </div>

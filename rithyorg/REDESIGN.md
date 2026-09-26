@@ -10,6 +10,26 @@ bun test                          # content and routing tests
 bun run typecheck
 ```
 
+## Design rules
+
+Simplicity comes from saying no. Keep these when changing the site:
+
+- **One focus per page.** The home page leads with the book. It has one
+  filled button, **About the book**. Other actions are text links.
+- **Say each thing once.** Lists hide the topic column when every row
+  shares a topic. Articles skip the topic label when the back link names it.
+  Lists show titles, not excerpts. Digests open on their TL;DR, not on a
+  repeated summary.
+- **One system.** Every size and gap comes from the tokens at the top of
+  `app/globals.css`: 5 text sizes, 2 display sizes, and 8px-based spacing.
+  Every two-column section uses `--split`.
+- **Care in the details.** Headlines use balanced wrapping and paragraphs
+  avoid orphans. Date figures line up (tabular numerals). Browser chrome
+  matches the paper colour. The favicon and "Writing in progress" marker
+  reuse the wordmark's rust period. Text selection uses the accent.
+- **Nothing decorative.** No shadows, gradients, rounded pills, animation,
+  or stock imagery.
+
 ## URL changes
 
 | URL | Before | After |

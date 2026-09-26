@@ -40,7 +40,7 @@ export default function WritingPage() {
             <h2 id={`year-${year}`} className="year-heading">
               {year}
             </h2>
-            <WritingList posts={items} showExcerpt />
+            <WritingList posts={items} />
           </section>
         ))
       )}

@@ -20,7 +20,10 @@ export default function Article({
               ← {back.label}
             </Link>
           </p>
-          <p className="eyebrow">{post.topic}</p>
+          {/* Say the topic once: skip it when the back link already names it. */}
+          {post.topic.toLowerCase() !== back.label.toLowerCase() && (
+            <p className="eyebrow">{post.topic}</p>
+          )}
           <h1>{post.title}</h1>
           <p className="article-meta">
             {post.author && <span>by {post.author}</span>}
@@ -28,7 +31,6 @@ export default function Article({
               <time dateTime={post.date}>{formatDate(post.date)}</time>
             )}
           </p>
-          {post.excerpt && <p className="article-lede">{post.excerpt}</p>}
         </header>
 
         {/* Repository-authored Markdown, rendered at build time. */}

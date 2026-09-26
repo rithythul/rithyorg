@@ -21,13 +21,10 @@ export default function BookPage() {
           <p className="eyebrow">{book.label}</p>
           <h1 className="page-title">{book.title}</h1>
           <p className="book-meta">
-            by {book.author}
-            <span className="sep" aria-hidden="true">·</span>
+            <span>by {book.author}</span>
             <span className="status">{book.status}</span>
+            {book.statusNote && <span>{book.statusNote}</span>}
           </p>
-          {book.statusNote && (
-            <p className="book-meta">{book.statusNote}</p>
-          )}
         </header>
 
         <div

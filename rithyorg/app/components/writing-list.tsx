@@ -1,24 +1,21 @@
 import Link from "next/link";
 import { formatDate, type Post } from "@/lib/content";
 
-export default function WritingList({
-  posts,
-  showExcerpt = false,
-}: {
-  posts: Post[];
-  showExcerpt?: boolean;
-}) {
+/**
+ * Full-width rows: title first, topic and date quiet. The topic column
+ * only appears when the list mixes topics; a repeated label is noise.
+ */
+export default function WritingList({ posts }: { posts: Post[] }) {
+  const showTopic = new Set(posts.map((p) => p.topic)).size > 1;
+
   return (
-    <ul className="writing-list">
+    <ul className={showTopic ? "writing-list" : "writing-list no-topic"}>
       {posts.map((post) => (
         <li key={post.href}>
           <Link href={post.href} className="writing-row">
-            <span className="topic">{post.topic}</span>
+            {showTopic && <span className="topic">{post.topic}</span>}
             <span className="title" lang={post.lang}>
-              <span className="title-text">{post.title}</span>
-              {showExcerpt && post.excerpt && (
-                <span className="excerpt">{post.excerpt}</span>
-              )}
+              {post.title}
             </span>
             {post.date ? (
               <time dateTime={post.date}>{formatDate(post.date)}</time>

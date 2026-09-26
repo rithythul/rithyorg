@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Article from "../../components/article";
+import WritingList from "../../components/writing-list";
 import {
-  formatDate,
   getAllCryptoDigests,
   getPublishedPost,
   getRelatedDigests,
@@ -49,25 +48,11 @@ export default async function DigestPage({ params }: Props) {
         .
       </p>
       {related.length > 0 && (
-        <section aria-labelledby="related" style={{ marginTop: 32 }}>
+        <section aria-labelledby="related">
           <h2 id="related" className="year-heading">
             Other digests
           </h2>
-          <ul className="writing-list">
-            {related.map((r) => (
-              <li key={r.slug}>
-                <Link href={r.href} className="writing-row">
-                  <span className="topic">
-                    <time dateTime={r.date}>{formatDate(r.date)}</time>
-                  </span>
-                  <span className="title">
-                    <span className="title-text">{r.title}</span>
-                  </span>
-                  <span />
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <WritingList posts={related} />
         </section>
       )}
     </Article>

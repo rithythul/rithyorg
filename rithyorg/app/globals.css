@@ -2,6 +2,7 @@
 
 /* ------------------------------------------------------------------
    Tokens
+   One colour set, one type scale, one spacing scale. Nothing else.
    ------------------------------------------------------------------ */
 :root {
   --paper: #f8f7f3;
@@ -17,8 +18,31 @@
   --sans: Arial, "Helvetica Neue", Helvetica, system-ui, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
+  /* Type scale */
+  --text-sm: 0.875rem; /* 14: metadata, labels */
+  --text-base: 1.0625rem; /* 17: interface copy */
+  --text-read: 1.1875rem; /* 19: reading text */
+  --text-lg: 1.375rem; /* 22: list titles */
+  --text-xl: clamp(1.75rem, 1.35rem + 1.4vw, 2.25rem); /* section heads */
+  /* Display sizes. The vw cap keeps words whole when text is enlarged
+     on narrow screens. */
+  --text-display: min(clamp(2.375rem, 1.5rem + 3.4vw, 3.875rem), 15vw);
+  --text-title: min(clamp(2.125rem, 1.5rem + 2.4vw, 3.25rem), 12vw);
+
+  /* Spacing scale (8px base) */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 64px;
+  --s7: 96px;
+
   --shell: 1320px;
   --gutter: 64px;
+  --reading: 680px;
+  /* The asymmetric split used by every two-column section */
+  --split: minmax(0, 1.7fr) minmax(0, 1fr);
 
   color-scheme: light;
 }
@@ -60,18 +84,40 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: var(--text-base);
+  line-height: 1.55;
   overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
 }
 
 a {
   color: inherit;
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
 :focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
 }
 
 .shell {
@@ -81,12 +127,16 @@ a {
   padding-inline: var(--gutter);
 }
 
+.reading {
+  max-width: var(--reading);
+}
+
 .skip-link {
   position: absolute;
   left: var(--gutter);
   top: -100px;
   z-index: 10;
-  padding: 12px 16px;
+  padding: 12px var(--s2);
   background: var(--ink);
   color: var(--paper);
   font-weight: 700;
@@ -105,6 +155,10 @@ a {
   white-space: nowrap;
 }
 
+.muted {
+  color: var(--secondary);
+}
+
 /* ------------------------------------------------------------------
    Header
    ------------------------------------------------------------------ */
@@ -113,8 +167,8 @@ a {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px 32px;
-  padding-block: 20px;
+  gap: var(--s1) var(--s4);
+  padding-block: var(--s3);
   border-bottom: 1px solid var(--rule);
 }
 
@@ -136,7 +190,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0 4px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -146,19 +199,19 @@ a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding-inline: 10px;
+  padding-inline: 12px;
   font-size: 0.9375rem;
   text-decoration: none;
   text-underline-offset: 6px;
 }
 
-.site-nav a:hover,
-.site-nav a[aria-current] {
+.site-nav a:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
 }
 
 .site-nav a[aria-current] {
+  text-decoration: underline;
   text-decoration-thickness: 2px;
 }
 
@@ -174,7 +227,7 @@ a {
 
 @media (max-width: 600px) {
   .site-header .shell {
-    padding-block: 12px;
+    padding-block: var(--s1);
   }
 
   .site-nav {
@@ -182,7 +235,7 @@ a {
   }
 
   .site-nav ul {
-    margin-left: -10px;
+    margin-left: -12px;
   }
 
   .site-nav .company {
@@ -192,18 +245,18 @@ a {
 }
 
 /* ------------------------------------------------------------------
-   Shared type
+   Shared pieces
    ------------------------------------------------------------------ */
 .eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 var(--s2);
   font-size: 0.8125rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--secondary);
 }
 
 .section {
-  padding-block: 56px;
+  padding-block: var(--s5) var(--s6);
 }
 
 .section-head {
@@ -211,14 +264,14 @@ a {
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 8px 24px;
-  margin-bottom: 20px;
+  gap: var(--s1) var(--s3);
+  margin-bottom: var(--s3);
 }
 
 .section-title {
   margin: 0;
   font-family: var(--serif);
-  font-size: 1.75rem;
+  font-size: var(--text-xl);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -236,137 +289,145 @@ a {
   text-decoration-thickness: 2px;
 }
 
-.muted {
-  color: var(--secondary);
+.page-head {
+  padding-block: var(--s6) var(--s5);
 }
 
-.page-head {
-  padding-block: 56px 32px;
+.page-head .back {
+  margin: 0 0 var(--s3);
+  font-size: var(--text-sm);
 }
 
 .page-title {
   margin: 0;
   font-family: var(--serif);
-  font-size: min(clamp(2.375rem, 1.6rem + 3vw, 3.5rem), 13vw);
+  font-size: var(--text-title);
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: -0.015em;
 }
 
 .page-lede {
-  max-width: 38rem;
-  margin: 16px 0 0;
-  font-size: 1.125rem;
-  line-height: 1.55;
+  max-width: 36rem;
+  margin: var(--s2) 0 0;
+  font-size: var(--text-base);
   color: var(--secondary);
 }
 
+/* Status: the accent period from the wordmark, then plain words. */
+.status {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.status::before {
+  content: "";
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-0.05em);
+}
+
 /* ------------------------------------------------------------------
-   Home hero
+   Home: hero
    ------------------------------------------------------------------ */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-  gap: 32px 64px;
+  grid-template-columns: var(--split);
+  gap: var(--s4) var(--s6);
   align-items: end;
-  padding-block: 88px 72px;
+  padding-block: var(--s7) var(--s6);
 }
 
 .hero h1 {
   margin: 0;
   font-family: var(--serif);
-  /* The vw cap keeps words whole when text is enlarged on narrow screens. */
-  font-size: min(clamp(2.375rem, 1.5rem + 3.4vw, 3.875rem), 15vw);
+  font-size: var(--text-display);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.04;
   letter-spacing: -0.02em;
 }
 
 .hero-intro p {
-  margin: 0 0 8px;
-  font-size: 1.1875rem;
+  margin: 0 0 var(--s1);
+  font-size: var(--text-read);
   line-height: 1.55;
 }
 
 @media (max-width: 800px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
-    padding-block: 48px 40px;
+    padding-block: var(--s5) var(--s5);
   }
 }
 
 /* ------------------------------------------------------------------
-   Book feature
+   Home: book feature
    ------------------------------------------------------------------ */
 .book-feature {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-  gap: 32px 64px;
-  padding-block: 28px 64px;
+  grid-template-columns: var(--split);
+  gap: var(--s4) var(--s6);
+  padding-block: var(--s4) var(--s6);
   border-top: 3px solid var(--rule-strong);
 }
 
-.book-feature .book-title {
+.book-title {
   margin: 0;
   font-family: var(--serif);
-  font-size: min(clamp(2.25rem, 1.4rem + 3.2vw, 3.75rem), 13vw);
+  font-size: var(--text-display);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.04;
   letter-spacing: -0.02em;
 }
 
 .book-meta {
-  margin: 20px 0 0;
-  font-size: 0.9375rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+  margin: var(--s3) 0 0;
+  font-size: var(--text-sm);
   color: var(--secondary);
 }
 
-.book-meta .sep {
-  margin-inline: 8px;
-}
-
-.status {
-  display: inline-block;
-  padding: 2px 8px;
-  border: 1px solid currentColor;
-  font-size: 0.8125rem;
-  letter-spacing: 0.03em;
-  color: var(--ink);
-  white-space: nowrap;
-}
-
 .book-body p {
-  margin: 0 0 14px;
-  font-size: 1.0625rem;
+  margin: 0 0 var(--s2);
   line-height: 1.6;
 }
 
+.book-body .button {
+  margin-top: var(--s1);
+}
+
 .book-body .status-note {
-  margin-top: 12px;
-  font-size: 0.875rem;
+  margin: var(--s2) 0 0;
+  font-size: var(--text-sm);
   color: var(--secondary);
 }
 
 @media (max-width: 800px) {
   .book-feature {
     grid-template-columns: minmax(0, 1fr);
-    padding-block: 24px 48px;
+    padding-block: var(--s3) var(--s5);
   }
 }
 
 /* ------------------------------------------------------------------
-   Buttons
+   Button: one per page at most
    ------------------------------------------------------------------ */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  margin-top: 8px;
-  padding: 12px 22px;
+  padding: 12px var(--s3);
   background: var(--accent);
   color: var(--accent-ink);
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 700;
   text-decoration: none;
   border: 0;
@@ -382,7 +443,7 @@ a {
 }
 
 /* ------------------------------------------------------------------
-   Writing list
+   Writing list: title first, everything else quiet
    ------------------------------------------------------------------ */
 .writing-list {
   margin: 0;
@@ -397,161 +458,161 @@ a {
 
 .writing-row {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr) 150px;
-  gap: 6px 32px;
+  grid-template-columns: 200px minmax(0, 1fr) 140px;
+  gap: var(--s1) var(--s4);
   align-items: baseline;
-  padding-block: 18px;
+  padding-block: 20px;
   text-decoration: none;
+}
+
+.writing-list.no-topic .writing-row {
+  grid-template-columns: minmax(0, 1fr) 140px;
 }
 
 .writing-row .topic,
 .writing-row time {
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   color: var(--secondary);
 }
 
 .writing-row time {
   text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
 .writing-row .title {
   font-family: var(--serif);
-  font-size: 1.3125rem;
+  font-size: var(--text-lg);
   line-height: 1.3;
+  text-wrap: pretty;
 }
 
-.writing-row .excerpt {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--sans);
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: var(--secondary);
-}
-
-.writing-row:hover .title-text {
+.writing-row:hover .title {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
+  text-underline-offset: 5px;
 }
 
 @media (max-width: 800px) {
-  .writing-row {
+  .writing-row,
+  .writing-list.no-topic .writing-row {
     grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px var(--s2);
+    padding-block: var(--s2);
   }
 
   .writing-row .title {
     grid-column: 1 / -1;
     grid-row: 2;
   }
+
+  .writing-list.no-topic .writing-row time {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    text-align: left;
+  }
 }
 
 .year-heading {
-  margin: 40px 0 8px;
-  font-family: var(--sans);
-  font-size: 0.875rem;
+  margin: var(--s5) 0 var(--s2);
+  font-size: var(--text-sm);
   font-weight: 700;
   color: var(--secondary);
+  font-variant-numeric: tabular-nums;
 }
 
 .empty-note {
-  padding-block: 20px;
+  padding-block: var(--s3);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   color: var(--secondary);
 }
 
 /* ------------------------------------------------------------------
-   Company section
+   Home: SmallWorld
    ------------------------------------------------------------------ */
 .company-section {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-  gap: 24px 64px;
-  padding-block: 32px 72px;
-  border-top: 1px solid var(--rule);
+  grid-template-columns: var(--split);
+  gap: var(--s3) var(--s6);
+  padding-block: var(--s5) var(--s6);
 }
 
 .company-section h2 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.375rem);
+  font-size: var(--text-xl);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .company-section p {
-  margin: 0 0 8px;
-  font-size: 1.0625rem;
+  margin: 0 0 var(--s1);
   line-height: 1.6;
 }
 
 @media (max-width: 800px) {
   .company-section {
     grid-template-columns: minmax(0, 1fr);
+    padding-block: var(--s4) var(--s6);
   }
 }
 
 /* ------------------------------------------------------------------
-   Reading pages
+   Articles
    ------------------------------------------------------------------ */
-.reading {
-  max-width: 680px;
-}
-
 .article-head {
-  padding-block: 48px 28px;
+  padding-block: var(--s5) var(--s4);
 }
 
 .article-head .back {
-  margin-bottom: 20px;
-  font-size: 0.9375rem;
+  margin: 0 0 var(--s3);
+  font-size: var(--text-sm);
 }
 
 .article-head h1 {
   margin: 0;
   font-family: var(--serif);
-  font-size: min(clamp(2rem, 1.5rem + 2vw, 2.875rem), 12vw);
+  font-size: var(--text-title);
   font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  line-height: 1.1;
+  letter-spacing: -0.012em;
 }
 
 .article-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 16px;
-  margin: 16px 0 0;
-  font-size: 0.9375rem;
-  color: var(--secondary);
-}
-
-.article-lede {
-  margin: 20px 0 0;
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  line-height: 1.5;
+  gap: 4px var(--s3);
+  margin: var(--s3) 0 0;
+  font-size: var(--text-sm);
   color: var(--secondary);
 }
 
 .article-end {
-  margin-top: 48px;
-  padding-top: 24px;
+  margin-top: var(--s6);
+  padding-top: var(--s3);
   border-top: 1px solid var(--rule);
 }
 
 .article-end p {
-  margin: 0 0 8px;
-  line-height: 1.6;
+  margin: 0 0 var(--s1);
+}
+
+.article-end section {
+  margin-top: var(--s4);
+}
+
+.article-end > p:last-child {
+  margin-top: var(--s3);
 }
 
 /* Markdown body */
 .prose {
-  font-family: var(--serif);
-  font-size: 1.1875rem;
-  line-height: 1.7;
-  padding-top: 28px;
+  padding-top: var(--s4);
   border-top: 1px solid var(--rule);
+  font-family: var(--serif);
+  font-size: var(--text-read);
+  line-height: 1.7;
 }
 
 .prose > :first-child {
@@ -580,20 +641,20 @@ a {
 
 .prose h1,
 .prose h2 {
-  font-size: 1.4rem;
+  font-size: 1.3em;
 }
 
 .prose h3 {
-  font-size: 1.2rem;
+  font-size: 1.1em;
 }
 
 .prose h4 {
-  font-size: 1.05rem;
+  font-size: 1em;
 }
 
 .prose ul,
 .prose ol {
-  padding-left: 1.4em;
+  padding-left: 1.3em;
 }
 
 .prose ul {
@@ -608,11 +669,15 @@ a {
   margin-bottom: 0.4em;
 }
 
+.prose li::marker {
+  color: var(--secondary);
+}
+
 .prose a {
+  color: var(--accent);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  color: var(--accent);
   overflow-wrap: anywhere;
 }
 
@@ -641,9 +706,9 @@ a {
 
 .prose pre {
   overflow-x: auto;
-  padding: 16px;
+  padding: var(--s2);
   background: var(--code-bg);
-  font-size: 0.9rem;
+  font-size: 0.85em;
   line-height: 1.5;
 }
 
@@ -663,19 +728,19 @@ a {
   overflow-x: auto;
   border-collapse: collapse;
   font-family: var(--sans);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
 }
 
 .prose th,
 .prose td {
-  padding: 8px 12px;
+  padding: var(--s1) 12px;
   border-bottom: 1px solid var(--rule);
   text-align: left;
 }
 
 /* Book page */
 .book-page .page-title {
-  font-size: min(clamp(2.375rem, 1.4rem + 3.6vw, 3.875rem), 13vw);
+  font-size: var(--text-display);
 }
 
 .book-page .prose {
@@ -685,26 +750,23 @@ a {
 /* ------------------------------------------------------------------
    Footer
    ------------------------------------------------------------------ */
-.site-footer {
-  margin-top: 48px;
-}
-
 .site-footer .shell {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px 32px;
-  padding-block: 24px 32px;
+  gap: var(--s1) var(--s4);
+  margin-top: var(--s5);
+  padding-block: var(--s3) var(--s4);
   border-top: 1px solid var(--rule);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
 }
 
 .footer-id {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0 20px;
+  gap: 0 var(--s3);
 }
 
 .footer-id .wordmark {
@@ -715,7 +777,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0 20px;
+  gap: 0 var(--s3);
   margin: 0;
   padding: 0;
   list-style: none;

@@ -28,7 +28,7 @@ export default function CryptoPage() {
       </header>
 
       {posts.length > 0 ? (
-        <WritingList posts={posts} showExcerpt />
+        <WritingList posts={posts} />
       ) : (
         <p className="empty-note">No digests published.</p>
       )}
