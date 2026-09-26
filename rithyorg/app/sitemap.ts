@@ -1,49 +1,29 @@
 import { MetadataRoute } from "next";
-import { getAllCryptoDigests } from "@/lib/content";
+import { SITE_URL, getWritingIndex } from "@/lib/content";
 
 export const dynamic = "force-static";
 
+// Published routes only. Drafts are filtered out by getWritingIndex().
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllCryptoDigests();
+  const posts = getWritingIndex();
+  const latest = posts[0]?.date ? new Date(posts[0].date) : undefined;
 
-  const digestRoutes = posts.map((post) => ({
-    url: `https://rithy.org/crypto/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "daily" as const,
-    priority: 0.8,
-  }));
+  const pages: MetadataRoute.Sitemap = [
+    { url: SITE_URL, lastModified: latest, priority: 1 },
+    { url: `${SITE_URL}/book`, priority: 0.9 },
+    { url: `${SITE_URL}/writing`, lastModified: latest, priority: 0.8 },
+    { url: `${SITE_URL}/crypto`, priority: 0.5 },
+    { url: `${SITE_URL}/about`, priority: 0.7 },
+    { url: `${SITE_URL}/privacy`, priority: 0.1 },
+    { url: `${SITE_URL}/terms`, priority: 0.1 },
+  ];
 
   return [
-    {
-      url: "https://rithy.org",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1,
-    },
-    {
-      url: "https://rithy.org/crypto",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: "https://rithy.org/writing",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: "https://rithy.org/projects",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: "https://rithy.org/about",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    ...digestRoutes,
+    ...pages,
+    ...posts.map((post) => ({
+      url: `${SITE_URL}${post.href}`,
+      lastModified: post.date ? new Date(post.date) : undefined,
+      priority: post.collection === "posts" ? 0.7 : 0.4,
+    })),
   ];
 }

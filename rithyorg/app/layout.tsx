@@ -1,22 +1,27 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Navigation from "./navigation";
-import Footer from "./footer";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import SiteHeader from "./components/site-header";
+import SiteFooter from "./components/site-footer";
+import { AUTHOR, SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "The Living Archive — Rithy",
-    template: "%s — The Living Archive",
+    default: AUTHOR,
+    template: `%s · ${AUTHOR}`,
   },
-  description: "Personal archive of writings, crypto digests, and projects by Rithy.",
-  metadataBase: new URL("https://rithy.org"),
+  description:
+    "Writing by rithythul, founder of SmallWorld, from Phnom Penh, Cambodia.",
+  authors: [{ name: AUTHOR, url: SITE_URL }],
+  openGraph: {
+    siteName: AUTHOR,
+    locale: "en_US",
+    type: "website",
+  },
 };
+
+// Apply the saved or system theme before first paint (existing behaviour).
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`;
 
 export default function RootLayout({
   children,
@@ -25,31 +30,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <Navigation />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <ThemeScript />
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
+        <SiteFooter />
       </body>
     </html>
-  );
-}
-
-function ThemeScript() {
-  return (
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-          (function() {
-            try {
-              const theme = localStorage.getItem('theme');
-              if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-              }
-            } catch(e) {}
-          })();
-        `,
-      }}
-    />
   );
 }
