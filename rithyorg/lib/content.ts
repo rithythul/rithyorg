@@ -57,6 +57,17 @@ export function stripLeadingTitle(markdown: string, title: string): string {
   return markdown.slice(match[0].length);
 }
 
+/**
+ * Keep one H1 per page. If a body uses H1 for its own headline, shift every
+ * heading down a level so the hierarchy inside the body is preserved.
+ */
+export function demoteHeadings(html: string): string {
+  if (!/<h1[\s>]/.test(html)) return html;
+  return html.replace(/<(\/?)h([1-5])(?=[\s>])/g, (_, slash, level) =>
+    `<${slash}h${Number(level) + 1}`
+  );
+}
+
 export function parsePost(
   raw: string,
   slug: string,
@@ -74,18 +85,20 @@ export function parsePost(
     href,
     title,
     date: toIsoDate(data.date),
-    excerpt: (data.excerpt as string) || "",
+    // Older essays use `description` for the summary.
+    excerpt: (data.excerpt as string) || (data.description as string) || "",
     tags,
     topic:
       (data.topic as string) ||
-      (collection === "crypto" ? "Crypto digest" : tags[0] || "Essay"),
+      (collection === "crypto" ? "Crypto digest" : "Essay"),
     author:
       (data.author as string) || (collection === "posts" ? AUTHOR : ""),
     lang: (data.lang as string) || "en",
     featured: data.featured === true,
-    draft: data.draft === true,
+    // Older essays mark drafts with `status: "draft"`.
+    draft: data.draft === true || data.status === "draft",
     canonicalUrl: (data.canonicalUrl as string) || `${SITE_URL}${href}`,
-    content: marked.parse(body, { async: false }) as string,
+    content: demoteHeadings(marked.parse(body, { async: false }) as string),
   };
 }
 
@@ -136,10 +149,13 @@ export function getWritingIndex(): Post[] {
 }
 
 /**
- * Homepage selection: items marked `featured: true` first, then the most
- * recent published items to fill the list.
+ * Homepage selection: essays marked `featured: true` first, then the newest
+ * essays. Falls back to everything published when there are no essays.
  */
-export function getCurated(count = 4, items = getWritingIndex()): Post[] {
+export function getCurated(
+  count = 4,
+  items = getAllWritingPosts().length ? getAllWritingPosts() : getWritingIndex()
+): Post[] {
   const featured = items.filter((p) => p.featured);
   const rest = items.filter((p) => !p.featured);
   return [...featured, ...rest].slice(0, count);

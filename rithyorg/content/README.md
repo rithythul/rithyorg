@@ -23,12 +23,13 @@ Essays and notes. Front matter:
 title: "Title"
 date: 2026-10-01        # real publication date; omit if unknown
 excerpt: "One or two sentences for lists and search results."
-topic: "SmallWorld"     # short label shown in lists (defaults to first tag)
+topic: "Essay"          # short label shown in lists (default "Essay")
 tags: [smallworld]
 author: "rithythul"     # default for new essays
 lang: "en"              # use "km" for Khmer
 featured: true          # optional: pin to the homepage list
 draft: true             # drafts are left out of routes, lists, and the sitemap
+                        # (older posts use status: "draft", which also works)
 ```
 
 ## `crypto/*.md` → `/crypto/<file-name>`

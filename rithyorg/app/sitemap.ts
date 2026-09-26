@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/writing`, lastModified: latest, priority: 0.8 },
     { url: `${SITE_URL}/crypto`, priority: 0.5 },
     { url: `${SITE_URL}/about`, priority: 0.7 },
+    { url: `${SITE_URL}/projects`, priority: 0.4 },
+    { url: `${SITE_URL}/social`, priority: 0.3 },
     { url: `${SITE_URL}/privacy`, priority: 0.1 },
     { url: `${SITE_URL}/terms`, priority: 0.1 },
   ];

@@ -34,19 +34,35 @@ Simplicity comes from saying no. Keep these when changing the site:
 
 | URL | Before | After |
 |---|---|---|
-| `/` | Crypto digest cards | Home: hero, book, notes & writing, SmallWorld |
+| `/` | Crypto digest cards | Home: hero, book, four featured essays, SmallWorld |
 | `/book` | none | Book page (new) |
-| `/writing` | "Coming soon" | Full index: essays and crypto digests, by year |
-| `/writing/<slug>` | none | Essays from `content/posts/*.md` (none published yet) |
+| `/writing` | "Coming soon" | Full index: 15 essays and 8 crypto digests, by year |
+| `/writing/<slug>` | none on `main` | The 15 essays from the previous site, same slugs (see below) |
 | `/crypto` | Digest cards and filter buttons that did nothing | Digest series index (kept, out of main nav) |
 | `/crypto/<slug>` | 8 digests | Same 8 URLs and canonicals, new article layout |
 | `/about` | Generic archive text | Short factual biography |
-| `/projects` | Empty "Coming soon" | **308 permanent redirect to `/about`** |
+| `/projects` | Empty "Coming soon" | Project list restored from the previous site |
+| `/social` | none on `main` | Social links restored from the previous site |
 | `/privacy`, `/terms` | Kept | Kept, text unchanged. The footer "Terms" link used to point to `/privacy`; now fixed |
 | `/sitemap.xml`, `/robots.txt` | Kept | Sitemap lists published routes only; `/projects` removed, `/book` added |
 
 There were no feeds, forms, subscriptions, images, or Khmer content in the
 repository. Nothing like that was removed.
+
+### Essays from the previous site
+
+`main` did not contain the essays. They were on older branches of this
+repository with unrelated history (`v2`, `feat-minimalist-typography-redesign`).
+The 15 posts in `content/posts/` were copied verbatim from commit `23a3aab`,
+the last content commit by rithythul. The only change is a `featured: true`
+line on the four essays shown on the homepage. Their front matter
+(`description`, `status: "draft"`) is read as-is. Where an essay body uses an
+H1, its headings are shifted down one level so the page keeps a single H1.
+
+Not carried over: `book/toc.md` (manuscript planning, not for publication),
+the cross-posting workflow (it posts to social networks and needs secrets and
+a script not in this history), and Vercel Analytics (not re-added without a
+decision).
 
 ## Deployment
 
@@ -60,11 +76,11 @@ Before cutover:
 1. Deploy this branch as a preview on the existing host. On Vercel, preview
    URLs are sent with `X-Robots-Tag: noindex` automatically. Other hosts
    need the equivalent set up.
-2. Check that the live rithy.org serves nothing this repository lacks, such
-   as older essays from another system. If it does, add them to
-   `content/posts/` with their original slugs, or add redirects, first.
-3. Set the project root to `rithyorg/` and the build command to
-   `bun run build`.
+2. Check the preview against the live site: every live `/writing/<slug>`
+   should load on the preview too.
+3. The previous site lived at the repository root. This one lives in
+   `rithyorg/`, so the Vercel project's Root Directory must be `rithyorg`,
+   install `bun install`, build `bun run build`.
 
 Cutover: promote the reviewed preview to production.
 

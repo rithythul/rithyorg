@@ -1,6 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import path from "path";
 import {
+  demoteHeadings,
   formatDate,
   getCurated,
   getPublished,
@@ -47,6 +48,28 @@ describe("existing URLs", () => {
     }
   });
 
+  test("every essay from the previous site keeps its /writing/<slug> URL", () => {
+    const essays = [
+      "believe-vs-fact",
+      "bicycle-philosophy-business",
+      "bitcoin-2025",
+      "bitcoin-analysis-2025",
+      "bitcoin-max-supply",
+      "choices",
+      "finding-a-path",
+      "fools",
+      "future-tech-city",
+      "linux-labs-rural-cambodia",
+      "meditation-startup-life",
+      "new-blog",
+      "rwa",
+      "startup-ecosystem",
+      "thirteen-years-building-cambodia",
+    ];
+    const hrefs = getWritingIndex().map((p) => p.href);
+    for (const slug of essays) expect(hrefs).toContain(`/writing/${slug}`);
+  });
+
   test("no item appears twice in the index", () => {
     const hrefs = getWritingIndex().map((p) => p.href);
     expect(new Set(hrefs).size).toBe(hrefs.length);
@@ -59,7 +82,24 @@ describe("rendering", () => {
     expect(stripLeadingTitle("# Other\n\nBody", "Title")).toContain("# Other");
   });
 
-  test("digest bodies do not render a second h1", () => {
+  test("body headings shift down a level when a body uses h1", () => {
+    expect(demoteHeadings("<h1>A</h1><h2 id=\"b\">B</h2>")).toBe(
+      "<h2>A</h2><h3 id=\"b\">B</h3>"
+    );
+    expect(demoteHeadings("<h2>A</h2>")).toBe("<h2>A</h2>");
+  });
+
+  test("older front matter: description and status", () => {
+    const post = parsePost(
+      '---\ntitle: A\ndescription: "Summary"\nstatus: "draft"\n---\n',
+      "a",
+      "posts"
+    );
+    expect(post.excerpt).toBe("Summary");
+    expect(post.draft).toBe(true);
+  });
+
+  test("no page body renders a second h1", () => {
     for (const post of getWritingIndex()) {
       expect(post.content).not.toContain("<h1");
     }

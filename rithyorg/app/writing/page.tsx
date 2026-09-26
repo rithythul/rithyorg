@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import WritingList from "../components/writing-list";
+import WritingList, { hasMixedTopics } from "../components/writing-list";
 import { getWritingIndex, type Post } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ function groupByYear(posts: Post[]): [string, Post[]][] {
 
 export default function WritingPage() {
   const posts = getWritingIndex();
+  const showTopic = hasMixedTopics(posts);
 
   return (
     <div className="shell">
@@ -40,7 +41,7 @@ export default function WritingPage() {
             <h2 id={`year-${year}`} className="year-heading">
               {year}
             </h2>
-            <WritingList posts={items} />
+            <WritingList posts={items} showTopic={showTopic} />
           </section>
         ))
       )}

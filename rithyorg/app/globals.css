@@ -102,8 +102,13 @@ li {
   text-wrap: pretty;
 }
 
+/* Links in running text are underlined; navigation, rows, and buttons
+   opt out below. */
 a {
   color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 ::selection {
@@ -789,7 +794,13 @@ main:focus {
   align-items: center;
   min-height: 44px;
   color: var(--secondary);
+  text-decoration: none;
   text-underline-offset: 4px;
+}
+
+.footer-links a:hover,
+.theme-toggle:hover {
+  text-decoration: underline;
 }
 
 .theme-toggle {
@@ -797,7 +808,25 @@ main:focus {
   background: none;
   border: 0;
   font: inherit;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
   cursor: pointer;
+}
+
+/* Name-and-note rows (projects, social) */
+.writing-list.pairs .writing-row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+}
+
+.writing-row .row-note {
+  font-size: var(--text-sm);
+  color: var(--secondary);
+}
+
+@media (max-width: 800px) {
+  .writing-list.pairs .writing-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .writing-list.pairs .writing-row .title {
+    grid-row: auto;
+  }
 }
