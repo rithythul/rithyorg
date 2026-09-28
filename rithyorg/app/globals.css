@@ -23,6 +23,7 @@
   --color-fg: #34233f;
   --color-muted: #6b5a78;
   --color-border: #34233f;
+  --color-rule: color-mix(in srgb, var(--color-border) 35%, transparent);
   --color-accent: #0b6b4c;
   --color-feature: #ffeec8;
   --color-on-accent: #fff8e8;
@@ -209,9 +210,6 @@ main:focus {
 }
 
 
-.site-header {
-  border-bottom: 1px solid var(--color-border);
-}
 
 .navigation {
   min-height: 102px;
@@ -362,7 +360,7 @@ main:focus {
 }
 
 .smallworld-section {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-rule);
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
@@ -375,7 +373,6 @@ main:focus {
 
 
 .book-feature {
-  border-block: 1px solid var(--color-border);
   background: var(--color-feature);
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -430,7 +427,6 @@ main:focus {
 .book-page-header {
   background: var(--color-feature);
   padding: 44px 48px;
-  border-block: 1px solid var(--color-border);
 }
 
 .book-page-header .book-title {
@@ -460,11 +456,11 @@ main:focus {
   list-style: none;
   padding: 0;
   margin: 0;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-rule);
 }
 
 .writing-list li {
-  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 35%, transparent);
+  border-bottom: 1px solid var(--color-rule);
 }
 
 .home-writing .writing-list li:last-child {
@@ -583,7 +579,7 @@ main:focus {
 }
 
 .article-header {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-rule);
   padding-bottom: 28px;
   margin-bottom: 32px;
 }
@@ -604,9 +600,7 @@ main:focus {
 }
 
 .article-end {
-  border-top: 1px solid var(--color-border);
   margin-top: 40px;
-  padding-top: 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -724,7 +718,7 @@ main:focus {
 
 .prose hr {
   border: 0;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-rule);
   margin: 32px 0;
 }
 
@@ -736,7 +730,7 @@ main:focus {
 
 
 .site-footer {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-rule);
   padding-block: 32px 20px;
 }
 

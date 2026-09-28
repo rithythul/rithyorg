@@ -4,7 +4,7 @@ import { getCuratedPosts } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 
 const intro =
-  "I started smallworld. I write about the things we build, the people I learn from, and life along the way.";
+  "I build startups in Cambodia with smallworld. I write about the companies we start, the people I learn from, and the life around the work.";
 
 export const metadata = {
   ...pageMetadata("Writing, Building, Startup", intro, "/"),

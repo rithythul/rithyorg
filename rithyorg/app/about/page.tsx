@@ -2,7 +2,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "About",
-  "I started smallworld and KOOMPI. I live in Cambodia and write about work and life along the way.",
+  "I started smallworld and KOOMPI. I live in Cambodia and write about building startups and the life around the work.",
   "/about",
 );
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
 
         <h2>Writing</h2>
         <p>
-          I write about the things we build, the people I learn from, and life along the way. I’m also
+          I write about the companies we start, the people I learn from, and the life around the work. I’m also
           writing my first book, <a href="/book">The Things We Chose to Build</a>.
         </p>
       </div>

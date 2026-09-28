@@ -3,12 +3,15 @@
   "author": "rithythul",
   "status": "Writing in progress",
   "publicationNote": "Working title · Publication date to come",
-  "summary": "The people, experiments, mistakes, and choices behind what we built at smallworld.",
-  "homeNote": "My life is the thread connecting the story. But I am not the main subject.",
+  "summary": "A book about the people, experiments, mistakes, and choices behind the companies we built at smallworld.",
+  "homeNote": "It keeps the unfinished parts in: the doubts, the failures, and the changes of mind.",
   "description": [
-    "My life is the thread connecting the story, but I am not the main subject.",
     "The book is about the experiences, people, ideas, companies, technologies, failures, experiments, and choices that led us to build what we built around smallworld.",
     "The imperfections, contradictions, uncertainty, mistakes, unfinished ideas, and changes of mind are part of the story."
   ],
-  "relatedSlugs": ["thirteen-years-building-cambodia", "bicycle-philosophy-business", "finding-a-path"]
+  "relatedSlugs": [
+    "thirteen-years-building-cambodia",
+    "bicycle-philosophy-business",
+    "finding-a-path"
+  ]
 }
