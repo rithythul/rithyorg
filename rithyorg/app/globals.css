@@ -444,11 +444,18 @@ main:focus {
 }
 
 .book-description {
-  padding-block: 48px 35px;
+  max-width: 640px;
+  margin-top: 28px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.book-description p:last-child {
+  margin-bottom: 0;
 }
 
 .book-related {
-  margin-top: 24px;
+  margin-top: 64px;
 }
 
 
@@ -991,8 +998,12 @@ main:focus {
   }
 
   .book-description {
-    width: 100%;
-    padding-top: 32px;
+    margin-top: 20px;
+    font-size: 1.125rem;
+  }
+
+  .book-related {
+    margin-top: 48px;
   }
 
   .article {

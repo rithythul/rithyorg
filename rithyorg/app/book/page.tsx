@@ -12,15 +12,14 @@ export default function BookPage() {
         <p className="label">My first book</p>
         <h1 className="book-title">{book.title}</h1>
         <p className="book-author">{book.author}</p>
+        <div className="book-description">
+          {book.description.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
         <p className="status">{book.status}</p>
         <p className="meta">{book.publicationNote}</p>
       </header>
-
-      <div className="reading book-description prose">
-        {book.description.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </div>
 
       <section className="book-related" aria-labelledby="related-title">
         <div className="section-heading">
