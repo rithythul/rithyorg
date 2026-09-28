@@ -16,25 +16,32 @@ export default function AboutPage() {
 
         <h2>Building</h2>
         <p>
-          I also work on Selendra, StadiumX, and VitaminAir. The aim is profitable businesses, run by the people
-          who build them. <a href="https://smallworld.xyz/">smallworld</a> has the current news on each company.
+          I also work on Selendra, StadiumX, and VitaminAir. I want to build profitable businesses.{" "}
+          <a href="https://smallworld.xyz/">smallworld</a> has current information on each company.
         </p>
 
         <h2>Learning</h2>
         <p>
-          I learn by running companies, and away from them: cycling, camping, running, time in nature, and long
-          conversations. I want a free life, close to nature.
+          I learn by experimenting, by running companies, and from people I count as mentors, whether they know
+          it or not.
         </p>
 
         <h2>Writing</h2>
         <p>
-          I write down what the work teaches me. My first book, <a href="/book">{book.title}</a>, is in progress.
+          I write down what the work teaches me. My first book, <a href="/book">{book.title}</a>, follows my
+          journey of learning while building. It is in progress.
+        </p>
+
+        <h2>Outside work</h2>
+        <p>
+          Cycling, camping, running, time in nature, and long conversations. I want a free life, close to
+          nature.
         </p>
 
         <h2>Work with me</h2>
         <p>
-          Young Cambodians who want to build, partners, funders, and investors: start at{" "}
-          <a href="https://smallworld.xyz/">smallworld</a>, or <a href="/social">reach me directly</a>.
+          To build with smallworld, partner, fund, or invest, start at{" "}
+          <a href="https://smallworld.xyz/">smallworld</a> or <a href="/social">write to me</a>.
         </p>
       </div>
       <a className="text-link" href="/writing">
