@@ -19,7 +19,7 @@ What worked was different. smallworld the co-working space created more value th
 
 KOOMPI started as a computer company and became an education mission. We have now set up 63 computer labs in schools. Training the next generation turned out to matter more than serving the current one.
 
-Selendra works because it solves Cambodian problems: land registration, loyalty programs, supply chain transparency. It is built for local needs with global technology.
+Selendra is built for local needs with global technology.
 
 We plan for 5 to 10 years and execute in 90-day cycles. Cambodia's bureaucracy and infrastructure require patience, but opportunities move fast.
 

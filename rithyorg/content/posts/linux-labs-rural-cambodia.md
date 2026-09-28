@@ -25,24 +25,24 @@ Teachers love Google Docs, Canva, and Khan Academy, and all of them work on Linu
 
 Teachers are used to pirated Windows and Office, and they don't see the legal or security risks. Free and legal feels suspicious when illegal and expensive feels normal.
 
-Local computer shops know how to fix Windows, not Linux. When something breaks, schools want to call the shop down the street, not search Ubuntu forums.
+Local computer shops know how to fix Windows, not Linux. When something breaks, schools want to call the shop down the street, not search Linux forums.
 
-There are small wins. Give a 12-year-old Ubuntu and they are productive within hours. Adults bring Windows habits; kids bring curiosity.
+There are small wins. Give a 12-year-old a Linux computer and they are productive within hours. Adults bring Windows habits; kids bring curiosity.
 
 Visual programming languages work well for introducing logic. Students build games and animations without getting lost in syntax.
 
 When teachers find they can update every computer in the lab with a single command, Linux stops feeling foreign and starts feeling useful.
 
-We are learning that schools care more about computers that work reliably for five years than about the latest specs. Ubuntu LTS delivers that.
+We are learning that schools care more about computers that work reliably for five years than about the latest specs. Linux delivers that.
 
 We are developing Khmer-language programming tutorials, with examples relevant to Cambodian students. Global tools need local context.
 
 Each school that succeeds becomes a reference for five more. Word of mouth is slower than a top-down mandate, but it sticks.
 
-Installing 63 labs taught us this isn't about turning teachers into Linux believers. It is about giving students access to computers and the ideas behind them. Whether they use Windows or Linux in their careers matters less than whether they understand how computers work.
+Installing 63 labs taught us that the work is giving students access to computers and the ideas behind them, so they understand how computers work, not only how to use one program.
 
 In 10 years, the students using these labs will build Cambodia's next technology companies. They will choose their own tools then. Our job is to make sure they have the foundation to choose well.
 
-The goal isn't 1,000 schools running Linux. It is 1,000 schools where students learn to think computationally, solve problems step by step, and see technology as something they can create, not only consume.
+The goal is schools where students learn to think computationally, solve problems step by step, and see technology as something they can create, not only consume.
 
-Sometimes progress looks like compromise. But every student who learns to code on an open-source system learns that knowledge should be free, tools should be accessible, and barriers to learning are bugs to fix.
+Every student who learns to code on an open-source system learns that knowledge should be free, tools should be accessible, and barriers to learning are bugs to fix.

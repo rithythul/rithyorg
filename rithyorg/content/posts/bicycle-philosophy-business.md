@@ -60,6 +60,6 @@ These lessons carry over to building companies, because both need:
 - Handling setbacks without losing momentum
 - Self-reliance balanced with the right partnerships
 
-After 13 years of building businesses and thousands of kilometers on two wheels, I am convinced the mental skills are the same. Both teach patience, persistence, and the value of steady effort over dramatic gestures.
+After 13 years of building startups and thousands of kilometers on two wheels, I am convinced the mental skills are the same. Both teach patience, persistence, and the value of steady effort over dramatic gestures.
 
 The next time your startup faces a steep climb: shift down, keep your cadence, keep pedaling. The top is closer than you think.

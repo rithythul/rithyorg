@@ -7,7 +7,7 @@ status: "published"
 crossPosted: true
 ---
 
-Every morning, I sit for 30 minutes before checking email. It isn't for show. After 13 years of building startups, meditation is the most practical business tool I have.
+I meditate for short periods between working hours, and on bad news before I react. It isn't for show. After 13 years of building startups, meditation is the most practical business tool I have.
 
 In a startup, every email, meeting, and decision feels like life or death. Answer the investor now. Fix the server now. Hire someone yesterday. That constant urgency leads to poor judgment.
 
@@ -33,7 +33,7 @@ Instead, I went on a week-long meditation retreat.
 
 The space brought clarity: we were trying to be a computer company, a software developer, and an education provider at once. Trying to excel at everything meant excelling at nothing.
 
-We refocused on education, partnered for manufacturing, and kept developing open source. The decision came from stillness, not panic. Three years later, we have 63 school labs because we stopped trying to do everything.
+We refocused on education, partnered for manufacturing, and kept developing open source. The decision came from stillness, not panic.
 
 People say meditation makes you passive. It doesn't; it makes you responsive instead of reactive. Thoughtful action and impulsive motion are different things.
 
@@ -53,6 +53,6 @@ Entrepreneurship is a marathon, not a sprint. Meditation helps keep your energy 
 
 After 13 years of building companies, I am convinced the most important startup skill isn't coding, marketing, or fundraising. It is the ability to pause, observe clearly, and respond wisely.
 
-That skill starts with sitting quietly for 30 minutes each morning, watching your breath, and training your mind to see what is actually there instead of what you fear or hope is there.
+That skill starts with sitting quietly for a few minutes, watching your breath, and training your mind to see what is actually there instead of what you fear or hope is there.
 
 The world changes fast enough without our minds making it feel faster.
