@@ -1,0 +1,57 @@
+[
+  {
+    "title": "smallworld",
+    "description": "A venture builder ecosystem based in Phnom Penh. We provide the space, capital, and mentorship for Cambodia's next generation of startups.",
+    "url": "https://smallworld.xyz/"
+  },
+  {
+    "title": "KOOMPI",
+    "description": "Compute for Cambodia. Building affordable, Linux-based hardware and software tools for students and engineers.",
+    "url": "https://koompi.com"
+  },
+  {
+    "title": "KOOMPI OS",
+    "description": "Linux-based operating system for education and productivity.",
+    "url": "https://koompi.org"
+  },
+  {
+    "title": "Weteka",
+    "description": "A digital school platform designed for 21st-century education.",
+    "url": "https://weteka.org"
+  },
+  {
+    "title": "Selendra",
+    "description": "An EVM-compatible blockchain network bridging Cambodia to the global Web3 ecosystem.",
+    "url": "https://selendra.org"
+  },
+  {
+    "title": "VitaminAir",
+    "description": "A reforestation and sustainable living community pilot, exploring regenerative land practices.",
+    "url": "https://vitaminair.org"
+  },
+  {
+    "title": "Baray",
+    "description": "A seamless payment gateway for startups and SMEs to accept payments easily.",
+    "url": null
+  },
+  {
+    "title": "StadiumX",
+    "description": "Sport management platform for merchandise, ticketing, and fan engagement.",
+    "url": "https://stadiumx.asia"
+  },
+  {
+    "title": "Riverbase",
+    "description": "Headless e-commerce solution empowering small businesses to sell online.",
+    "url": "https://riverbase.app"
+  },
+  {
+    "title": "Virtual Office",
+    "description": "Professional virtual space for remote teams and startups to collaborate.",
+    "url": "https://smallworldventure.com"
+  },
+  {
+    "title": "Grood",
+    "description": "Electric bikes for Cambodia, making urban commuting greener and more accessible.",
+    "url": "https://getgrood.com"
+  }
+]
