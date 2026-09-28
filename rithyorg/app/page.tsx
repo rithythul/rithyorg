@@ -4,7 +4,7 @@ import { getCuratedPosts } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 
 const intro =
-  "I build startups in Cambodia with smallworld. I write about the companies we start, the people I learn from, and the life around the work.";
+  "I build startups in Cambodia with smallworld, learn by running them, and write down what the work teaches me.";
 
 export const metadata = {
   ...pageMetadata("Building, Learning, Writing", intro, "/"),
@@ -30,7 +30,7 @@ export default function Home() {
 
       <section className="home-writing" aria-labelledby="writing-title">
         <div className="section-heading">
-          <h2 id="writing-title">Notes &amp; writing</h2>
+          <h2 id="writing-title">Selected writing</h2>
           <a href="/writing">
             All writing <span aria-hidden="true">→</span>
           </a>

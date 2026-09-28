@@ -22,7 +22,7 @@ export async function generateMetadata({ searchParams }: Props) {
   const title = ["Crypto archive", category, page > 1 ? `Page ${page}` : ""].filter(Boolean).join(" · ");
   return pageMetadata(
     title,
-    "Published crypto news, commentary, and digests.",
+    "Crypto news, commentary, and digests from the BitcoinPrahok Crypto Digest. Not investment advice.",
     query.size ? `/crypto?${query}` : "/crypto",
   );
 }
@@ -35,7 +35,7 @@ export default async function CryptoPage({ searchParams }: Props) {
     <div className="shell page">
       <h1>Crypto archive</h1>
       <p className="page-intro">
-        Published news, commentary, and digests.{" "}
+        News, commentary, and digests from the BitcoinPrahok Crypto Digest. Not investment advice.{" "}
         <a href="https://t.me/bitcoinprahok">
           BitcoinPrahok on Telegram <span aria-hidden="true">↗</span>
         </a>

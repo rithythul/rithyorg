@@ -24,6 +24,7 @@ Lab and headless-browser results only; no real readers, real devices or field da
 - The company is written "smallworld" in all site copy; the two historical essays that say "SmallWorld" are left as published.
 - Page titles in Bagel Fat One use smallworld's gold sticker treatment (gold fill, ink stroke, hard ink shadow), as smallworld.xyz does for its display titles; section headings, the book title and article titles stay plain ink.
 - Layout lines reduced: none under the header, around the book panel or above the article footer; the remaining section, list, article-title and footer lines are 35% ink. Control and table borders stay full strength (Jev: `layout_lines remove_redundant_soften_rest p=1.0`).
+- Site copy follows the Building / Learning / Writing pattern: one name per section ("Writing", "Essays", "Crypto archive"), plain project descriptions without hype words, /about in Building, Learning, Writing and Work with me sections, and an email address on Connect for partners, funders and investors.
 - The home intro and book copy were rewritten; "My life is the thread connecting the story" was an authoring note, not reader copy, and is gone from home and `/book`.
 - `/terms` and `/crypto/privacy` restore the live legal text verbatim instead of redirecting to `/privacy` (Jev: `legal_pages restore_live_verbatim p=0.99`).
 

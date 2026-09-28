@@ -13,7 +13,7 @@ export default function Article({ post }: { post: Post }) {
       </a>
       <header className="article-header">
         <p className="meta">
-          {post.section === "crypto" ? "Crypto archive" : "Notes & writing"}
+          {post.section === "crypto" ? "Crypto archive" : "Essay"}
           {post.date && (
             <>
               {" · "}

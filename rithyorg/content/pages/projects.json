@@ -1,57 +1,57 @@
 [
   {
     "title": "smallworld",
-    "description": "A venture builder ecosystem based in Phnom Penh. We provide the space, capital, and mentorship for Cambodia's next generation of startups.",
+    "description": "Starts companies in Phnom Penh with young Cambodians, who learn beside the team and go on to lead companies of their own.",
     "url": "https://smallworld.xyz/"
   },
   {
     "title": "KOOMPI",
-    "description": "Compute for Cambodia. Building affordable, Linux-based hardware and software tools for students and engineers.",
+    "description": "Affordable Linux laptops and software for students and engineers in Cambodia.",
     "url": "https://koompi.com"
   },
   {
     "title": "KOOMPI OS",
-    "description": "Linux-based operating system for education and productivity.",
+    "description": "A Linux operating system for schools and everyday work.",
     "url": "https://koompi.org"
   },
   {
     "title": "Weteka",
-    "description": "A digital school platform designed for 21st-century education.",
+    "description": "A digital school platform.",
     "url": "https://weteka.org"
   },
   {
     "title": "Selendra",
-    "description": "An EVM-compatible blockchain network bridging Cambodia to the global Web3 ecosystem.",
+    "description": "An EVM-compatible blockchain network from Cambodia.",
     "url": "https://selendra.org"
   },
   {
     "title": "VitaminAir",
-    "description": "A reforestation and sustainable living community pilot, exploring regenerative land practices.",
+    "description": "A pilot community for reforestation and sustainable living, testing regenerative land practices.",
     "url": "https://vitaminair.org"
   },
   {
     "title": "Baray",
-    "description": "A seamless payment gateway for startups and SMEs to accept payments easily.",
+    "description": "A payment gateway that lets startups and small businesses accept payments.",
     "url": null
   },
   {
     "title": "StadiumX",
-    "description": "Sport management platform for merchandise, ticketing, and fan engagement.",
+    "description": "Ticketing, merchandise, and fan engagement for sport.",
     "url": "https://stadiumx.asia"
   },
   {
     "title": "Riverbase",
-    "description": "Headless e-commerce solution empowering small businesses to sell online.",
+    "description": "Headless e-commerce for small businesses selling online.",
     "url": "https://riverbase.app"
   },
   {
     "title": "Virtual Office",
-    "description": "Professional virtual space for remote teams and startups to collaborate.",
+    "description": "A virtual workspace for remote teams and startups.",
     "url": "https://smallworldventure.com"
   },
   {
     "title": "Grood",
-    "description": "Electric bikes for Cambodia, making urban commuting greener and more accessible.",
+    "description": "Electric bikes for getting around Cambodian cities.",
     "url": "https://getgrood.com"
   }
 ]

@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const post = getPost("crypto", (await params).slug);
   if (!post) notFound();
-  return pageMetadata(post.title, post.excerpt || `${post.title}. From the crypto archive of rithythul.`, post.url);
+  return pageMetadata(post.title, post.excerpt || `${post.title}. From the crypto archive on rithy.org.`, post.url);
 }
 
 export default async function ArticlePage({ params }: Props) {
