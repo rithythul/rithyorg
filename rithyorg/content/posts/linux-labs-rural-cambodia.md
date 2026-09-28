@@ -1,60 +1,48 @@
 ---
 title: "Linux Labs in Rural Cambodia: Real Numbers, Real Challenges"
 date: "2025-01-18"
-description: "Honest update on installing KOOMPI computer labs in 63 Cambodian schools. What works, what doesn't, and why teachers still want Windows."
+description: "An update on installing KOOMPI computer labs in 63 Cambodian schools: what works, what doesn't, and why teachers still want Windows."
 tags: ["koompi", "education", "linux", "cambodia"]
 status: "published"
 crossPosted: true
 ---
 
-We've now installed KOOMPI computer labs in 63 schools across Cambodia. Here's what the numbers don't tell you about bringing Linux to rural education.
+We have now installed KOOMPI computer labs in 63 schools across Cambodia. This is what the numbers don't tell you about bringing Linux to rural schools.
 
-## The Reality on the Ground
+63 schools, 1,500+ computers, 25,000+ students. Those are the easy numbers. The hard ones: only 40% of teachers use the labs regularly, and 60% still ask when we're installing Windows.
 
-63 schools, 1,500+ computers, 25,000+ students. Those are the easy numbers. The hard numbers: only 40% of teachers use the labs regularly. 60% still ask when we're installing Windows.
+Three schools had to delay their lab openings because their electrical systems couldn't run 20 computers at once. In rural areas, stable electricity matters more than processing power.
 
-Three schools had to delay lab openings because their electrical systems couldn't handle 20 computers running simultaneously. In rural areas, stable electricity beats processing power.
+We budgeted two days per school for Linux training. In reality, most teachers need 6 to 8 sessions before they are comfortable. LibreOffice isn't "just like Microsoft Office" when you have only known Windows.
 
-We budgeted two days per school for Linux training. Reality: most teachers need 6-8 sessions before they're comfortable. LibreOffice isn't "just like Microsoft Office" when you've only known Windows.
+Teachers expected us to jump into coding lessons. Instead, we begin with keyboard skills and file management. Students get comfortable with the desktop before they touch terminal commands.
 
-## What Actually Works
+In every school where the lab works, one teacher becomes the Linux advocate. They troubleshoot, train their peers, and speak up for open source. Find that teacher and invest in them.
 
-Teachers expected us to jump into coding lessons. Instead, we begin with basic keyboard skills and file management. Get comfortable with the desktop before diving into terminal commands.
+Teachers love Google Docs, Canva, and Khan Academy, and all of them work on Linux. We stopped fighting the move to web applications and went with it. Sometimes being practical beats being ideological.
 
-In every successful school, one teacher becomes the Linux advocate. They troubleshoot, train peers, and evangelize open source. Find the champion, invest in them heavily.
+"How will students get jobs without Microsoft Office?" This question comes up in every school meeting. The fear is real even if the logic is flawed: most entry-level jobs use web applications, not desktop software.
 
-Teachers love Google Docs, Canva, and Khan Academy—all work perfectly on Linux. We stopped fighting the web application trend and embraced it. Sometimes pragmatism beats ideology.
+Teachers are used to pirated Windows and Office, and they don't see the legal or security risks. Free and legal feels suspicious when illegal and expensive feels normal.
 
-## The Windows Problem
+Local computer shops know how to fix Windows, not Linux. When something breaks, schools want to call the shop down the street, not search Ubuntu forums.
 
-"How will students get jobs without Microsoft Office?" This question comes up in every school meeting. The fear is real even if the logic is flawed. Most entry-level jobs use web applications, not desktop software.
+There are small wins. Give a 12-year-old Ubuntu and they are productive within hours. Adults bring Windows habits; kids bring curiosity.
 
-Teachers are used to pirated Windows and Office. They don't see the legal or security risks. Free and legal feels suspicious when illegal and expensive seems normal.
+Visual programming languages work well for introducing logic. Students build games and animations without getting lost in syntax.
 
-Local computer shops know Windows troubleshooting, not Linux. When something breaks, schools want to call the guy down the street, not search Ubuntu forums.
+When teachers find they can update every computer in the lab with a single command, Linux stops feeling foreign and starts feeling useful.
 
-## Small Victories
+We are learning that schools care more about computers that work reliably for five years than about the latest specs. Ubuntu LTS delivers that.
 
-Give a 12-year-old Ubuntu and they're productive in hours. Adults bring Windows baggage; kids bring curiosity.
+We are developing Khmer-language programming tutorials, with examples relevant to Cambodian students. Global tools need local context.
 
-Visual programming languages work well for introducing logic concepts. Students build games and animations without getting lost in syntax.
+Each school that succeeds becomes a reference for five more. Word of mouth is slower than a top-down mandate, but it sticks.
 
-When teachers discover they can update all lab computers simultaneously with a single command, Linux stops feeling foreign and starts feeling powerful.
+Installing 63 labs taught us this isn't about turning teachers into Linux believers. It is about giving students access to computers and the ideas behind them. Whether they use Windows or Linux in their careers matters less than whether they understand how computers work.
 
-## What We're Learning
+In 10 years, the students using these labs will build Cambodia's next technology companies. They will choose their own tools then. Our job is to make sure they have the foundation to choose well.
 
-Schools care more about computers that work reliably for five years than computers with the latest specs. Ubuntu LTS delivers on this promise.
+The goal isn't 1,000 schools running Linux. It is 1,000 schools where students learn to think computationally, solve problems step by step, and see technology as something they can create, not only consume.
 
-We're developing Khmer language programming tutorials and examples relevant to Cambodian students. Global tools need local context.
-
-Each successful school becomes a reference for five more. Word-of-mouth adoption is slower but stickier than top-down mandates.
-
-## The Long Game
-
-Installing 63 labs taught us this isn't about converting teachers to Linux believers. It's about giving students access to computing tools and concepts. Whether they use Windows or Linux in their careers matters less than whether they understand how computers work.
-
-In 10 years, the students using these labs today will build Cambodia's next generation of technology companies. They'll choose their own tools then. Our job is making sure they have the foundation to choose wisely.
-
-The goal isn't 1,000 schools running Linux. It's 1,000 schools where students learn to think computationally, solve problems systematically, and understand that technology is something they can create, not just consume.
-
-Sometimes progress looks like compromise. But every student who learns to code on an open-source system learns that knowledge should be free, tools should be accessible, and barriers to learning are bugs to be fixed.
+Sometimes progress looks like compromise. But every student who learns to code on an open-source system learns that knowledge should be free, tools should be accessible, and barriers to learning are bugs to fix.

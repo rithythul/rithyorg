@@ -7,74 +7,59 @@ status: "published"
 crossPosted: true
 ---
 
-I've cycled thousands of kilometers across Cambodia, Vietnam, and Thailand. Every long ride teaches something about building businesses that short trips around the block never could.
+I have cycled thousands of kilometers across Cambodia, Vietnam, and Thailand. Every long ride teaches something about building businesses that short trips around the block never could.
 
-## The Gear Myth
+Carbon frames, electronic shifting, aerodynamic wheels: beginning cyclists spend more on gear than on training. Beginning entrepreneurs do the same with tools, funding, and co-working spaces.
 
-Carbon frames, electronic shifting, aerodynamic wheels. Beginning cyclists spend more on gear than training. Sound familiar? Beginning entrepreneurs do the same with tools, funding, and co-working spaces.
+A $10,000 bike won't help if you haven't built the fitness for 100-kilometer days. The latest project management software won't save a team that hasn't learned to work together.
 
-A $10,000 bike won't help if you haven't built the cardiovascular fitness for 100-kilometer days. Similarly, the latest project management software won't save a team that hasn't developed collaborative discipline.
+My first touring bike was a $300 steel frame with basic components. It carried me 2,000 kilometers before I understood which upgrades mattered. Startups are the same: begin with simple tools, and upgrade when you hit real limits.
 
-My first touring bike was a $300 steel frame with basic components. It carried me 2,000 kilometers before I understood what upgrades actually mattered. Same with startups: begin with simple tools, upgrade when you hit real constraints.
+On the first day of a multi-day tour, excitement makes you pedal too hard. By afternoon you are exhausted, with 50 kilometers still to go. A sustainable pace feels slow but covers more ground.
 
-## Pacing for Distance
+Startups sprint for the first six months, then hit the wall when the early energy fades. Building KOOMPI taught me that sustainable growth beats heroic bursts.
 
-On day one of a multi-day tour, excitement makes you pedal too hard. By afternoon, you're exhausted while 50 kilometers remain. Sustainable pace feels slow but covers more ground.
+On a bike, cruising speed is the pace you can hold for hours without exhaustion. In business, it is the rhythm of work you can hold for years. Both need honest self-assessment and a check on ego.
 
-Startups sprint for the first six months, then hit the wall when initial energy fades. Building KOOMPI taught me this: sustainable growth beats heroic bursts.
+You can avoid hills by staying on flat ground, but you will never reach interesting places. Business is the same: avoiding all risk means avoiding all opportunity.
 
-On a bike, cruising speed is the pace you can maintain for hours without exhaustion. In business, it's the work rhythm you can sustain for years. Both require honest self-assessment and ego management.
+On steep climbs, inexperienced cyclists try to push through in a high gear and burn out halfway up. Experienced cyclists shift down, keep their cadence, and reach the top with energy left.
 
-## Hills and Headwinds
+Some days you fight headwinds for hours and make slow progress despite full effort. Other days, tailwinds push you along. Markets are the same: outside forces can matter more than how hard you work.
 
-You can avoid hills by staying in flat areas, but you'll never reach interesting destinations. Business challenges work similarly—avoiding all risks means avoiding all opportunities.
+Look too close and you hit potholes, miss turns, and strain your neck. Look further ahead to see problems and openings coming. Business planning needs the same distant focus.
 
-When facing steep climbs, inexperienced cyclists try to power through in high gear. They burn out halfway up. Smart cyclists shift down, maintain cadence, reach the top with energy remaining.
+The effort of a climb is repaid with easier riding after it. Building smallworld, KOOMPI, and Selendra, the hardest periods came before the biggest breakthroughs.
 
-Sometimes you battle headwinds for hours, making slow progress despite maximum effort. Other days, tailwinds push you effortlessly forward. Market conditions are the same—external forces matter more than your effort level.
+On tours, I aim for a daily distance, not top speed. Consistency covers more ground than intensity. Startup progress is the same: daily work beats quarterly heroics.
 
-## The Long View
+GPS shows the shortest route but misses construction, storm damage, and local knowledge. Business plans also show logical paths that reality interrupts.
 
-Focus too close and you'll hit potholes, miss turns, and tire your neck. Look further ahead to anticipate problems and opportunities. Business planning requires the same distant focus.
+Other cyclists give the best route advice, because they understand your limits and goals. In business, talk to customers and partners, not only to other entrepreneurs.
 
-The effort required to climb always gets rewarded with easier pedaling ahead. When building SmallWorld, KOOMPI, and Selendra, the hardest periods preceded the biggest breakthroughs.
+Weather, mechanical problems, and energy levels force changes of route. Flexible planning beats perfect planning. Building startups in Cambodia needs the same adaptability.
 
-On touring trips, I aim for daily distance targets, not maximum speed. Consistency beats intensity for covering ground. Same with startup progress—daily execution trumps quarterly heroics.
+You can't call roadside assistance in rural Cambodia. Knowing how your bike works stops small problems from ending the ride. Entrepreneurs need the same working knowledge of their business.
 
-## Navigation and Route Planning
+A multi-tool, a spare tube, and tire levers solve 80% of roadside problems. In business, cash reserves, core skills, and key relationships handle most crises.
 
-GPS shows the shortest route but misses construction, weather damage, and local knowledge. Similarly, business plans show logical paths that reality disrupts with unexpected obstacles.
+A slow leak might get you to the next town. A broken chain stops you on the spot. Learning the difference keeps minor problems from becoming major failures.
 
-Other cyclists give the best route advice because they understand your constraints and goals. In business, talk to customers and partners, not just other entrepreneurs.
+Riding alone, no one else sets your pace, chooses your route, or solves your problems. Building a business alone teaches the same independence and accountability.
 
-Weather, mechanical issues, and energy levels force route changes. Flexible planning beats perfect planning. Building startups in Cambodia requires the same adaptability.
+Group tours need coordination: drafting, taking turns in front, sharing supplies. Building teams and partnerships needs the same cooperation.
 
-## Mechanical Philosophy
+Fast and slow riders can't stay together without compromise. Business partnerships are similar: a mismatch in pace and goals creates frustration.
 
-You can't call roadside assistance from rural Cambodia. Understanding your bike's systems prevents small problems from becoming ride-ending failures. Entrepreneurs need similar technical literacy about their businesses.
+Touring by bicycle strips away complexity and shows the basics: a sustainable pace beats sprinting, preparation prevents crisis, and steady progress reaches distant goals better than heroic bursts.
 
-A multi-tool, spare tube, and tire levers solve 80% of roadside problems. In business: cash reserves, core skills, and key relationships handle most crises.
+These lessons carry over to building companies, because both need:
 
-A slow tire leak might get you to the next town. A broken chain stops you immediately. Learning this distinction prevents minor issues from becoming major failures.
-
-## The Solo vs. Group Dynamic
-
-No one else sets your pace, chooses your route, or solves your problems. Solo entrepreneurship builds similar independence and accountability.
-
-Drafting, taking turns leading, sharing supplies—successful group tours require coordination. Building teams and partnerships demands the same cooperative skills.
-
-Fast riders and slow riders can't stay together without compromise. Business partnerships work similarly—mismatched pace and goals create frustration.
-
-## Why This Matters for Business
-
-Bicycle touring strips away complexity and reveals fundamental truths: sustainable pace beats sprint speed, preparation prevents crisis, and consistent progress reaches distant goals better than heroic bursts.
-
-These lessons transfer directly to building companies because both activities require:
 - Long-term thinking with daily execution
-- Resource management and energy conservation  
+- Managing resources and saving energy
 - Handling setbacks without losing momentum
-- Self-reliance balanced with strategic partnerships
+- Self-reliance balanced with the right partnerships
 
-After 13 years of building businesses and thousands of kilometers on two wheels, I'm convinced the mental skills overlap completely. Both teach patience, persistence, and the wisdom of sustainable effort over dramatic gestures.
+After 13 years of building businesses and thousands of kilometers on two wheels, I am convinced the mental skills are the same. Both teach patience, persistence, and the value of steady effort over dramatic gestures.
 
-The next time your startup faces a steep climb, remember: gear down, maintain cadence, keep pedaling. The summit is closer than you think.
+The next time your startup faces a steep climb: shift down, keep your cadence, keep pedaling. The top is closer than you think.

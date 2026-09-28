@@ -17,7 +17,7 @@ import {
 } from "../lib/content";
 import inventory from "../../docs/content-inventory.json";
 const hash = (s: string) => createHash("sha256").update(s).digest("hex");
-test("every original and recovered article remains reachable with its original body text", () => {
+test("every archived article remains reachable; unedited ones keep their original body text", () => {
   assert.equal(getAllWritingPosts().length, 16);
   assert.equal(getAllCryptoDigests().length, 32);
   assert.equal(inventory.length, 48);
@@ -25,7 +25,7 @@ test("every original and recovered article remains reachable with its original b
     const [, section, slug] = record.url.split("/");
     const post = getPost(section as Section, slug);
     assert.ok(post, record.url);
-    if (record.bodyTextSha256) {
+    if (record.bodyTextSha256 && !record.editedAt) {
       const text = sanitizeHtml(post.content, {allowedTags:[],allowedAttributes:{}}).replace(/\s+/g, " ").trim();
       assert.equal(hash(text), record.bodyTextSha256, record.url);
     }

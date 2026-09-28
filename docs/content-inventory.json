@@ -5,7 +5,9 @@
     "format": "HTML body in Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "ff71339ebfd4f9abace360b5afce0d0e572940eac946cccbf341c1052bd42098",
-    "livePublishedDate": "2026-05-04"
+    "livePublishedDate": "2026-05-04",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/rwa",
@@ -13,7 +15,9 @@
     "format": "HTML body in Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "f60499a0699369b37c94bdb2af1b2e747b51d497809a58e712ea7e6f76ce7c39",
-    "livePublishedDate": "2025-06-14"
+    "livePublishedDate": "2025-06-14",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/startup-ecosystem",
@@ -21,7 +25,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "723f73cea64ec6cd1b3bdea086a37ff04f8b59ad4be468f766c5b2ea1055b8ad",
-    "livePublishedDate": "2025-06-10"
+    "livePublishedDate": "2025-06-10",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/bitcoin-analysis-2025",
@@ -29,7 +35,9 @@
     "format": "HTML body in Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "9fe0fe56e29d2c31341cef40b13ebc63d6cf940a330a9ad7e43262a52bc3202a",
-    "livePublishedDate": "2025-05-25"
+    "livePublishedDate": "2025-05-25",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/bitcoin-2025",
@@ -37,7 +45,9 @@
     "format": "HTML body in Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "9fe0fe56e29d2c31341cef40b13ebc63d6cf940a330a9ad7e43262a52bc3202a",
-    "livePublishedDate": "2025-05-25"
+    "livePublishedDate": "2025-05-25",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/thirteen-years-building-cambodia",
@@ -45,7 +55,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "00c3d1321b8cd3d6c8172043b266fe4f752443c95ad31ed1a164f3a1878842a2",
-    "livePublishedDate": "2025-01-18"
+    "livePublishedDate": "2025-01-18",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/meditation-startup-life",
@@ -53,7 +65,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "dc09617a9f487579429f41efe9df2d8eafd60cf41738e96668e2a49216ddffcb",
-    "livePublishedDate": "2025-01-18"
+    "livePublishedDate": "2025-01-18",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/linux-labs-rural-cambodia",
@@ -61,7 +75,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "84e72f0e83ac961e145922c0a28af435d7090e49783963f72d5b730a168d2d80",
-    "livePublishedDate": "2025-01-18"
+    "livePublishedDate": "2025-01-18",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/finding-a-path",
@@ -69,7 +85,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "a85bea79b8917a988ca03538e9842baa538638de184d56fa7a59eb38bb97b37c",
-    "livePublishedDate": "2025-01-18"
+    "livePublishedDate": "2025-01-18",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/bicycle-philosophy-business",
@@ -77,7 +95,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "d0e9f4806825060e7a6e912866a67cc6255c9c6a409e8855e23a4b289696f2c2",
-    "livePublishedDate": "2025-01-18"
+    "livePublishedDate": "2025-01-18",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/believe-vs-fact",
@@ -85,7 +105,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "40f44358bf5aa513e1f4a1fcf575a2b22a9c2730be45b9132690c9a7185ac421",
-    "livePublishedDate": "2024-12-25"
+    "livePublishedDate": "2024-12-25",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/fools",
@@ -93,7 +115,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "fa89311345d6ebc30affa4e677a97375ac2f67e03bb95329371cac87f110148d",
-    "livePublishedDate": "2024-12-21"
+    "livePublishedDate": "2024-12-21",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/bitcoin-max-supply",
@@ -101,7 +125,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "8c99ae5105b86b1adfdfcd4a540a3ccdd2e00745edf12ca768fb70e2687d5016",
-    "livePublishedDate": "2024-12-20"
+    "livePublishedDate": "2024-12-20",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/future-tech-city",
@@ -109,7 +135,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "600cbe9ec07e8d96915923be8d65643ee6d423ce863241d35ae83c688c1c5c1c",
-    "livePublishedDate": "2024-12-05"
+    "livePublishedDate": "2024-12-05",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/choices",
@@ -117,7 +145,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "9c49bfd7f6da59646869a7d9d63c1b330864a8d3a4b1479a32b09908785601e3",
-    "livePublishedDate": "2024-12-01"
+    "livePublishedDate": "2024-12-01",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/writing/new-blog",
@@ -125,7 +155,9 @@
     "format": "original Markdown",
     "bodyMatchesLive": true,
     "bodyTextSha256": "be707f2120f452feebb21f445bb3699cc9e36a188a7a4dea4b3428b95d5e84ca",
-    "livePublishedDate": "2024-11-30"
+    "livePublishedDate": "2024-11-30",
+    "editedAt": "2026-09-28",
+    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
   },
   {
     "url": "/crypto/digest-2026-05-16",

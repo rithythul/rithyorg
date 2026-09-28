@@ -81,13 +81,14 @@ status: "published"
 The 48 article URLs (16 essays, 32 crypto) are recorded in `docs/content-inventory.json` with their provenance:
 
 - 12 essays restored byte-for-byte from `origin/feat-minimalist-typography-redesign`, only where their rendered text matched the live page.
-- 4 essays and 24 crypto articles recovered from the published HTML on 2026-09-28 and stored as sanitized HTML inside Markdown files. Their dates are the live published dates (`livePublishedDate` in the inventory); prose was not edited.
+- 4 essays and 24 crypto articles recovered from the published HTML on 2026-09-28 and stored as sanitized HTML inside Markdown files. Their dates are the live published dates (`livePublishedDate` in the inventory); the crypto prose was not edited.
 - The 8 original `main` digests are unchanged byte-for-byte.
+- On 2026-09-28 all 16 essays were edited for style at rithythul's request: section headings removed, hype and filler cut, every fact, number, date and link kept. The four HTML essays became Markdown. `editedAt` in the inventory marks them; the recovered text is in git history before that commit.
 - `bitcoin-2025` and `bitcoin-analysis-2025` were published with the same body at two URLs; both are kept.
 - `/terms` and `/crypto/privacy` carry the live text verbatim; `/privacy` keeps `main`'s text.
 - The favicon is the live `/favicon.svg`, identical to the copy on `origin/feat-minimalist-typography-redesign`.
 
-`bun test` fails if any archived article disappears, its body text changes, or its date drifts from the live date.
+`bun test` fails if any archived article disappears, its date drifts from the live date, or the body text of an unedited article changes.
 
 ## Deploying
 

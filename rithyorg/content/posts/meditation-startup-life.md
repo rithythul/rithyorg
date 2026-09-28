@@ -1,74 +1,58 @@
 ---
 title: "Why I Put Meditation Before Business Meetings"
 date: "2025-01-18"
-description: "How vipassana meditation practice improves startup decision-making and reduces entrepreneurial stress. Personal insights from 13 years of building ventures."
+description: "How vipassana meditation improves decisions in startup work and reduces stress. Notes from 13 years of building ventures."
 tags: ["meditation", "vipassana", "startup", "philosophy"]
 status: "published"
 crossPosted: true
 ---
 
-Every morning, I sit for 30 minutes before checking email. It's not productivity theater or wellness signaling. After 13 years of building startups, meditation is the most practical business tool I've developed.
+Every morning, I sit for 30 minutes before checking email. It isn't for show. After 13 years of building startups, meditation is the most practical business tool I have.
 
-## The Problem with Startup Mind
+In a startup, every email, meeting, and decision feels like life or death. Answer the investor now. Fix the server now. Hire someone yesterday. That constant urgency leads to poor judgment.
 
-In startup mode, every email, meeting, and decision carries existential weight. Respond to the investor immediately. Fix the server crisis now. Hire someone yesterday. This urgency addiction creates poor judgment.
+Without a pause between what happens and how you respond, you live in crisis mode. Firefighting feels productive but crowds out thinking ahead. You choose speed over accuracy.
 
-Without pause between stimulus and response, you operate in crisis mode constantly. Firefighting feels productive but prevents strategic thinking. You optimize for speed over accuracy.
+Entrepreneurship attracts people who believe they can change the world. That confidence helps in dark moments but hurts when making decisions. Pride makes us defend bad ideas longer than logic would.
 
-Entrepreneurship attracts people who believe they can change the world. That confidence helps during dark moments but hurts during decision-making. Pride makes us defend bad ideas longer than logic suggests.
+In meditation, you notice thoughts and sensations without acting on them. The same skill works in business: observe the problem, understand it fully, then respond deliberately.
 
-## What Vipassana Teaches
+When someone criticizes your product, they are not criticizing you, but ego makes that hard to see. Meditation helps you hold ideas lightly, so feedback and changes of direction are easier to take.
 
-In meditation, you notice thoughts and sensations without jumping to action. This skill transfers directly to business: observe the problem, understand it fully, then respond deliberately.
+Vipassana teaches impermanence. The server crash that feels like a disaster today will be forgotten next month. Remembering that stops you from overreacting to temporary problems.
 
-When someone criticizes your product, they're not criticizing you. But ego makes this distinction difficult. Meditation practice helps you hold ideas lightly, making pivots and feedback easier to process.
+In practice, instead of trying hard to impress investors, I listen to what they want to know. Meditation reduces the anxiety that makes founders oversell and underdeliver.
 
-Vipassana teaches impermanence. The server crash that feels catastrophic today will be forgotten next month. This perspective prevents overreaction to temporary problems.
+When someone brings me a problem, I pause before offering a solution. Often they need to talk it through more than they need my answer.
 
-## Practical Applications
+First impressions and gut feelings can mislead. Meditation helps me notice my biases and look into them instead of acting on them automatically.
 
-Instead of desperately trying to impress, I listen to what investors actually want to know. Meditation reduces the anxiety that makes entrepreneurs oversell and under-deliver.
+In 2019, KOOMPI faced its biggest crisis. Manufacturing delays, cash flow problems, and team conflicts hit at the same time. My first reaction was to work 18-hour days and micromanage everything.
 
-When someone brings me a problem, I pause before jumping to solutions. Often, they need to talk through the issue more than they need my immediate answer.
+Instead, I went on a week-long meditation retreat.
 
-First impressions and gut feelings can mislead. Meditation practice helps me notice my biases and investigate them rather than acting on them automatically.
+The space brought clarity: we were trying to be a computer company, a software developer, and an education provider at once. Trying to excel at everything meant excelling at nothing.
 
-## The KOOMPI Example
+We refocused on education, partnered for manufacturing, and kept developing open source. The decision came from stillness, not panic. Three years later, we have 63 school labs because we stopped trying to do everything.
 
-In 2019, KOOMPI faced our biggest crisis. Manufacturing delays, cash flow problems, and team conflicts hit simultaneously. My initial reaction was to work 18-hour days and micromanage everything.
+People say meditation makes you passive. It doesn't; it makes you responsive instead of reactive. Thoughtful action and impulsive motion are different things.
 
-Instead, I took a week-long meditation retreat.
+People say there is no time for meditation in startup life. The busier the schedule, the more the practice is worth. Meditation isn't time away from work; it is training for better work.
 
-The space created clarity: we were trying to be a computer company, software developer, and education provider simultaneously. Trying to excel at everything meant excelling at nothing.
+People say Eastern philosophy doesn't apply to business. Most meditation techniques are mental training, not religious practice. Seeing your thoughts clearly helps anywhere good judgment is needed.
 
-We refocused on education, partnerships for manufacturing, and open-source development. The decision came from stillness, not panic. Three years later, we have 63 school labs because we stopped trying to do everything.
+The practice is simple. Sit quietly, watch your breathing, notice when your mind wanders to business problems, and gently return to the breath. That's it.
 
-## Common Misconceptions
+Before a change of direction, a hire, or a strategic choice, sit for 20 minutes first. The decision will still be there, and you will approach it more clearly.
 
-"Meditation makes you passive." Wrong. It makes you responsive instead of reactive. There's a difference between thoughtful action and impulsive motion.
+Stuck in traffic or waiting for a meeting? Watch your thoughts instead of checking your phone. Every moment of awareness builds the skill.
 
-"No time for meditation in startup life." The busier the schedule, the more valuable the practice. Meditation isn't time away from work—it's training for better work.
+Over time, problems feel manageable instead of overwhelming, and you see options where you used to see only obstacles. Relationships with team members, investors, and partners improve too: when you are not constantly reacting, people feel heard and respected.
 
-"Eastern philosophy doesn't apply to business." Most meditation techniques are mental training, not religious practice. Observing your thoughts clearly helps in any context requiring good judgment.
+Entrepreneurship is a marathon, not a sprint. Meditation helps keep your energy and perspective for the long run.
 
-## Simple Practice for Entrepreneurs
+After 13 years of building companies, I am convinced the most important startup skill isn't coding, marketing, or fundraising. It is the ability to pause, observe clearly, and respond wisely.
 
-Sit quietly, observe your breathing, notice when your mind wanders to business problems, gently return attention to breath. That's it.
-
-When facing pivots, hires, or strategic choices, sit for 20 minutes first. The decision will still be there, but your approach will be clearer.
-
-Stuck in traffic or waiting for meetings? Practice observing thoughts instead of checking phones. Every moment of awareness builds the skill.
-
-## Results Over Time
-
-Problems feel manageable instead of overwhelming. You see options where you previously saw only obstacles.
-
-With team members, investors, and partners. When you're not constantly reactive, other people feel heard and respected.
-
-Entrepreneurship is a marathon, not a sprint. Meditation helps maintain energy and perspective for the long game.
-
-After 13 years of building companies, I'm convinced the most important startup skill isn't coding, marketing, or fundraising. It's the ability to pause, observe clearly, and respond wisely.
-
-That skill starts with sitting quietly for 30 minutes each morning, watching your breath, and training your mind to see what's actually there instead of what you fear or hope might be there.
+That skill starts with sitting quietly for 30 minutes each morning, watching your breath, and training your mind to see what is actually there instead of what you fear or hope is there.
 
 The world changes fast enough without our minds making it feel faster.
