@@ -55,4 +55,4 @@ Adventures taught me too. The most transformative bike tour was in December 2007
 
 With meditation, I am more aware of my feelings. I meditate for short periods between working hours. I meditate on bad news and try not to overreact.
 
-Looking back, every coffee shop meeting, every kilometer cycled, and every small gathering was building toward something larger. We weren't only drinking coffee or riding bikes; we were laying the groundwork for what came next. Sometimes the most important work happens in the smallest moments, with the simplest tools, and with whatever money is left in your savings account.
+Every coffee shop meeting and every kilometer was groundwork. Start with the simplest tools, and with whatever is left in your savings account.

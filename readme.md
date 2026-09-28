@@ -84,7 +84,8 @@ The 48 article URLs (16 essays, 32 crypto) are recorded in `docs/content-invento
 - 4 essays and 24 crypto articles recovered from the published HTML on 2026-09-28 and stored as sanitized HTML inside Markdown files. Their dates are the live published dates (`livePublishedDate` in the inventory); the crypto prose was not edited.
 - The 8 original `main` digests are unchanged byte-for-byte.
 - On 2026-09-28 all 16 essays were edited for style at rithythul's request: section headings removed, hype and filler cut, every fact, number, date and link kept. The four HTML essays became Markdown. `editedAt` in the inventory marks them; the recovered text is in git history before that commit.
-- `why-your-next-computer-wont-need-a-gpu` was rewritten rather than edited: its generated text was replaced, and its unverifiable prices, tool names and 5G claim were dropped.
+- Five generated essays were rewritten rather than edited, in rithythul's voice: `why-your-next-computer-wont-need-a-gpu`, `thirteen-years-building-cambodia`, `linux-labs-rural-cambodia`, `meditation-startup-life` and `bicycle-philosophy-business`.
+  Their unverifiable figures and anecdotes were dropped (product prices, "over 50 startups", lab counts beyond the 63 labs, the 2019 retreat, the $300 bike); the inventory note says so for each.
 - `bitcoin-2025` and `bitcoin-analysis-2025` were published with the same body at two URLs; both are kept.
 - `/terms` and `/crypto/privacy` carry the live text verbatim; `/privacy` keeps `main`'s text.
 - The favicon is the live `/favicon.svg`, identical to the copy on `origin/feat-minimalist-typography-redesign`.

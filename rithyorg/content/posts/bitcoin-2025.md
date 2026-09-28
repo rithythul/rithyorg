@@ -9,7 +9,7 @@ recoveredAt: "2026-09-28"
 
 Bitcoin trades at $107,582 as of May 25, 2025, just below its $111,814 all-time high. We are 13 months past the April 2024 halving, entering the window where Bitcoin has historically peaked.
 
-The bull case is $150K to $200K, driven by four forces. Bitcoin ETF approval in January 2024 released institutional capital that keeps flowing in. Companies like MicroStrategy, Tesla, and Block holding Bitcoin in their treasuries create steady buying pressure, as firms allocate 1-10% of cash reserves to it. Every previous halving cycle produced new all-time highs, which suggests the pattern still holds. And current momentum and market sentiment point upward.
+The bull case is $150K to $200K, from four forces. Bitcoin ETF approval in January 2024 released institutional capital that keeps flowing in. Companies like MicroStrategy, Tesla, and Block holding Bitcoin in their treasuries create steady buying pressure, as firms allocate 1-10% of cash reserves to it. Every previous halving cycle produced new all-time highs, which suggests the pattern still holds. And current momentum and market sentiment point upward.
 
 Corporate treasuries are a structural shift, not speculative trading. Companies that hold Bitcoin as a treasury asset rarely sell during volatility, which reduces the available supply. That long-term holding on corporate balance sheets adds to the scarcity from the halving.
 
@@ -32,4 +32,4 @@ The past cycles, with this one's projections in the last row:
 | 2020 | $8,700 | $69,000 | 18 months | $16,000 | 77% |
 | 2024 | $65,882 | $150K-$200K | 12-18 months | $50K-$60K | 60-70% |
 
-Bitcoin looks set for another run toward $150K to $200K, driven by institutional adoption, corporate treasuries, and the cycle pattern. But the same volatility that allows large gains guarantees an eventual correction toward $50K to $60K. Position sizing and risk management matter more than perfect timing.
+Institutional adoption, corporate treasuries, and the cycle pattern point toward $150K to $200K. Every past cycle also ended in a deep correction, and nothing suggests this one is different; $50K to $60K is the level to be ready for. No one times the top. Size your position so that you can hold through the fall.
