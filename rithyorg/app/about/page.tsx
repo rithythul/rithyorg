@@ -1,3 +1,4 @@
+import book from "@/content/pages/book.json";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
@@ -29,7 +30,7 @@ export default function AboutPage() {
         <h2>Writing</h2>
         <p>
           I write about the companies we start, the people I learn from, and the life around the work. I’m also
-          writing my first book, <a href="/book">The Things We Chose to Build</a>.
+          writing my first book, <a href="/book">{book.title}</a>.
         </p>
       </div>
       <a className="text-link" href="/writing">
