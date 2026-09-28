@@ -7,7 +7,7 @@ import { indexable, siteName, siteUrl } from "@/lib/metadata";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: `${siteName} · Building, Learning, Writing`, template: `%s · ${siteName}` },
-  description: "rithythul builds startups in Cambodia with smallworld, learns by running them, and writes down what the work teaches.",
+  description: "Building startups with the team at smallworld. Learning to be less wrong, at work and in life. Shaping a culture where everyone learns to become the leader they want to see in others.",
   icons: { icon: "/favicon.svg" },
   robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
 };
