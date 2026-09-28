@@ -12,11 +12,9 @@ export default function AboutPage() {
     <div className="reading page">
       <h1>About</h1>
       <div className="prose">
-        <p className="lead">rithythul builds startups in Cambodia, and started smallworld and KOOMPI.</p>
-
         <h2>Building</h2>
         <p>
-          Also works on Selendra, StadiumX, <a href="https://riverbase.app">Riverbase</a>,{" "}
+          Started smallworld and KOOMPI. Works on Selendra, StadiumX, <a href="https://riverbase.app">Riverbase</a>,{" "}
           <a href="https://baray.io">Baray</a>, and VitaminAir, with profitable businesses as the goal.{" "}
           <a href="https://smallworld.xyz/">smallworld</a> has current information on each company.
         </p>
