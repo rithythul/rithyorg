@@ -1,102 +1,142 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import sanitizeHtml from "sanitize-html";
+import book from "../content/pages/book.json";
+
+export type Section = "writing" | "crypto";
 
 export interface Post {
   slug: string;
+  section: Section;
+  url: string;
   title: string;
   date: string;
   excerpt: string;
   tags: string[];
-  canonicalUrl: string;
+  lang: string;
+  author?: string;
   content: string;
 }
 
-const CRYPTO_DIR = path.join(process.cwd(), "content/crypto");
-const POSTS_DIR = path.join(process.cwd(), "content/posts");
+// relative to app dir: run from rithyorg/
+const contentRoot = path.join(process.cwd(), "content");
+const directories = { writing: "posts", crypto: "crypto" } as const;
+const slugPattern = /^[a-z0-9][a-z0-9-]*$/;
 
-function readMarkdownFile(filePath: string): Post | null {
-  try {
-    const raw = fs.readFileSync(filePath, "utf-8");
-    const { data, content } = matter(raw);
-
-    const slug = path.basename(filePath, ".md");
-    const htmlContent = marked.parse(content) as string;
-
-    return {
-      slug,
-      title: (data.title as string) || slug,
-      date: data.date ? String(data.date) : "",
-      excerpt: (data.excerpt as string) || "",
-      tags: (data.tags as string[]) || [],
-      canonicalUrl: (data.canonicalUrl as string) || "",
-      content: htmlContent,
-    };
-  } catch {
-    return null;
-  }
-}
-
-export function getAllCryptoDigests(): Post[] {
-  if (!fs.existsSync(CRYPTO_DIR)) return [];
-  const files = fs.readdirSync(CRYPTO_DIR).filter((f) => f.endsWith(".md"));
-
-  const posts = files
-    .map((f) => readMarkdownFile(path.join(CRYPTO_DIR, f)))
-    .filter((p): p is Post => p !== null);
-
-  return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-}
-
-export function getCryptoDigest(slug: string): Post | null {
-  return readMarkdownFile(path.join(CRYPTO_DIR, `${slug}.md`));
-}
-
-export function getRelatedDigests(
-  currentSlug: string,
-  tags: string[],
-  count: number = 3
-): Post[] {
-  const all = getAllCryptoDigests().filter((p) => p.slug !== currentSlug);
-
-  const scored = all.map((post) => {
-    const overlap = post.tags.filter((t) => tags.includes(t)).length;
-    return { post, overlap };
+export function renderContent(markdown: string): string {
+  const html = marked.parse(markdown, { async: false });
+  return sanitizeHtml(html, {
+    allowedTags: [...sanitizeHtml.defaults.allowedTags, "img", "figure", "figcaption", "time"],
+    allowedAttributes: {
+      "*": ["lang", "dir", "id"],
+      a: ["href", "title"],
+      img: ["src", "alt", "title", "width", "height", "loading"],
+      th: ["colspan", "rowspan", "scope"],
+      td: ["colspan", "rowspan"],
+      ol: ["start"],
+      time: ["datetime"],
+      code: ["class"],
+    },
+    allowedSchemes: ["https", "http", "mailto"],
+    transformTags: {
+      h1: "h2",
+      img: (_tag, attribs) => ({ tagName: "img", attribs: { ...attribs, loading: "lazy" } }),
+    },
   });
-
-  scored.sort((a, b) => b.overlap - a.overlap);
-  return scored.slice(0, count).map((s) => s.post);
 }
 
-export function getAllWritingPosts(): Post[] {
-  if (!fs.existsSync(POSTS_DIR)) return [];
-  const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
+export function isPublished(data: Record<string, unknown>): boolean {
+  if (data.draft === true) return false;
+  if (data.status && data.status !== "published") return false;
+  if (!data.date) return true;
+  const date = new Date(String(data.date));
+  if (Number.isNaN(date.getTime())) throw new Error(`Invalid publication date: ${data.date}`);
+  return date.getTime() <= Date.now();
+}
 
-  const posts = files
-    .map((f) => readMarkdownFile(path.join(POSTS_DIR, f)))
-    .filter((p): p is Post => p !== null);
+export function getPost(section: Section, slug: string): Post | null {
+  if (!slugPattern.test(slug)) return null;
+  const file = path.join(contentRoot, directories[section], `${slug}.md`);
+  if (!fs.existsSync(file)) return null;
 
-  return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  const { data, content } = matter(fs.readFileSync(file, "utf8"));
+  if (!isPublished(data)) return null;
+  if (typeof data.title !== "string" || !data.title.trim()) throw new Error(`Missing title: ${file}`);
+  const title = data.title.trim();
+
+  // drop only a duplicate leading title
+  const body = content.replace(/^\s*# (.+)\r?\n/, (match, heading: string) =>
+    heading.trim() === title ? "" : match,
   );
+
+  return {
+    slug,
+    section,
+    url: `/${section}/${slug}`,
+    title,
+    date: data.date ? new Date(String(data.date)).toISOString().slice(0, 10) : "",
+    excerpt: String(data.excerpt || data.description || ""),
+    tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+    lang: typeof data.lang === "string" ? data.lang : /[ក-៿]/.test(content) ? "km" : "en",
+    author: typeof data.author === "string" ? data.author : undefined,
+    content: renderContent(body),
+  };
 }
 
-export function formatDate(dateStr: string): string {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("en-US", {
+export function getPosts(section: Section): Post[] {
+  const directory = path.join(contentRoot, directories[section]);
+  if (!fs.existsSync(directory)) return [];
+  return fs
+    .readdirSync(directory)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => getPost(section, file.slice(0, -3)))
+    .filter((post): post is Post => post !== null)
+    .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
+}
+
+export const getAllWritingPosts = () => getPosts("writing");
+export const getAllCryptoDigests = () => getPosts("crypto");
+
+export function getCuratedPosts(): Post[] {
+  return book.relatedSlugs
+    .map((slug) => getPost("writing", slug))
+    .filter((post): post is Post => post !== null);
+}
+
+export const cryptoTopics = [
+  "bitcoin",
+  "defi",
+  "digest",
+  "ethereum",
+  "geopolitics",
+  "institutional",
+  "regulation",
+  "security",
+];
+
+export function hasTag(post: Post, tag: string): boolean {
+  return post.tags.some((t) => t.toLowerCase() === tag.toLowerCase());
+}
+
+// repeated query keys arrive as arrays
+export function singleParam(value: string | string[] | undefined): string {
+  return typeof value === "string" ? value : "";
+}
+
+export function formatDate(date: string): string {
+  return new Intl.DateTimeFormat("en", {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
-  });
+    timeZone: "UTC",
+  }).format(new Date(date));
 }
 
-export function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/[\s_]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+export function paginate<T>(items: T[], requestedPage: string | undefined, pageSize = 15) {
+  const pages = Math.max(1, Math.ceil(items.length / pageSize));
+  const requested = Number.parseInt(requestedPage || "1", 10) || 1;
+  const page = Math.min(pages, Math.max(1, requested));
+  return { items: items.slice((page - 1) * pageSize, page * pageSize), page, pages };
 }

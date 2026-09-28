@@ -6,17 +6,17 @@ import { pageMetadata } from "@/lib/metadata";
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return getPosts("crypto").map((post) => ({ slug: post.slug }));
+  return getPosts("writing").map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
-  const post = getPost("crypto", (await params).slug);
+  const post = getPost("writing", (await params).slug);
   if (!post) notFound();
-  return pageMetadata(post.title, post.excerpt || `${post.title}. From the crypto archive of rithythul.`, post.url);
+  return pageMetadata(post.title, post.excerpt || `${post.title}. From the writing archive of rithythul.`, post.url);
 }
 
 export default async function ArticlePage({ params }: Props) {
-  const post = getPost("crypto", (await params).slug);
+  const post = getPost("writing", (await params).slug);
   if (!post) notFound();
   return <Article post={post} />;
 }

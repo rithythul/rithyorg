@@ -1,16 +1,34 @@
+import projects from "@/content/pages/projects.json";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("Projects", "An archive of projects and work connected to rithythul.", "/projects");
+
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12">
-      <h1 className="text-3xl font-bold mb-2" style={{ color: "var(--color-fg)" }}>
-        Projects
-      </h1>
-      <p className="mb-12" style={{ color: "var(--color-muted)" }}>
-        Things I&apos;ve built and am working on.
+    <div className="reading page">
+      <h1>Projects</h1>
+      <p className="page-intro">
+        Descriptions from the existing project archive. For current company information, visit{" "}
+        <a href="https://smallworld.xyz/">
+          smallworld <span aria-hidden="true">↗</span>
+        </a>
+        .
       </p>
-
-      <div className="py-20 text-center" style={{ color: "var(--color-muted)" }}>
-        <p className="text-lg">Coming soon.</p>
-        <p className="text-sm mt-2">Projects will be listed here.</p>
+      <div className="prose">
+        {projects.map((project) => (
+          <section key={project.title}>
+            <h2>
+              {project.url ? (
+                <a href={project.url}>
+                  {project.title} <span aria-hidden="true">↗</span>
+                </a>
+              ) : (
+                project.title
+              )}
+            </h2>
+            <p>{project.description}</p>
+          </section>
+        ))}
       </div>
     </div>
   );

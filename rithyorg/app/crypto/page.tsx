@@ -1,75 +1,73 @@
-import Link from "next/link";
-import { getAllCryptoDigests, formatDate } from "@/lib/content";
+import ArchiveTabs from "@/components/archive-tabs";
+import Pagination from "@/components/pagination";
+import WritingList from "@/components/writing-list";
+import { cryptoTopics, getAllCryptoDigests, hasTag, paginate, singleParam } from "@/lib/content";
+import { pageMetadata } from "@/lib/metadata";
 
-export default function CryptoPage() {
-  const posts = getAllCryptoDigests();
+type Props = { searchParams: Promise<{ page?: string | string[]; category?: string | string[] }> };
 
-  const filterTags = ["ALL", "BITCOIN", "DIGEST", "DEFI", "SECURITY", "REGULATION", "ETHEREUM", "INSTITUTIONAL", "GEOPOLITICS"];
+async function selection(searchParams: Props["searchParams"]) {
+  const params = await searchParams;
+  const category = singleParam(params.category);
+  const all = getAllCryptoDigests();
+  const filtered = category ? all.filter((post) => hasTag(post, category)) : all;
+  return { category, ...paginate(filtered, singleParam(params.page)) };
+}
+
+export async function generateMetadata({ searchParams }: Props) {
+  const { category, page } = await selection(searchParams);
+  const query = new URLSearchParams();
+  if (cryptoTopics.includes(category)) query.set("category", category);
+  if (page > 1) query.set("page", String(page));
+  const title = ["Crypto archive", category, page > 1 ? `Page ${page}` : ""].filter(Boolean).join(" · ");
+  return pageMetadata(
+    title,
+    "Published crypto news, commentary, and digests.",
+    query.size ? `/crypto?${query}` : "/crypto",
+  );
+}
+
+export default async function CryptoPage({ searchParams }: Props) {
+  const { category, items, page, pages } = await selection(searchParams);
+  const unknownTopic = category !== "" && !cryptoTopics.includes(category);
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12">
-      <h1 className="text-3xl font-bold mb-2" style={{ color: "var(--color-fg)" }}>
-        Crypto Digest
-      </h1>
-      <p className="mb-8" style={{ color: "var(--color-muted)" }}>
-        Daily market updates and analysis from the crypto space.
+    <div className="shell page">
+      <h1>Crypto archive</h1>
+      <p className="page-intro">
+        Published news, commentary, and digests.{" "}
+        <a href="https://t.me/bitcoinprahok">
+          BitcoinPrahok on Telegram <span aria-hidden="true">↗</span>
+        </a>
       </p>
+      <ArchiveTabs current="crypto" />
 
-      <div className="flex flex-wrap gap-2 mb-8">
-        {filterTags.map((tag) => (
-          <button
-            key={tag}
-            className="px-3 py-1 text-xs uppercase tracking-wider transition-colors border"
-            style={{
-              borderColor: "var(--color-border)",
-              color: tag === "ALL" ? "var(--color-bg)" : "var(--color-muted)",
-              backgroundColor: tag === "ALL" ? "var(--color-accent)" : "transparent",
-            }}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
+      <form className="filter-form" action="/crypto">
+        <label htmlFor="category">Topic</label>
+        <select id="category" name="category" defaultValue={category}>
+          <option value="">All topics</option>
+          {unknownTopic && <option value={category}>{category}</option>}
+          {cryptoTopics.map((topic) => (
+            <option key={topic} value={topic}>
+              {topic}
+            </option>
+          ))}
+        </select>
+        <button type="submit">Filter</button>
+      </form>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))" }}>
-        {posts.map((post) => {
-          const displayTag = post.tags.find((t) =>
-            ["BITCOIN", "ETHEREUM", "DEFI", "SECURITY", "REGULATION", "INSTITUTIONAL", "GEOPOLITICS"].includes(t.toUpperCase())
-          ) || "DIGEST";
-
-          return (
-            <Link
-              key={post.slug}
-              href={`/crypto/${post.slug}`}
-              className="block no-underline transition-opacity hover:opacity-90"
-              style={{
-                backgroundColor: "var(--color-card)",
-                color: "var(--color-card-text)",
-                padding: "32px",
-                borderRadius: "0px",
-              }}
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span
-                  className="text-xs uppercase tracking-wider px-2 py-0.5"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.1)",
-                    color: "#a8a29e",
-                  }}
-                >
-                  {displayTag}
-                </span>
-              </div>
-              <h2 className="text-base font-semibold leading-snug mb-2" style={{ color: "var(--color-card-text)" }}>
-                {post.title}
-              </h2>
-              <span className="text-xs" style={{ color: "#78716c" }}>
-                {formatDate(post.date)}
-              </span>
-            </Link>
-          );
-        })}
-      </div>
+      {items.length ? (
+        <WritingList posts={items} />
+      ) : (
+        <p className="empty-state">
+          No articles match this topic. <a href="/crypto">Show all crypto articles</a>.
+        </p>
+      )}
+      <Pagination
+        page={page}
+        pages={pages}
+        base={category ? `/crypto?category=${encodeURIComponent(category)}` : "/crypto"}
+      />
     </div>
   );
 }

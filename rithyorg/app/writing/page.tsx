@@ -1,17 +1,29 @@
-export default function WritingPage() {
-  return (
-    <div className="mx-auto max-w-6xl px-6 py-12">
-      <h1 className="text-3xl font-bold mb-2" style={{ color: "var(--color-fg)" }}>
-        Writing
-      </h1>
-      <p className="mb-12" style={{ color: "var(--color-muted)" }}>
-        Essays, thoughts, and reflections.
-      </p>
+import ArchiveTabs from "@/components/archive-tabs";
+import Pagination from "@/components/pagination";
+import WritingList from "@/components/writing-list";
+import { getAllWritingPosts, paginate, singleParam } from "@/lib/content";
+import { pageMetadata } from "@/lib/metadata";
 
-      <div className="py-20 text-center" style={{ color: "var(--color-muted)" }}>
-        <p className="text-lg">Coming soon.</p>
-        <p className="text-sm mt-2">Check back for essays and long-form writing.</p>
-      </div>
+type Props = { searchParams: Promise<{ page?: string | string[] }> };
+
+export async function generateMetadata({ searchParams }: Props) {
+  const { page } = paginate(getAllWritingPosts(), singleParam((await searchParams).page));
+  return pageMetadata(
+    page > 1 ? `Writing · Page ${page}` : "Writing",
+    "Essays and notes on building, Cambodia, technology, and life along the way.",
+    page > 1 ? `/writing?page=${page}` : "/writing",
+  );
+}
+
+export default async function WritingPage({ searchParams }: Props) {
+  const { items, page, pages } = paginate(getAllWritingPosts(), singleParam((await searchParams).page));
+  return (
+    <div className="shell page">
+      <h1>Writing</h1>
+      <p className="page-intro">Notes on the things we build, the people I learn from, and life along the way.</p>
+      <ArchiveTabs current="writing" />
+      <WritingList posts={items} />
+      <Pagination page={page} pages={pages} base="/writing" />
     </div>
   );
 }

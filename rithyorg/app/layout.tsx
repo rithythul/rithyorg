@@ -1,55 +1,40 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Navigation from "./navigation";
-import Footer from "./footer";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import { siteName, siteUrl } from "@/lib/metadata";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+const indexable = process.env.SITE_ENV === "production";
 
 export const metadata: Metadata = {
-  title: {
-    default: "The Living Archive — Rithy",
-    template: "%s — The Living Archive",
-  },
-  description: "Personal archive of writings, crypto digests, and projects by Rithy.",
-  metadataBase: new URL("https://rithy.org"),
+  metadataBase: new URL(siteUrl),
+  title: { default: `${siteName} · Writing, Building, Startup`, template: `%s · ${siteName}` },
+  description: "Writing about the things we build, the people I learn from, and life along the way.",
+  icons: { icon: "/favicon.svg" },
+  robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// cream light is the default; dark only when chosen, applied before first paint
+const themeScript = `(function(){try{if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}})()`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <head>
+        <link rel="preload" href="/fonts/bagel-fat-one-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/baloo-2-var-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
-        <ThemeScript />
       </body>
     </html>
-  );
-}
-
-function ThemeScript() {
-  return (
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
-          (function() {
-            try {
-              const theme = localStorage.getItem('theme');
-              if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-              }
-            } catch(e) {}
-          })();
-        `,
-      }}
-    />
   );
 }

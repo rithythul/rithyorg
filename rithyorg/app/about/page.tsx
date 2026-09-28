@@ -1,24 +1,40 @@
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata(
+  "About",
+  "I started smallworld and KOOMPI. I live in Cambodia and write about work and life along the way.",
+  "/about",
+);
+
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-3xl font-bold mb-4" style={{ color: "var(--color-fg)" }}>
-        About
-      </h1>
-      <p className="text-xl mb-8" style={{ color: "var(--color-muted)" }}>
-        Building systems for emerging markets.
-      </p>
+    <div className="reading page">
+      <h1>About</h1>
+      <div className="prose">
+        <p className="lead">I started smallworld and KOOMPI. I live in Cambodia.</p>
 
-      <div className="space-y-6" style={{ color: "var(--color-muted)", lineHeight: "1.75" }}>
+        <h2>The work</h2>
         <p>
-          This is a personal archive — a place to collect thoughts, research,
-          and project updates. Everything here is written with intention.
+          My work includes Selendra, StadiumX, and VitaminAir. I want to build profitable businesses and have
+          a free life close to nature.
         </p>
         <p>
-          The crypto digest is a daily series tracking the most important
-          developments in digital assets, DeFi, and the broader financial
-          landscape.
+          <a href="https://smallworld.xyz/">smallworld</a> is where to find current information about the
+          companies and the people building them.
+        </p>
+
+        <h2>Life along the way</h2>
+        <p>I enjoy cycling, camping, running, nature, and long conversations.</p>
+
+        <h2>Writing</h2>
+        <p>
+          I write about the things we build, the people I learn from, and life along the way. I’m also
+          writing my first book, <a href="/book">The Things We Chose to Build</a>.
         </p>
       </div>
+      <a className="text-link" href="/writing">
+        Read my writing <span aria-hidden="true">→</span>
+      </a>
     </div>
   );
 }
