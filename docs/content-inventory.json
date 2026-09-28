@@ -7,7 +7,7 @@
     "bodyTextSha256": "ff71339ebfd4f9abace360b5afce0d0e572940eac946cccbf341c1052bd42098",
     "livePublishedDate": "2026-05-04",
     "editedAt": "2026-09-28",
-    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
+    "note": "Rewritten at rithythul's request: the generated sales-pitch text was replaced with the argument in his voice, grounded in KOOMPI's local-model testing; unverifiable product prices, tool names and the Cambodian 5G claim were dropped. bodyTextSha256 is the text as recovered; the pre-edit text is in git history."
   },
   {
     "url": "/writing/rwa",
