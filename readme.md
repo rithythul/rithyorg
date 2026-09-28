@@ -91,20 +91,25 @@ The 48 article URLs (16 essays, 32 crypto) are recorded in `docs/content-invento
 
 ## Deploying
 
-The live site is served by Vercel (`server: Vercel` on rithy.org).
-No Vercel or other hosting configuration is in this repository, so the project settings live in the Vercel dashboard; confirm them before cutting over:
+rithy.org is the Vercel project `rithyorg` (team rithy's projects), connected to this GitHub repository.
+Every push to `main` deploys to production; other branches get preview deployments.
+`www.rithy.org` redirects to `rithy.org`.
 
-1. Root directory `rithyorg`, install `bun install`, build `bun run build`, framework Next.js.
-2. Nothing to set for indexing: Vercel production builds are indexable, previews are not. On another host, build with `SITE_ENV=production`.
-3. Deploy the branch as a preview first and check `/`, `/writing`, an article, `/book`, `/crypto?category=bitcoin`, `/crypto/privacy`, `/sitemap.xml` and `/robots.txt`.
-4. Promote to production.
+Project settings live in the Vercel dashboard, not in this repository:
+
+- Root Directory: `rithyorg` (set on 2026-09-28; without it every build fails with "No Next.js version detected").
+- Framework: Next.js, with the default install and build commands.
+- No environment variables are needed: Vercel production builds are indexable, previews are not. On another host, build with `SITE_ENV=production`.
+
+After a deploy, check `/`, `/writing`, an article, `/book`, `/crypto?category=bitcoin`, `/crypto/privacy`, `/sitemap.xml` and `/robots.txt`.
 
 `.github/workflows/build_epub.yml` builds an unrelated EPUB and is not part of the site.
 
 ### Rollback
 
-In Vercel, promote the previous production deployment (Deployments → the last good one → Promote to Production); this needs no rebuild.
-From git, revert the merge commit on the production branch and redeploy.
+In Vercel, open Deployments, pick the last good production deployment and choose Promote to Production; this needs no rebuild.
+The last deployment of the previous site is `dpl_2jFj6J23gtehEQveXYXQaPKLVFPg` (commit `7d44c6f`, 2026-05-16).
+From git, revert the offending commits on `main` and push.
 
 ## Review evidence
 
