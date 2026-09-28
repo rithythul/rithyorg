@@ -41,10 +41,10 @@ export default function Home() {
       <section className="smallworld-section" aria-labelledby="smallworld-title">
         <h2 id="smallworld-title">smallworld</h2>
         <div>
-          <p className="lead">We start companies. We learn by running them.</p>
+          <p className="lead">Started in 2011. Now building KOOMPI, Selendra, StadiumX, Riverbase, Baray, and VitaminAir.</p>
           <p>
-            At smallworld, young people learn beside the team, take responsibility, and eventually lead
-            companies of their own.
+            Young people join the team, work on real products, and take on more as they learn. Some go on to lead
+            a company.
           </p>
           <a className="text-link" href="https://smallworld.xyz/">
             Visit smallworld <span aria-hidden="true">↗</span>
