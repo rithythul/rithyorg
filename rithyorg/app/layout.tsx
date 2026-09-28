@@ -8,7 +8,7 @@ const indexable = process.env.SITE_ENV === "production";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: `${siteName} · Writing, Building, Startup`, template: `%s · ${siteName}` },
+  title: { default: `${siteName} · Building, Learning, Writing`, template: `%s · ${siteName}` },
   description: "Writing about building startups in Cambodia, the people I learn from, and the life around the work.",
   icons: { icon: "/favicon.svg" },
   robots: indexable ? { index: true, follow: true } : { index: false, follow: false },

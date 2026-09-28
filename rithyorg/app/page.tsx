@@ -7,8 +7,8 @@ const intro =
   "I build startups in Cambodia with smallworld. I write about the companies we start, the people I learn from, and the life around the work.";
 
 export const metadata = {
-  ...pageMetadata("Writing, Building, Startup", intro, "/"),
-  title: { absolute: "rithythul · Writing, Building, Startup" },
+  ...pageMetadata("Building, Learning, Writing", intro, "/"),
+  title: { absolute: "rithythul · Building, Learning, Writing" },
 };
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
     <div className="shell">
       <section className="hero">
         <h1>
-          <span>Writing</span> <span>Building</span> <span>Startup</span>
+          <span>Building</span> <span>Learning</span> <span>Writing</span>
         </h1>
         <div className="hero-copy">
           <p>{intro}</p>
