@@ -16,9 +16,8 @@ export default function AboutPage() {
           Started smallworld in 2011, and now builds <a href="https://koompi.com">KOOMPI</a>,{" "}
           <a href="https://selendra.org">Selendra</a>, <a href="https://stadiumx.asia">StadiumX</a>,{" "}
           <a href="https://riverbase.app">Riverbase</a>, <a href="https://baray.io">Baray</a>, and{" "}
-          <a href="https://vitaminair.org">VitaminAir</a> with the team at smallworld. The goal is profitable
-          businesses.{" "}
-          <a href="https://smallworld.xyz/">smallworld</a> has current information on each company.
+          <a href="https://vitaminair.org">VitaminAir</a> with the team at{" "}
+          <a href="https://smallworld.xyz/">smallworld</a>.
         </p>
 
         <p>
