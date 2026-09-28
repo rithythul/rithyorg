@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata("Connect", "Reach rithythul by email, Telegram, LinkedIn, GitHub, or X.", "/social");
 
 const profiles = [
-  { name: "Email", url: "mailto:contact@rithy.org", detail: "contact@rithy.org" },
+  { name: "Email", url: "mailto:hello@rithy.org", detail: "hello@rithy.org" },
   { name: "Telegram", url: "https://t.me/rithy", detail: "@rithy" },
   { name: "LinkedIn", url: "https://linkedin.com/in/rithythul" },
   { name: "GitHub", url: "https://github.com/rithythul" },

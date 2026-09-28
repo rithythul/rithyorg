@@ -31,7 +31,7 @@ bun run start -p 3100 -H 127.0.0.1   # http://127.0.0.1:3100
 ```
 
 A preview build sends `X-Robots-Tag: noindex, nofollow`, a `noindex` robots meta tag, and a `Disallow: /` robots.txt.
-Only a build made with `SITE_ENV=production` is indexable.
+Only a Vercel production build (`VERCEL_ENV=production`, set by Vercel) or a build with `SITE_ENV=production` is indexable.
 
 ## App structure
 
@@ -95,7 +95,7 @@ The live site is served by Vercel (`server: Vercel` on rithy.org).
 No Vercel or other hosting configuration is in this repository, so the project settings live in the Vercel dashboard; confirm them before cutting over:
 
 1. Root directory `rithyorg`, install `bun install`, build `bun run build`, framework Next.js.
-2. Set `SITE_ENV=production` for the production environment only, so previews stay unindexed.
+2. Nothing to set for indexing: Vercel production builds are indexable, previews are not. On another host, build with `SITE_ENV=production`.
 3. Deploy the branch as a preview first and check `/`, `/writing`, an article, `/book`, `/crypto?category=bitcoin`, `/crypto/privacy`, `/sitemap.xml` and `/robots.txt`.
 4. Promote to production.
 

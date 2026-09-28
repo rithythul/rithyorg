@@ -54,7 +54,7 @@ export default function CryptoPrivacyPage() {
 
         <h2>Questions?</h2>
         <p>
-          <a href="mailto:contact@rithy.org">Get in touch</a>
+          <a href="mailto:hello@rithy.org">Get in touch</a>
         </p>
       </div>
       <a className="text-link" href="/crypto">

@@ -89,7 +89,7 @@ Lighthouse 13.5.0, mobile form factor, simulated throttling (150ms RTT, 1.6Mbps,
 | `/crypto` | 96 | 100 | 100 | 54 | 0.8 s | 2.1 s | 190 ms | 0 | 174.5 | 103.5 | 56.8 |
 
 - LCP is within the 2.5s target on every audited page.
-- The SEO score is low because preview builds are deliberately `noindex`; production builds with `SITE_ENV=production` are indexable.
+- The SEO score is low because preview builds are deliberately `noindex`; Vercel production builds (or `SITE_ENV=production`) are indexable.
 - `/crypto` also loses the meta-description check: Next.js 15 streams metadata into the body for dynamic pages when the user agent is not a known crawler. A request with a Googlebot user agent receives the description in the head.
 - Fonts on disk: Bagel Fat One 24.4KB, Baloo 2 variable 33.2KB, 57.6KB together against a 200KB budget. There is no decorative art.
 - Layout shift measured in the browser on a cold cache at 390px over a throttled connection, including the font swap: home 0.024, article 0.001, book 0.041. Lighthouse reports 0.

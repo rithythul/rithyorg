@@ -2,9 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { siteName, siteUrl } from "@/lib/metadata";
-
-const indexable = process.env.SITE_ENV === "production";
+import { indexable, siteName, siteUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
