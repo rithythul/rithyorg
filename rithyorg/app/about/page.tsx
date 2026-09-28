@@ -13,7 +13,7 @@ export default function AboutPage() {
       <h1>About</h1>
       <div className="prose">
         <p>
-          Started smallworld and KOOMPI. Works on <a href="https://selendra.org">Selendra</a>,{" "}
+          Started smallworld and <a href="https://koompi.com">KOOMPI</a>. Works on <a href="https://selendra.org">Selendra</a>,{" "}
           <a href="https://stadiumx.asia">StadiumX</a>, <a href="https://riverbase.app">Riverbase</a>,{" "}
           <a href="https://baray.io">Baray</a>, and <a href="https://vitaminair.org">VitaminAir</a>, with profitable
           businesses as the goal.{" "}
