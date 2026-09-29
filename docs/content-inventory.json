@@ -37,7 +37,8 @@
     "bodyTextSha256": "9fe0fe56e29d2c31341cef40b13ebc63d6cf940a330a9ad7e43262a52bc3202a",
     "livePublishedDate": "2025-05-25",
     "editedAt": "2026-09-28",
-    "note": "Edited for style at rithythul's request; bodyTextSha256 is the text as recovered. The pre-edit text is in git history before this change."
+    "note": "Removed on 2026-09-29 at rithythul's request: the same body as /writing/bitcoin-2025. The URL redirects there permanently; the file is in git history.",
+    "redirectTo": "/writing/bitcoin-2025"
   },
   {
     "url": "/writing/bitcoin-2025",

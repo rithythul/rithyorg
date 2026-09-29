@@ -16,6 +16,7 @@ import {
   singleParam,
   type Section,
 } from "../lib/content";
+import { archiveRedirects } from "../lib/redirects";
 import inventory from "../../docs/content-inventory.json";
 const hash = (s: string) => createHash("sha256").update(s).digest("hex");
 test("every archived article remains reachable; unedited ones keep their original body text", () => {
@@ -23,6 +24,12 @@ test("every archived article remains reachable; unedited ones keep their origina
   assert.ok(getAllWritingPosts().length >= 16);
   assert.ok(getAllCryptoDigests().length >= 32);
   for (const record of inventory) {
+    if (record.redirectTo) {
+      assert.ok(archiveRedirects.some((r) => r.source === record.url && r.destination === record.redirectTo && r.permanent), record.url);
+      const [, targetSection, targetSlug] = record.redirectTo.split("/");
+      assert.ok(getPost(targetSection as Section, targetSlug), record.redirectTo);
+      continue;
+    }
     const [, section, slug] = record.url.split("/");
     const post = getPost(section as Section, slug);
     assert.ok(post, record.url);
