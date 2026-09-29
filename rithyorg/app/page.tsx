@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import BookFeature from "@/components/book-feature";
 import WritingList from "@/components/writing-list";
 import { getAllWritingPosts, pickRandom } from "@/lib/content";
@@ -9,7 +10,7 @@ const intro =
 // per request: new random essays each visit
 export const dynamic = "force-dynamic";
 
-export const metadata = {
+export const metadata: Metadata = {
   ...pageMetadata("Building, Learning, Writing", intro, "/"),
   title: { absolute: "rithythul · Building, Learning, Writing" },
 };
