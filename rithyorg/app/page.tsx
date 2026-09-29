@@ -1,10 +1,13 @@
 import BookFeature from "@/components/book-feature";
 import WritingList from "@/components/writing-list";
-import { getCuratedPosts } from "@/lib/content";
+import { getAllWritingPosts, pickRandom } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 
 const intro =
   "Building startups with the team at smallworld. Learning to be less wrong, at work and in life. Shaping a culture where everyone learns to become the leader they want to see in others.";
+
+// Rendered per request so the writing section shows a different three essays on each visit.
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   ...pageMetadata("Building, Learning, Writing", intro, "/"),
@@ -30,12 +33,12 @@ export default function Home() {
 
       <section className="home-writing" aria-labelledby="writing-title">
         <div className="section-heading">
-          <h2 id="writing-title">Selected writing</h2>
+          <h2 id="writing-title">From the writing</h2>
           <a href="/writing">
             All writing <span aria-hidden="true">→</span>
           </a>
         </div>
-        <WritingList posts={getCuratedPosts()} />
+        <WritingList posts={pickRandom(getAllWritingPosts(), 3)} />
       </section>
 
       <section className="smallworld-section" aria-labelledby="smallworld-title">

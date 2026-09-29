@@ -11,6 +11,7 @@ import {
   hasTag,
   isPublished,
   paginate,
+  pickRandom,
   renderContent,
   singleParam,
   type Section,
@@ -65,4 +66,13 @@ test("repeated or missing query parameters collapse to an empty string", () => {
   assert.equal(singleParam(["bitcoin", "defi"]), "");
   assert.equal(singleParam(undefined), "");
   assert.equal(singleParam("bitcoin"), "bitcoin");
+});
+
+test("pickRandom returns distinct items and never more than exist", () => {
+  const items = [1, 2, 3, 4, 5];
+  assert.deepEqual(pickRandom(items, 3, () => 0.99), [5, 4, 3]);
+  assert.deepEqual(pickRandom(items, 3, () => 0), [1, 2, 3]);
+  assert.equal(pickRandom([1, 2], 3).length, 2);
+  assert.equal(new Set(pickRandom(items, 5)).size, 5);
+  assert.deepEqual(items, [1, 2, 3, 4, 5]);
 });

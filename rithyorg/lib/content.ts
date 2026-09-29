@@ -105,6 +105,15 @@ export function getCuratedPosts(): Post[] {
     .filter((post): post is Post => post !== null);
 }
 
+export function pickRandom<T>(items: T[], count: number, random: () => number = Math.random): T[] {
+  const pool = [...items];
+  const picked: T[] = [];
+  while (picked.length < count && pool.length > 0) {
+    picked.push(pool.splice(Math.floor(random() * pool.length), 1)[0]);
+  }
+  return picked;
+}
+
 export const cryptoTopics = [
   "bitcoin",
   "defi",

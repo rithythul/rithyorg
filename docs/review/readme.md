@@ -32,7 +32,7 @@ Lab and headless-browser results only; no real readers, real devices or field da
 
 | Page | What it does | States checked |
 |---|---|---|
-| `/` | Hero, book feature with the green "About the book" action, three curated essays, smallworld section | 320/390/768/1440, both themes, keyboard order, 200% text |
+| `/` | Hero, book feature with the green "About the book" action, three random essays picked per request (the page is dynamic), smallworld section | 320/390/768/1440, both themes, keyboard order, 200% text |
 | `/writing` | 16 essays, 15 per page, `?page=2` | Pagination with and without JS, back navigation keeps scroll |
 | `/writing/[slug]`, `/crypto/[slug]` | Article, back link to its own archive | Direct load, reload, back; crypto articles add the BitcoinPrahok link |
 | `/book` | Book record, three approved paragraphs, related writing | Keyboard and touch from home |
