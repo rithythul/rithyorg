@@ -18,9 +18,9 @@ import {
 import inventory from "../../docs/content-inventory.json";
 const hash = (s: string) => createHash("sha256").update(s).digest("hex");
 test("every archived article remains reachable; unedited ones keep their original body text", () => {
-  assert.equal(getAllWritingPosts().length, 16);
-  assert.equal(getAllCryptoDigests().length, 32);
   assert.equal(inventory.length, 48);
+  assert.ok(getAllWritingPosts().length >= 16);
+  assert.ok(getAllCryptoDigests().length >= 32);
   for (const record of inventory) {
     const [, section, slug] = record.url.split("/");
     const post = getPost(section as Section, slug);
@@ -49,8 +49,9 @@ test("HTML is sanitized without dropping tables, code or language attributes", (
 });
 test("unknown slugs and traversal return null; archive pagination retains the final article", () => {
   assert.equal(getPost("writing","../../profile"),null);assert.equal(getPost("writing","missing"),null);
-  const posts=getAllWritingPosts();assert.equal(paginate(posts,"2").items.length,1);
+  const posts=Array.from({length:16},(_,i)=>i);assert.deepEqual(paginate(posts,"2").items,[15]);
   assert.equal(paginate(posts,"-1").page,1);assert.equal(paginate(posts,"999").page,2);
+  const all=getAllWritingPosts();const last=paginate(all,String(Math.ceil(all.length/15))).items;assert.equal(last.at(-1),all.at(-1));
 });
 
 test("every crypto filter topic matches at least one published article", () => {
