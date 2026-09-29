@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/metadata";
 const intro =
   "Building startups with the team at smallworld. Learning to be less wrong, at work and in life. Shaping a culture where everyone learns to become the leader they want to see in others.";
 
-// Rendered per request so the writing section shows a different three essays on each visit.
+// per request: new random essays each visit
 export const dynamic = "force-dynamic";
 
 export const metadata = {
