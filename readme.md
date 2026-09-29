@@ -86,11 +86,11 @@ The 48 article URLs (16 essays, 32 crypto) are recorded in `docs/content-invento
 - On 2026-09-28 all 16 essays were edited for style at rithythul's request: section headings removed, hype and filler cut, every fact, number, date and link kept. The four HTML essays became Markdown. `editedAt` in the inventory marks them; the recovered text is in git history before that commit.
 - Five generated essays were rewritten rather than edited, in rithythul's voice: `why-your-next-computer-wont-need-a-gpu`, `thirteen-years-building-cambodia`, `linux-labs-rural-cambodia`, `meditation-startup-life` and `bicycle-philosophy-business`.
   Their unverifiable figures and anecdotes were dropped (product prices, "over 50 startups", lab counts beyond the 63 labs, the 2019 retreat, the $300 bike); the inventory note says so for each.
-- `bitcoin-2025` and `bitcoin-analysis-2025` were published with the same body at two URLs. On 2026-09-29 `bitcoin-analysis-2025` was removed and now redirects permanently to `bitcoin-2025` (`lib/redirects.ts`).
+- `bitcoin-2025` and `bitcoin-analysis-2025` were published with the same body at two URLs. On 2026-09-29 `bitcoin-analysis-2025` was removed without a redirect; its URL returns 404 and the inventory marks it `removedAt`.
 - `/terms` and `/crypto/privacy` carry the live text verbatim; `/privacy` keeps `main`'s text.
 - The favicon is the live `/favicon.svg`, identical to the copy on `origin/feat-minimalist-typography-redesign`.
 
-`bun test` fails if any archived article disappears without a permanent redirect to one that exists, its date drifts from the live date, or the body text of an unedited article changes.
+`bun test` fails if any archived article not marked `removedAt` disappears, its date drifts from the live date, or the body text of an unedited article changes.
 
 ## Deploying
 
