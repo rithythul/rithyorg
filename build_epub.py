@@ -4,7 +4,7 @@ import markdown
 from ebooklib import epub
 
 repo_root = Path(__file__).parent
-manuscript_dir = repo_root / 'book' / 'manuscript'
+manuscript_dir = repo_root / 'books' / 'minute-zero' / 'manuscript'
 chapters_dir = manuscript_dir / 'chapter_drafts'
 outline_path = manuscript_dir / 'Manuscript_Outline.md'
 output_dir = repo_root / 'output'
