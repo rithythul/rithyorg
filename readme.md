@@ -3,7 +3,7 @@
 Personal site of rithythul: writing, the book in progress, and the crypto archive.
 The Next.js app lives in `rithyorg/`; everything else at the root (`build_epub.py`, `profile.md`, `selendra-wdk/`) is unrelated to the site.
 Two books are in progress.
-The first, "The Survivors", is non-fiction about smallworld and the things built there, and is the site's book page (`/book`).
+The first, "The Survivors", is non-fiction about smallworld, the people, and the things built there, and is the site's book page (`/book`).
 The second, "Minute Zero", is fiction, and its manuscript lives in `book/`.
 
 ## Setup
