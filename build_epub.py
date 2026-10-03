@@ -1,29 +1,26 @@
-import os, re, sys
+import re, sys
 from pathlib import Path
 import markdown
 from ebooklib import epub
 
-# Paths
 repo_root = Path(__file__).parent
-chapters_dir = repo_root / 'manuscript' / 'chapter_drafts'
+manuscript_dir = repo_root / 'book' / 'manuscript'
+chapters_dir = manuscript_dir / 'chapter_drafts'
+outline_path = manuscript_dir / 'Manuscript_Outline.md'
 output_dir = repo_root / 'output'
+
+chapter_files = sorted(chapters_dir.glob('chapter_*.md'), key=lambda p: int(re.search(r'chapter_(\d+)_', p.name).group(1)))
+if not chapter_files:
+    sys.exit(f'no chapters found in {chapters_dir}')
+
+title_match = re.match(r'#\s+(.+)', outline_path.read_text(encoding='utf-8'))
+if not title_match:
+    sys.exit(f'no title heading on the first line of {outline_path}')
+
 output_dir.mkdir(exist_ok=True)
 
-# Gather chapter files sorted by numeric prefix
-chapter_files = sorted(chapters_dir.glob('chapter_*.md'), key=lambda p: int(re.search(r'chapter_(\d+)_', p.name).group(1)))
-
 book = epub.EpubBook()
-# Use title from Table of Contents first header line if available
-toc_path = repo_root / 'manuscript' / 'Table_of_Contents.md'
-title = 'Untitled Manuscript'
-if toc_path.exists():
-    with open(toc_path, 'r', encoding='utf-8') as f:
-        for line in f:
-            m = re.search(r'##\s*(.+)', line)
-            if m:
-                title = m.group(1).strip()
-                break
-book.set_title(title)
+book.set_title(title_match.group(1).strip())
 book.set_language('en')
 book.add_author('Rithy Thul')
 
@@ -37,10 +34,8 @@ for idx, chap_path in enumerate(chapter_files, start=1):
     book.add_item(c)
     chapters.append(c)
 
-# Define Table Of Contents and Spine
 book.toc = tuple(chapters)
 book.spine = ['nav'] + chapters
-# Add default NCX and Nav files
 book.add_item(epub.EpubNcx())
 book.add_item(epub.EpubNav())
 

@@ -1,7 +1,8 @@
 # rithy.org
 
 Personal site of rithythul: writing, the book in progress, and the crypto archive.
-The Next.js app lives in `rithyorg/`; everything else at the root (`academic/`, `build_epub.py`, `profile.md`, `selendra-wdk/`) is unrelated to the site.
+The Next.js app lives in `rithyorg/`; everything else at the root (`build_epub.py`, `profile.md`, `selendra-wdk/`) is unrelated to the site.
+`book/` holds the Minute Zero manuscript, a separate project from the site's book page (`/book`, "The Survivors").
 
 ## Setup
 
