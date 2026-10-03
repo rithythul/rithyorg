@@ -1,4 +1,4 @@
-# COMPARATIVE TITLE ANALYSIS — MINUTES TO ZERO
+# COMPARATIVE TITLE ANALYSIS — MINUTE ZERO
 
 ## Direct Comparables (True Crime / Cybersecurity)
 | Title | Author | Year | Publisher | Price (US) | Notes |
@@ -11,7 +11,7 @@
 | This Machine Kills Secrets | Andy Greenberg | 2012 | Faber & Faber | $25.00 | WikiLeaks, whistleblower tech |
 
 ## Pricing Positioning
-- Minutes to Zero targets the mid-to-upper range of this spectrum ($24.99-$28.99)
+- Minute Zero targets the mid-to-upper range of this spectrum ($24.99-$28.99)
 - Justification: First major narrative on contractor-state blindness + documented twin insider threat
 - Competitors lack the structural/contractor oversight angle unique to this project
 - Supports $24.99-$27.99 range for hardcover/trade paperback in major markets

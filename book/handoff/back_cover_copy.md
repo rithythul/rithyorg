@@ -1,5 +1,5 @@
 # BACK COVER COPY — DRAFT v2.0
-# Minutes to Zero: Inside the Akhter Breach and the Contractor Blindness That Made It Possible
+# Minute Zero: Inside the Akhter Breach and the Contractor Blindness That Made It Possible
 # For Hermes agent review. Legal review pending — both brothers named per public court record (SOF, indictment, verdict). Composite scenes in Ch 9 require review.
 
 ---
@@ -14,7 +14,7 @@ At 4:59 p.m. while the databases were still falling Muneeb opened an AI tool and
 
 His brother Sohaib watched in real time. They had done this before.
 
-*Minutes to Zero* is the account of how Muneeb and Sohaib Akhter ex-convicts who had already served federal prison time for hacking State Department systems in 2015 walked back into federal infrastructure through a contractor that missed their criminal record and never fixed its own offboarding process. They did not break in. They walked through a door that Opexus a FedRAMP-certified contractor serving 45+ federal agencies had failed to close.
+*Minute Zero* is the account of how Muneeb and Sohaib Akhter ex-convicts who had already served federal prison time for hacking State Department systems in 2015 walked back into federal infrastructure through a contractor that missed their criminal record and never fixed its own offboarding process. They did not break in. They walked through a door that Opexus a FedRAMP-certified contractor serving 45+ federal agencies had failed to close.
 
 The breach was not a failure of individuals. It was a failure of architecture a contractor state that outsourced accountability as efficiently as operations yet lacked mechanisms to revoke access upon termination. This is the documented story of how it happened what the investigation found and what every federal system built the same way still risks repeating.
 
@@ -25,7 +25,7 @@ The breach was not a failure of individuals. It was a failure of architecture a 
 > "The definitive account of what happens when the government outsources not just its IT but its ability to know when something has gone wrong."
 > — [ADVANCE READER NAME, TITLE]
 
-> "Essential reading for anyone who believes that cybersecurity is a technology problem. It is a governance problem. *Minutes to Zero* makes that case with forensic precision."
+> "Essential reading for anyone who believes that cybersecurity is a technology problem. It is a governance problem. *Minute Zero* makes that case with forensic precision."
 > — [ADVANCE READER NAME, TITLE]
 
 ---
@@ -39,7 +39,7 @@ The breach was not a failure of individuals. It was a failure of architecture a 
 
 ## SPINE TEXT
 
-MINUTES TO ZERO | Vol 1: The Architecture of Blindness | [AUTHOR LAST NAME]
+MINUTE ZERO | Vol 1: The Architecture of Blindness | [AUTHOR LAST NAME]
 
 ---
 

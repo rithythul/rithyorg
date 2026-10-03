@@ -1,4 +1,4 @@
-# Source Log — Minutes to Zero
+# Source Log — Minute Zero
 ## Primary Source Registry | Akhter Brothers Case
 **Maintained by:** GYLC Spokesperson / Author
 **Last updated:** 2026-05-15

@@ -1,6 +1,6 @@
 ============================================================
 ISBN & BISAC REGISTRATION REFERENCE
-Minutes to Zero — The Architecture of Blindness, Volume 1
+Minute Zero — The Architecture of Blindness, Volume 1
 Hermes Agent Handoff | Version 1.0 | 2026-05-13
 ============================================================
 
@@ -120,7 +120,7 @@ Spine width calculation:
   [ ] FOIA document use reviewed — government documents are public domain; confirm no sealed records cited
   [ ] Advance reader quote releases obtained
   [ ] Author bio factually verified
-  [ ] Title cleared — search USPTO trademark database for "Minutes to Zero" in book/publication class
+  [ ] Title cleared — search USPTO trademark database for "Minute Zero" in book/publication class
 
 
 ============================================================

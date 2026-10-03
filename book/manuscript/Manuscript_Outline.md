@@ -1,4 +1,4 @@
-# Minutes to Zero
+# Minute Zero
 ## Inside the IRS Infrastructure Breach and the Contractor Blindness That Made It Possible
 
 **Series:** The Architecture of Blindness, Volume 1
@@ -221,7 +221,7 @@ Chapter-level allocations below are guides, not hard limits. The cascade in Part
 
 ---
 
-### Chapter 11 — *Minutes to Zero* | Target: 4,200 words | `[DOCUMENTARY-PACER]`
+### Chapter 11 — *Minute Zero* | Target: 4,200 words | `[DOCUMENTARY-PACER]`
 
 **Function:** The operational close. The databases are gone. The exfiltration is complete. The cover holds — for now.
 
