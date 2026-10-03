@@ -9,7 +9,7 @@ export default function BookPage() {
   return (
     <div className="shell book-page">
       <header className="book-page-header">
-        <p className="label">My first book</p>
+        <p className="label">First book</p>
         <h1 className="book-title">{book.title}</h1>
         <p className="book-author">{book.author}</p>
         <div className="book-description">

@@ -4,7 +4,7 @@ export default function BookFeature() {
   return (
     <section className="book-feature" aria-labelledby="book-title">
       <div className="book-heading">
-        <p className="label">My first book</p>
+        <p className="label">First book</p>
         <h2 id="book-title" className="book-title">
           {book.title}
         </h2>
