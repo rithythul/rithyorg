@@ -23,7 +23,7 @@ export default function AboutPage() {
           Learning by experimenting, by running companies, and from mentors, whether they know it or not.
         </p>
         <p>
-          Writing down what the work teaches, including a first book, <a href="/book">{book.title}</a>, still in
+          Writing down what the work teaches, including a first book, <a href="/book">{`${book.title}: ${book.subtitle}`}</a>, still in
           progress.
         </p>
         <p>

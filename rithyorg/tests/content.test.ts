@@ -16,6 +16,7 @@ import {
   singleParam,
   type Section,
 } from "../lib/content";
+import { pageMetadata } from "../lib/metadata";
 import inventory from "../../docs/content-inventory.json";
 const hash = (s: string) => createHash("sha256").update(s).digest("hex");
 test("every archived article remains reachable; unedited ones keep their original body text", () => {
@@ -79,4 +80,10 @@ test("pickRandom returns distinct items and never more than exist", () => {
   assert.equal(pickRandom([1, 2], 3).length, 2);
   assert.equal(new Set(pickRandom(items, 5)).size, 5);
   assert.deepEqual(items, [1, 2, 3, 4, 5]);
+});
+
+test("twitter and open graph titles both carry the site name once", () => {
+  const metadata = pageMetadata("Somehow: Still Building", "description", "/book");
+  assert.equal(metadata.openGraph?.title, "Somehow: Still Building · rithythul");
+  assert.equal(metadata.twitter?.title, "Somehow: Still Building · rithythul");
 });

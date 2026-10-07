@@ -20,6 +20,6 @@ export function pageMetadata(title: string, description: string, path: string): 
       locale: "en_US",
       siteName,
     },
-    twitter: { card: "summary", title, description },
+    twitter: { card: "summary", title: `${title} · ${siteName}`, description },
   };
 }

@@ -389,6 +389,13 @@ main:focus {
   max-width: 650px;
 }
 
+.book-subtitle {
+  color: var(--color-muted);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  line-height: 1.2;
+  margin: 10px 0 0;
+}
+
 .book-author {
   font-size: 1.125rem;
   margin: 18px 0 0;

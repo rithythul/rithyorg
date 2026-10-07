@@ -1,15 +1,16 @@
 {
-  "title": "The Survivors",
+  "title": "Somehow",
+  "subtitle": "Still Building",
   "author": "rithythul",
   "status": "Writing in progress",
-  "publicationNote": "Working title · Publication date to come",
-  "summary": "Cambodia's startups from the early days: the ups and downs, and what works and what does not.",
+  "publicationNote": "Publication date to come",
+  "summary": "Somehow: Still Building follows the people, choices, and companies around smallworld in Cambodia. A book by rithythul, in English and Khmer.",
   "homeNote": "Some mentors never knew they were teaching.",
   "description": [
-    "Until the 2000s, Cambodia had mostly traditional companies and NGOs. Startups began in the 2000s and tech startups around 2010, and most of those still running started then.",
-    "smallworld has been part of Cambodia's startups since the early days, building startups first-hand and watching others from the sidelines.",
-    "It has seen the ups and downs, and founders who started and failed, who go unnamed here.",
-    "The book is about what works and what does not, told through the people and the things built, with the lessons from the experiments and from the mentors, whether they know it or not."
+    "Somehow is about the people and the work around smallworld, and the companies connected with it.",
+    "An interest in Linux. An idea for a coding space. The connections only made sense later.",
+    "The money ran out more than once. Each time, something small kept it going.",
+    "The work is not finished, and neither is the book. It is being written in English and Khmer."
   ],
   "relatedSlugs": [
     "thirteen-years-building-cambodia",

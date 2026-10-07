@@ -3,7 +3,7 @@ import WritingList from "@/components/writing-list";
 import { getCuratedPosts } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = pageMetadata(book.title, `${book.summary} ${book.status}.`, "/book");
+export const metadata = pageMetadata(`${book.title}: ${book.subtitle}`, book.summary, "/book");
 
 export default function BookPage() {
   return (
@@ -11,6 +11,7 @@ export default function BookPage() {
       <header className="book-page-header">
         <p className="label">First book</p>
         <h1 className="book-title">{book.title}</h1>
+        <p className="book-subtitle">{book.subtitle}</p>
         <p className="book-author">{book.author}</p>
         <div className="book-description">
           {book.description.map((paragraph) => (

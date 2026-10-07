@@ -8,11 +8,12 @@ export default function BookFeature() {
         <h2 id="book-title" className="book-title">
           {book.title}
         </h2>
+        <p className="book-subtitle">{book.subtitle}</p>
         <p className="book-author">{book.author}</p>
       </div>
       <div className="book-copy">
         <p className="status">{book.status}</p>
-        <p>{book.summary}</p>
+        <p>{book.description[0]}</p>
         <p>{book.homeNote}</p>
         <a className="button" href="/book">
           About the book <span aria-hidden="true">→</span>
