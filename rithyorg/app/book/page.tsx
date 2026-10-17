@@ -9,17 +9,19 @@ export default function BookPage() {
   return (
     <div className="shell book-page">
       <header className="book-page-header">
-        <p className="label">First book</p>
-        <h1 className="book-title">{book.title}</h1>
-        <p className="book-subtitle">{book.subtitle}</p>
-        <p className="book-author">{book.author}</p>
+        <div className="book-heading">
+          <p className="label">First book</p>
+          <h1 className="book-title">{book.title}</h1>
+          <p className="book-subtitle">{book.subtitle}</p>
+          <p className="book-author">{book.author}</p>
+          <p className="status">{book.status}</p>
+          <p className="meta">{book.publicationNote}</p>
+        </div>
         <div className="book-description">
           {book.description.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
-        <p className="status">{book.status}</p>
-        <p className="meta">{book.publicationNote}</p>
       </header>
 
       <section className="book-related" aria-labelledby="related-title">

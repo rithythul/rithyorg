@@ -143,6 +143,34 @@ export function formatDate(date: string): string {
   }).format(new Date(date));
 }
 
+export function formatDay(date: string): string {
+  return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(date));
+}
+
+// Khmer has no spaces between words, so a word count would mislead
+export function readingMinutes(post: Post): number | null {
+  if (post.lang !== "en") return null;
+  const words = sanitizeHtml(post.content, { allowedTags: [], allowedAttributes: {} }).split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 220));
+}
+
+// posts arrive newest first, so groups do too
+export function groupByYear(posts: Post[]): { year: string; posts: Post[] }[] {
+  const groups: { year: string; posts: Post[] }[] = [];
+  for (const post of posts) {
+    const year = post.date.slice(0, 4) || "Undated";
+    if (groups.at(-1)?.year === year) groups.at(-1)!.posts.push(post);
+    else groups.push({ year, posts: [post] });
+  }
+  return groups;
+}
+
+export function getNeighbors(post: Post): { newer?: Post; older?: Post } {
+  const posts = getPosts(post.section);
+  const index = posts.findIndex((other) => other.slug === post.slug);
+  return { newer: posts[index - 1], older: index >= 0 ? posts[index + 1] : undefined };
+}
+
 export function paginate<T>(items: T[], requestedPage: string | undefined, pageSize = 15) {
   const pages = Math.max(1, Math.ceil(items.length / pageSize));
   const requested = Number.parseInt(requestedPage || "1", 10) || 1;

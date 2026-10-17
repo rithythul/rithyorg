@@ -24,7 +24,7 @@ export default function ThemeToggle() {
 
   return (
     <button type="button" className="theme-toggle" aria-pressed={dark} onClick={toggle}>
-      Dark theme <span aria-hidden="true">{dark ? "on" : "off"}</span>
+      Dark theme <span className="switch" aria-hidden="true" />
     </button>
   );
 }

@@ -7,11 +7,14 @@ import {
   cryptoTopics,
   getAllCryptoDigests,
   getAllWritingPosts,
+  getNeighbors,
   getPost,
+  groupByYear,
   hasTag,
   isPublished,
   paginate,
   pickRandom,
+  readingMinutes,
   renderContent,
   singleParam,
   type Section,
@@ -86,4 +89,22 @@ test("twitter and open graph titles both carry the site name once", () => {
   const metadata = pageMetadata("Somehow: Still Building", "description", "/book");
   assert.equal(metadata.openGraph?.title, "Somehow: Still Building · rithythul");
   assert.equal(metadata.twitter?.title, "Somehow: Still Building · rithythul");
+});
+
+test("archive years stay in date order and neighbours link both ways", () => {
+  const all = getAllWritingPosts();
+  const groups = groupByYear(all);
+  assert.deepEqual(groups.flatMap((group) => group.posts), all);
+  assert.equal(new Set(groups.map((group) => group.year)).size, groups.length);
+  const { newer, older } = getNeighbors(all[1]);
+  assert.equal(newer?.slug, all[0].slug);
+  assert.equal(older?.slug, all[2].slug);
+  assert.equal(getNeighbors(all[0]).newer, undefined);
+  assert.equal(getNeighbors(all.at(-1)!).older, undefined);
+});
+
+test("reading time counts English words and skips Khmer", () => {
+  const post = { ...getAllWritingPosts()[0], lang: "en", content: `<p>${"word ".repeat(660)}</p>` };
+  assert.equal(readingMinutes(post), 3);
+  assert.equal(readingMinutes({ ...post, lang: "km" }), null);
 });

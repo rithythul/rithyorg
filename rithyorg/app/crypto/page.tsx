@@ -1,4 +1,6 @@
 import ArchiveTabs from "@/components/archive-tabs";
+import PageHeader from "@/components/page-header";
+import TopicScroll from "@/components/topic-scroll";
 import Pagination from "@/components/pagination";
 import WritingList from "@/components/writing-list";
 import { cryptoTopics, getAllCryptoDigests, hasTag, paginate, singleParam } from "@/lib/content";
@@ -11,7 +13,7 @@ async function selection(searchParams: Props["searchParams"]) {
   const category = singleParam(params.category);
   const all = getAllCryptoDigests();
   const filtered = category ? all.filter((post) => hasTag(post, category)) : all;
-  return { category, ...paginate(filtered, singleParam(params.page)) };
+  return { category, total: all.length, ...paginate(filtered, singleParam(params.page)) };
 }
 
 export async function generateMetadata({ searchParams }: Props) {
@@ -28,36 +30,38 @@ export async function generateMetadata({ searchParams }: Props) {
 }
 
 export default async function CryptoPage({ searchParams }: Props) {
-  const { category, items, page, pages } = await selection(searchParams);
-  const unknownTopic = category !== "" && !cryptoTopics.includes(category);
+  const { category, total, items, page, pages } = await selection(searchParams);
 
   return (
     <div className="shell page">
-      <h1>Crypto archive</h1>
-      <p className="page-intro">
-        News, commentary, and digests from the BitcoinPrahok Crypto Digest. Not investment advice.{" "}
-        <a href="https://t.me/bitcoinprahok">
-          BitcoinPrahok on Telegram <span aria-hidden="true">↗</span>
-        </a>
-      </p>
+      <PageHeader eyebrow={`${total} articles · not investment advice`} title="Crypto archive">
+        <p>
+          News, commentary, and digests from the BitcoinPrahok Crypto Digest.{" "}
+          <a href="https://t.me/bitcoinprahok">
+            BitcoinPrahok on Telegram <span aria-hidden="true">↗</span>
+          </a>
+        </p>
+      </PageHeader>
       <ArchiveTabs current="crypto" />
 
-      <form className="filter-form" action="/crypto">
-        <label htmlFor="category">Topic</label>
-        <select id="category" name="category" defaultValue={category}>
-          <option value="">All topics</option>
-          {unknownTopic && <option value={category}>{category}</option>}
-          {cryptoTopics.map((topic) => (
-            <option key={topic} value={topic}>
-              {topic}
-            </option>
-          ))}
-        </select>
-        <button type="submit">Filter</button>
-      </form>
+      <nav className="topics" aria-label="Topics">
+        <a href="/crypto" aria-current={category ? undefined : "page"}>
+          all
+        </a>
+        {cryptoTopics.map((topic) => (
+          <a
+            key={topic}
+            href={`/crypto?category=${topic}`}
+            aria-current={topic === category.toLowerCase() ? "page" : undefined}
+          >
+            {topic}
+          </a>
+        ))}
+      </nav>
+      <TopicScroll />
 
       {items.length ? (
-        <WritingList posts={items} />
+        <WritingList posts={items} byYear />
       ) : (
         <p className="empty-state">
           No articles match this topic. <a href="/crypto">Show all crypto articles</a>.

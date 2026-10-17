@@ -1,4 +1,5 @@
 import ThemeToggle from "./theme-toggle";
+import Wordmark from "./wordmark";
 
 const secondaryLinks = [
   ["/crypto", "Crypto archive"],
@@ -14,7 +15,7 @@ export default function Footer() {
       <div className="shell">
         <div className="footer-top">
           <a href="/" className="wordmark">
-            rithythul<span aria-hidden="true">.</span>
+            <Wordmark />
           </a>
           <p>Phnom Penh, Cambodia</p>
           <a href="https://smallworld.xyz/">

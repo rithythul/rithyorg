@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: `${siteName} · Building, Learning, Writing`, template: `%s · ${siteName}` },
   description: "Building startups with the team at smallworld. Learning to be less wrong, at work and in life. Shaping a culture where everyone learns to become the leader they want to see in others.",
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: "/favicon.svg", apple: "/apple-touch-icon.png" },
   robots: indexable ? { index: true, follow: true } : { index: false, follow: false },
 };
 
@@ -19,8 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preload" href="/fonts/bagel-fat-one-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/baloo-2-var-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/fraunces-600-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/public-sans-var-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>

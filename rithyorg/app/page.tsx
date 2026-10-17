@@ -50,9 +50,14 @@ export default function Home() {
             Young people join the team, work on real products, and take on more as they learn. Some go on to lead
             a company.
           </p>
-          <a className="text-link" href="https://smallworld.xyz/">
-            Visit smallworld <span aria-hidden="true">↗</span>
-          </a>
+          <div className="link-row">
+            <a className="text-link" href="https://smallworld.xyz/">
+              Visit smallworld <span aria-hidden="true">↗</span>
+            </a>
+            <a className="text-link" href="/projects">
+              The companies <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </section>
     </div>

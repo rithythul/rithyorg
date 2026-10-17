@@ -7,10 +7,15 @@ export default function NotFound() {
     <div className="reading page">
       <p className="label">404</p>
       <h1>Page not found</h1>
-      <p>This page moved or no longer exists.</p>
-      <a className="text-link" href="/writing">
-        Go to Writing <span aria-hidden="true">→</span>
-      </a>
+      <p className="page-intro">This page moved or no longer exists.</p>
+      <div className="link-row">
+        <a className="button" href="/writing">
+          Go to Writing <span aria-hidden="true">→</span>
+        </a>
+        <a className="text-link" href="/">
+          Home
+        </a>
+      </div>
     </div>
   );
 }
