@@ -17,7 +17,7 @@ function sourceLabel(url: string): string {
   return "Source";
 }
 
-const pageSize = 30;
+const pageSize = 10;
 
 type Props = { searchParams: Promise<{ page?: string | string[] }> };
 
