@@ -7,6 +7,16 @@ import { pageMetadata } from "@/lib/metadata";
 export const dynamic = "force-dynamic";
 
 const intro = "Short thoughts on tech, building, and the rest. Most of them start on Facebook.";
+const facebook = "https://www.facebook.com/rithythul";
+
+// label a note's source by where it was first posted
+function sourceLabel(url: string): string {
+  const host = new URL(url).hostname;
+  if (/(^|\.)facebook\.com$/.test(host)) return "Facebook";
+  if (host === "t.me" || /(^|\.)telegram\.(org|me)$/.test(host)) return "Telegram";
+  return "Source";
+}
+
 const pageSize = 30;
 
 type Props = { searchParams: Promise<{ page?: string | string[] }> };
@@ -24,7 +34,9 @@ export default async function NotesPage({ searchParams }: Props) {
   return (
     <div className="reading page">
       <PageHeader eyebrow={`${all.length} notes`} title="Notes">
-        <p>{intro}</p>
+        <p>
+          Short thoughts on tech, building, and the rest. Most of them start on <a href={facebook}>Facebook</a>.
+        </p>
       </PageHeader>
       {items.length ? (
         <ol className="notes-list">
@@ -37,7 +49,7 @@ export default async function NotesPage({ searchParams }: Props) {
                 </a>
                 {note.source && (
                   <a href={note.source}>
-                    Facebook <span aria-hidden="true">↗</span>
+                    {sourceLabel(note.source)} <span aria-hidden="true">↗</span>
                   </a>
                 )}
               </p>
