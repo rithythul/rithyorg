@@ -96,6 +96,59 @@ export function getPosts(section: Section): Post[] {
     .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 }
 
+// short posts, mirrored from social; no title, dated to the minute
+export interface Note {
+  slug: string;
+  date: string;
+  lang: string;
+  source?: string;
+  content: string;
+}
+
+const notesDirectory = path.join(contentRoot, "notes");
+
+export function getNote(slug: string): Note | null {
+  if (!slugPattern.test(slug)) return null;
+  const file = path.join(notesDirectory, `${slug}.md`);
+  if (!fs.existsSync(file)) return null;
+
+  const { data, content } = matter(fs.readFileSync(file, "utf8"));
+  if (!data.date) throw new Error(`Missing date: ${file}`);
+  if (!isPublished(data)) return null;
+  if (!content.trim()) throw new Error(`Empty note: ${file}`);
+
+  return {
+    slug,
+    date: new Date(String(data.date)).toISOString(),
+    lang: typeof data.lang === "string" ? data.lang : /[ក-៿]/.test(content) ? "km" : "en",
+    source: typeof data.source === "string" && /^https:\/\//.test(data.source) ? data.source : undefined,
+    content: renderContent(content),
+  };
+}
+
+export function getNotes(): Note[] {
+  if (!fs.existsSync(notesDirectory)) return [];
+  return fs
+    .readdirSync(notesDirectory)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => getNote(file.slice(0, -3)))
+    .filter((note): note is Note => note !== null)
+    .sort((a, b) => b.date.localeCompare(a.date) || b.slug.localeCompare(a.slug));
+}
+
+// notes are written in Phnom Penh, so show its clock
+export function formatNoteTime(date: string): string {
+  return new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZone: "Asia/Phnom_Penh",
+  }).format(new Date(date));
+}
+
 export const getAllWritingPosts = () => getPosts("writing");
 export const getAllCryptoDigests = () => getPosts("crypto");
 

@@ -40,12 +40,13 @@ Only a Vercel production build (`VERCEL_ENV=production`, set by Vercel) or a bui
 
 | Path | Holds |
 |---|---|
-| `app/` | Routes: home, `/writing`, `/writing/[slug]`, `/book`, `/about`, `/crypto`, `/crypto/[slug]`, `/crypto/privacy`, `/projects`, `/social`, `/terms`, `/privacy`, 404, sitemap, robots |
+| `app/` | Routes: home, `/writing`, `/writing/[slug]`, `/notes`, `/book`, `/about`, `/crypto`, `/crypto/[slug]`, `/crypto/privacy`, `/projects`, `/social`, `/terms`, `/privacy`, 404, sitemap, robots |
 | `components/` | Header, footer, theme toggle, article, writing list, archive tabs, pagination, book feature |
 | `lib/content.ts` | Reads, validates, sanitizes and sorts Markdown content |
 | `lib/metadata.ts` | Canonical URLs (always `https://rithy.org`) and Open Graph metadata |
 | `content/posts/` | Essays, served at `/writing/<file-name>` |
 | `content/crypto/` | Crypto articles and digests, served at `/crypto/<file-name>` |
+| `content/notes/` | Short posts mirrored from Facebook, listed newest first at `/notes` |
 | `content/pages/book.json` | The book record shared by the home page and `/book` |
 | `content/pages/projects.json` | Project descriptions for `/projects` |
 | `public/fonts/` | Fraunces, Public Sans and JetBrains Mono Latin subsets (WOFF2) with their OFL licences |
@@ -77,6 +78,24 @@ status: "published"
 - A leading `# Title` that repeats the frontmatter title is dropped; any other `#` heading renders as `h2`.
 - Set `lang: "km"` for Khmer pieces; files containing Khmer script are detected automatically.
 - The crypto filter offers the topics in `cryptoTopics` in `lib/content.ts`; a test fails if a topic matches no article.
+
+## Notes
+
+Short posts live in `content/notes/`, one file each, named `YYYY-MM-DD-HHMM.md` (Phnom Penh time).
+They have no title. The front matter needs only the date and time, with the `+07:00` offset:
+
+```yaml
+---
+date: "2026-11-08T15:15:00+07:00"
+source: "https://www.facebook.com/..."   # optional link to the Facebook post
+---
+
+Every OS has a passport.
+```
+
+- `/notes` renders on each request, so a note dated later in the day appears when its time comes, with no rebuild.
+- Images go in `public/notes/` and are referenced as `![alt](/notes/file.png)`.
+- `draft: true` hides a note; a missing date or an empty body fails the build.
 
 ## Where the archive came from
 

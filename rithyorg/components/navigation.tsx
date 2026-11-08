@@ -6,6 +6,7 @@ import Wordmark, { Mark } from "./wordmark";
 
 const links = [
   { href: "/writing", label: "Writing", sections: ["/writing", "/crypto"] },
+  { href: "/notes", label: "Notes", sections: ["/notes"] },
   { href: "/book", label: "Book", sections: ["/book"] },
   { href: "/about", label: "About", sections: ["/about"] },
 ];

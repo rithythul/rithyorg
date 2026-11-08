@@ -5,9 +5,12 @@ import { createHash } from "node:crypto";
 import sanitizeHtml from "sanitize-html";
 import {
   cryptoTopics,
+  formatNoteTime,
   getAllCryptoDigests,
   getAllWritingPosts,
   getNeighbors,
+  getNote,
+  getNotes,
   getPost,
   groupByYear,
   hasTag,
@@ -107,4 +110,13 @@ test("reading time counts English words and skips Khmer", () => {
   const post = { ...getAllWritingPosts()[0], lang: "en", content: `<p>${"word ".repeat(660)}</p>` };
   assert.equal(readingMinutes(post), 3);
   assert.equal(readingMinutes({ ...post, lang: "km" }), null);
+});
+
+test("notes sort newest first, show Phnom Penh time, and reject unsafe slugs", () => {
+  const notes = getNotes();
+  for (let i = 1; i < notes.length; i++) assert.ok(notes[i - 1].date >= notes[i].date);
+  for (const note of notes) assert.ok(note.content.trim(), note.slug);
+  assert.equal(getNote("../posts/new-blog"), null);
+  assert.equal(getNote("missing"), null);
+  assert.equal(formatNoteTime("2026-11-08T08:15:00.000Z"), "Nov 8, 2026, 15:15");
 });
