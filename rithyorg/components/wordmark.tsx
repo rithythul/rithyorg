@@ -1,4 +1,4 @@
-// lettered in the noos wordmark style: one round stroke, a raised dot
+// lettered in one round stroke with raised dots; strokes in --color-mark, dots in --color-highlight
 export default function Wordmark() {
   return (
     <svg className="wordmark-full" viewBox="0 -50 789 200" role="img" aria-label="rithythul">

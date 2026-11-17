@@ -2,24 +2,24 @@
 
 /* latin subsets from Google Fonts; OFL licences in public/fonts */
 @font-face {
-  font-family: "Fraunces";
-  src: url("/fonts/fraunces-600-latin.woff2") format("woff2");
-  font-weight: 600;
+  font-family: "Bricolage Grotesque";
+  src: url("/fonts/bricolage-grotesque-var-latin.woff2") format("woff2");
+  font-weight: 500 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Public Sans";
-  src: url("/fonts/public-sans-var-latin.woff2") format("woff2");
+  font-family: "Figtree";
+  src: url("/fonts/figtree-var-latin.woff2") format("woff2");
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Public Sans";
-  src: url("/fonts/public-sans-var-italic-latin.woff2") format("woff2");
+  font-family: "Figtree";
+  src: url("/fonts/figtree-var-italic-latin.woff2") format("woff2");
   font-weight: 400 700;
   font-style: italic;
   font-display: swap;
@@ -33,36 +33,45 @@
   font-display: swap;
 }
 
-/* noos palette; light default, layout.tsx script adds .dark */
+/* Marigold Ink: indigo-tinted neutrals, indigo for action, marigold for attention.
+   Light is the default; layout.tsx script adds .dark. Ramp steps in comments. */
 :root {
-  --color-bg: #fbfcf8;
-  --color-fg: #12191c;
-  --color-muted: #5b6467;
-  --color-border: #7c857f;
-  --color-rule: #e3e7dd;
-  --color-accent: #527400; /* noos green darkened to 4.9:1 on the wash */
-  --color-mark: #81b300; /* the wordmark's own green, for shapes only */
-  --color-link: #0f5fa6;
-  --color-feature: #f1f5e8;
-  --color-on-accent: #fbfcf8;
-  --font-ui: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --color-bg: #f6f6fb; /* ink-50 */
+  --color-fg: #292b35; /* ink-900, 13.1:1 on bg */
+  --color-muted: #6a6b74; /* ink-600, 4.9:1 on bg */
+  --color-border: #84868e; /* ink-500, 3.4:1 on bg for control outlines */
+  --color-rule: #dbdce2; /* ink-200 */
+  --color-accent: #5b63af; /* indigo-600, 5.1:1 on bg */
+  --color-mark: #5b63af; /* the wordmark's strokes */
+  --color-link: #494f88; /* indigo-700, 7.1:1 on bg */
+  --color-feature: #ebecf2; /* ink-100: code, pager */
+  --color-feature-warm: #fff3d4; /* marigold-100: the book panel */
+  --color-highlight: #ffd370; /* marigold-300: highlighter, dots, selection; never text */
+  --color-on-highlight: #292b35;
+  --color-on-accent: #ffffff;
+  --font-ui: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --font-reading: var(--font-ui), "Noto Sans Khmer", sans-serif;
+  --highlight-start: 58%;
   color-scheme: light;
 }
 
 .dark {
-  --color-bg: #111614;
-  --color-fg: #e7ece6;
-  --color-muted: #9aa39d;
-  --color-border: #5e6862;
-  --color-rule: #27302b;
-  --color-accent: #a6d43a;
-  --color-mark: #8dbf1a;
-  --color-link: #7db8f0;
-  --color-feature: #18201a;
-  --color-on-accent: #111614;
+  --color-bg: #171923; /* ink-950 */
+  --color-fg: #ebecf2; /* ink-100, 14.9:1 */
+  --color-muted: #a6a7af; /* ink-400, 7.3:1 */
+  --color-border: #6a6b74; /* ink-600, 3.3:1 */
+  --color-rule: #3d3f49; /* ink-800 */
+  --color-accent: #bac2f4; /* indigo-300, 10.1:1 */
+  --color-mark: #bac2f4;
+  --color-link: #d4dafd; /* indigo-200 */
+  --color-feature: #292b35; /* ink-900 */
+  --color-feature-warm: #312317; /* marigold-950 */
+  --color-highlight: #ffd370;
+  --color-on-highlight: #171923;
+  --color-on-accent: #171923;
+  --highlight-start: 84%;
   color-scheme: dark;
 }
 
@@ -170,8 +179,20 @@ h3 {
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-on-accent);
+  background: var(--color-highlight);
+  color: var(--color-on-highlight);
+}
+
+/* the marigold highlighter: once per page, behind the phrase it is about */
+.highlight {
+  background: linear-gradient(
+    transparent var(--highlight-start),
+    var(--color-highlight) var(--highlight-start),
+    var(--color-highlight) 94%,
+    transparent 94%
+  );
+  color: inherit;
+  padding-inline: 0.04em;
 }
 
 main {
@@ -272,6 +293,10 @@ main:focus {
 
 .wordmark:hover {
   color: var(--color-mark);
+}
+
+.wordmark circle {
+  fill: var(--color-highlight);
 }
 
 .wordmark .wordmark-mark,
@@ -518,7 +543,7 @@ main:focus {
 
 
 .book-feature {
-  background: var(--color-feature);
+  background: var(--color-feature-warm);
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -567,7 +592,7 @@ main:focus {
   content: "";
   height: 8px;
   width: 8px;
-  background: var(--color-mark);
+  background: var(--color-highlight);
   border-radius: 50%;
   flex: none;
 }
@@ -585,7 +610,7 @@ main:focus {
   grid-template-columns: 1fr 1fr;
   align-items: start;
   gap: 48px;
-  background: var(--color-feature);
+  background: var(--color-feature-warm);
   border-radius: 10px;
   padding: 40px;
 }
@@ -1066,7 +1091,7 @@ main:focus {
 }
 
 .prose blockquote {
-  border-left: 3px solid var(--color-mark);
+  border-left: 3px solid var(--color-highlight);
   padding-left: 24px;
   margin: 30px 0;
 }
@@ -1213,7 +1238,7 @@ main:focus {
 }
 
 .theme-toggle[aria-pressed="true"] .switch {
-  background: var(--color-mark);
+  background: var(--color-accent);
 }
 
 .theme-toggle[aria-pressed="true"] .switch::after {

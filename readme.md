@@ -49,7 +49,7 @@ Only a Vercel production build (`VERCEL_ENV=production`, set by Vercel) or a bui
 | `content/notes/` | Short posts mirrored from Facebook, listed newest first at `/notes` |
 | `content/pages/book.json` | The book record shared by the home page and `/book` |
 | `content/pages/projects.json` | Project descriptions for `/projects` |
-| `public/fonts/` | Fraunces, Public Sans and JetBrains Mono Latin subsets (WOFF2) with their OFL licences |
+| `public/fonts/` | Bricolage Grotesque, Figtree and JetBrains Mono Latin subsets (WOFF2) with their OFL licences |
 
 Pages are server-rendered or static HTML with ordinary links, so reading, navigation, archive pagination and the crypto topic filter all work without JavaScript.
 Only the theme toggle and the current-page marker in the header hydrate.

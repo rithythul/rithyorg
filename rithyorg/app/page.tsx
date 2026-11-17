@@ -20,7 +20,11 @@ export default function Home() {
     <div className="shell">
       <section className="hero">
         <h1>
-          <span>Building</span> <span>Learning</span> <span>Writing</span>
+          <span>Building</span>{" "}
+          <span>
+            <mark className="highlight">Learning</mark>
+          </span>{" "}
+          <span>Writing</span>
         </h1>
         <div className="hero-copy">
           <p>{intro}</p>
