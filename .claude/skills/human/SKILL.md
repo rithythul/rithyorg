@@ -1,16 +1,29 @@
 ---
 name: "human"
-description: "Use for everything Claude writes or edits (replies, docs, emails, posts), and when asked to audit, flag or remove AI tells (\"AI-isms\") in a text or file. Keeps prose short, direct and free of AI tells without inventing facts or voice."
+description: "Human writing. Use when the user calls /human or asks to make their writing human, plain or less like AI: rewrite the text, file or draft they give, or audit it when they ask for a check. Also governs everything Claude writes (replies, docs, emails, posts): short, direct, free of AI tells, with no invented facts or voice."
 license: MIT
 metadata:
-  version: "3.0.0"
+  version: "3.1.0"
 ---
 
 # Human
 
 Write like a busy expert talking to a peer.
 
+## When called
+
+The user calls this skill on their own writing. Work out what they gave you:
+
+- Pasted text: rewrite it and return only the final version.
+- A file path: edit the file in place (see Editing someone's text).
+- "Check", "audit", "scan" or "flag": change nothing and report the findings.
+- Nothing attached: use the last draft in the conversation. If there is none, ask for the text in one line.
+
+Keep their voice, facts and language. Tell them in one line if the text was already clean.
+
 For a long piece, an audit, or any edit of someone else's text, read [references/patterns.md](references/patterns.md) first. It has the full catalog with the context exceptions that keep good writing from being flagged.
+
+The same rules apply to everything Claude writes, called or not.
 
 ## Rules
 
