@@ -1,7 +1,7 @@
 # rithy.org
 
 Personal site of rithythul: writing, the book in progress, and the crypto archive.
-The Next.js app lives in `rithyorg/`; everything else at the root (`build_epub.py`, `profile.md`, `selendra-wdk/`, and `skills/`, the source of the humanizer writing skill) is unrelated to the site.
+The Next.js app lives in `rithyorg/`; everything else at the root (`build_epub.py`, `profile.md`, `selendra-wdk/`, and `skills/`, the source of the human writing skill) is unrelated to the site.
 Two books are in progress, both in `books/`, which has the inventory.
 The first, "Somehow: Still Building", is about the people and the work around smallworld and the companies connected with it, and is the site's book page (`/book`).
 The second, "Minute Zero", is fiction and is not on the site.

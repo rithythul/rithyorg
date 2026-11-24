@@ -1,12 +1,12 @@
 ---
-name: "humanizer"
+name: "human"
 description: "Use for everything Claude writes or edits (replies, docs, emails, posts), and when asked to audit, flag or remove AI tells (\"AI-isms\") in a text or file. Keeps prose short, direct and free of AI tells without inventing facts or voice."
 license: MIT
 metadata:
   version: "3.0.0"
 ---
 
-# Humanizer
+# Human
 
 Write like a busy expert talking to a peer.
 

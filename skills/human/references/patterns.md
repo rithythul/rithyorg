@@ -2,8 +2,6 @@
 
 The full list behind SKILL.md. Each entry is a candidate, not an automatic edit. Read the context and the carve-out before changing anything. Quoted examples of bad writing (like the ones in this file) are exempt.
 
-Condensed and adapted from [conorbronsdon/avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) v3.39.0 (MIT). See NOTICE.md.
-
 ## Severity
 
 P0, credibility killers. Fix on sight.
@@ -226,14 +224,3 @@ Cold-outreach flattery. "I'd love your perspective" as the whole ask. State the 
 Extra strict means one instance is enough. Em dashes stay at zero everywhere in prose we write. When editing someone else's text, follow their house style for marks.
 
 Infer the context when nobody names it: under 300 words with hashtags is a social post; code or APIs make it technical; a salutation plus fundraising language makes it an investor email; steps and parameters make it docs. With no strong signal, treat it as a blog and leave borderline cases as judgment calls.
-
-## Optional mechanical check
-
-The upstream project ships a deterministic detector. It needs Node 18 or later and network access to npm:
-
-```bash
-npx --package avoid-ai-writing-detector avoid-ai-writing draft.md
-npx --package avoid-ai-writing-detector avoid-ai-writing --context technical draft.md
-```
-
-It prints JSON with a 0 to 100 score and the issues found. Use it as a second reader, not a verdict: it covers the regex-detectable patterns only, and a score is never proof of who wrote a text. Say whether it ran; if it didn't, call the audit model-only.
